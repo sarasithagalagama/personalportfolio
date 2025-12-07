@@ -1,5 +1,6 @@
 import React from "react";
 import SectionTitle from "../common/SectionTitle";
+import Testimonials from "./Testimonials";
 import {
   education,
   experience,
@@ -204,60 +205,74 @@ const Resume = () => {
         </div>
       </div>
 
-      {/* Technical Competencies Grid */}
+      {/* Technical Competencies */}
       <div className="content__block block-large">
         <div className="section-h3">
           <h3 className="h3__title animate-in-up">Technical Competencies</h3>
         </div>
-        <div className="tools-cards d-flex justify-content-start flex-wrap">
+
+        <div className="technical-competencies-list">
           {technicalCompetencies.map((category) => (
             <div
               key={category.id}
-              className="tools-cards__item d-flex grid-item-s animate-card-5"
+              className="competency-category animate-in-up"
+              style={{
+                marginBottom: "3rem",
+                paddingBottom: "2rem",
+                borderBottom: "1px solid var(--stroke-elements)",
+              }}
             >
-              <div
-                className="tools-cards__card"
-                style={{ width: "100%", padding: "2rem" }}
+              <h4
+                style={{
+                  fontSize: "1.6rem",
+                  color: "var(--t-accent)",
+                  marginBottom: "1.5rem",
+                  fontWeight: "600",
+                }}
               >
-                <h5
-                  className="tools-cards__caption animate-in-up"
-                  style={{
-                    fontSize: "1.8rem",
-                    color: "var(--t-accent)",
-                    marginTop: 0,
-                    marginBottom: "2rem",
-                    textAlign: "center",
-                  }}
-                >
-                  {category.title}
-                </h5>
-                <div className="d-flex flex-wrap justify-content-center gap-3">
-                  {category.itemList.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="rounded-tag d-flex align-items-center gap-2"
+                {category.title}
+              </h4>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "1rem",
+                }}
+              >
+                {category.itemList.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="rounded-tag d-flex align-items-center gap-2"
+                    style={{
+                      fontSize: "1.3rem",
+                      padding: "0.6rem 1.2rem",
+                      border: "1px solid var(--stroke-elements)",
+                      color: "var(--t-medium)",
+                      background: "rgba(255,255,255,0.03)",
+                      borderRadius: "0.8rem",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background =
+                        "rgba(255,255,255,0.08)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background =
+                        "rgba(255,255,255,0.03)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <i
+                      className={skill.icon}
                       style={{
-                        fontSize: "1.3rem",
-                        padding: "0.5rem 1rem",
-                        border: "1px solid var(--stroke-elements)",
-                        color: "var(--t-medium)",
-                        margin: "0.2rem",
-                        background: "rgba(255,255,255,0.05)",
+                        fontSize: "1.6rem",
+                        color: skill.color ? skill.color : undefined,
                       }}
-                    >
-                      <i
-                        className={skill.icon}
-                        style={{
-                          fontSize: "1.6rem",
-                          color: skill.color ? skill.color : undefined,
-                          animation: "float 3s ease-in-out infinite",
-                          animationDelay: `${i * 0.2}s`,
-                        }}
-                      ></i>
-                      {skill.name}
-                    </span>
-                  ))}
-                </div>
+                    ></i>
+                    {skill.name}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
@@ -287,6 +302,9 @@ const Resume = () => {
         </p>
         <h2 className="h2__title animate-in-up">Clients say about me</h2>
       </div>
+
+      {/* Testimonials */}
+      <Testimonials />
     </section>
   );
 };

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import SectionTitle from "../common/SectionTitle";
 import GalleryItem from "../common/GalleryItem";
 import { portfolioItems } from "../../data/portfolioData";
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const [selectedItem, setSelectedItem] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
   const [view, setView] = useState("categories"); // 'categories' or 'projects'
@@ -23,8 +25,13 @@ const Portfolio = () => {
   ];
 
   const handleCategoryClick = (categoryTitle) => {
-    setActiveCategory(categoryTitle);
-    setView("projects");
+    // Navigate to separate page for Full Stack Projects
+    if (categoryTitle === "Full Stack Projects") {
+      navigate("/fullstack-projects");
+    } else {
+      setActiveCategory(categoryTitle);
+      setView("projects");
+    }
   };
 
   const handleBackClick = () => {
