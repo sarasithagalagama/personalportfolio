@@ -26,9 +26,9 @@ const Contact = () => {
     <section id="contact" className="inner contact">
       <SectionTitle subtitle="Contact" title="Let's work together!" />
 
-      <div className="content__block grid-block block-large">
+      <div className="content__block block-large">
         <div className="container-fluid p-0">
-          <div className="row g-0">
+          <div className="row">
             <div className="col-12 col-lg-8">
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="row g-3">

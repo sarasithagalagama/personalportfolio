@@ -8,6 +8,7 @@ import About from "./components/sections/About";
 import Resume from "./components/sections/Resume";
 import Contact from "./components/sections/Contact";
 import "./styles/main.css";
+import "./styles/responsive-fixes.css";
 
 function App() {
   const { theme, toggleTheme } = useTheme();

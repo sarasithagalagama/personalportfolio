@@ -223,7 +223,6 @@ export const technicalCompetencies = [
   {
     id: 1,
     title: "Languages & Frameworks",
-    iconClass: "fa-solid fa-code",
     itemList: [
       { name: "Java", icon: "devicon-java-plain colored" },
       { name: "C/C++", icon: "devicon-cplusplus-plain colored" },
@@ -237,7 +236,6 @@ export const technicalCompetencies = [
   {
     id: 2,
     title: "Databases & Platforms",
-    iconClass: "fa-solid fa-database",
     itemList: [
       { name: "MySQL", icon: "devicon-mysql-original colored" },
       { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
@@ -250,7 +248,6 @@ export const technicalCompetencies = [
   {
     id: 3,
     title: "DevOps & Infrastructure",
-    iconClass: "fa-solid fa-cloud",
     itemList: [
       { name: "Docker", icon: "devicon-docker-plain colored" },
       { name: "Git", icon: "devicon-git-plain colored" },
@@ -266,7 +263,6 @@ export const technicalCompetencies = [
   {
     id: 4,
     title: "Concepts & Methodologies",
-    iconClass: "fa-solid fa-brain",
     itemList: [
       { name: "OOP", icon: "fa-solid fa-cubes" },
       { name: "REST", icon: "fa-solid fa-globe" },
@@ -280,7 +276,6 @@ export const technicalCompetencies = [
   {
     id: 5,
     title: "Design & UX Tools",
-    iconClass: "fa-solid fa-pen-nib",
     itemList: [
       { name: "Figma", icon: "devicon-figma-plain colored" },
       { name: "Photoshop", icon: "devicon-photoshop-plain", color: "#31A8FF" },
@@ -318,11 +313,11 @@ export const education = [
 export const experience = [
   {
     id: 1,
-    date: "2018 - Present",
-    title: "Freelance Designer & Developer",
-    source: "Fiverr",
+    date: "2020 - Present",
+    title: "Freelance Designer & Content Creator (Level 2 Seller)",
+    source: "Fiverr & Remote Clients",
     sourceLink: "https://www.fiverr.com/sarasithag",
     description:
-      "Providing creative design solutions and web development services to global clients.",
+      "Market Viability: Achieved Level 2 Seller status, successfully completing 523+ orders for over 170+ unique clients with a sustained 4.7-star rating. Project Management: Managed end-to-end commercial projects, ensuring timely delivery, quality control, and client satisfaction in a high-pressure environment. Visual Strategy: Provided high-volume digital assets that maximized user engagement and improved visual hierarchy for clients across multiple sectors.",
   },
 ];

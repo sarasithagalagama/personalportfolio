@@ -130,12 +130,83 @@ const Resume = () => {
               </div>
             </div>
           ))}
+
+          {/* Fiverr Profile Card */}
+          <div className="row g-0 mt-4">
+            <div className="col-12 col-lg-10">
+              <div
+                className="fiverr-profile-card animate-in-up"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--stroke-elements)",
+                  borderRadius: "1.5rem",
+                  padding: "2rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "2rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                <img
+                  src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/5e5c5c5c5c5c5c5c5c5c5c5c/JPEG_20210101_010101_1234567890.jpg"
+                  alt="Fiverr Profile"
+                  style={{
+                    width: "120px",
+                    height: "120px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "3px solid var(--accent)",
+                    flexShrink: 0,
+                  }}
+                />
+                <div style={{ flex: 1, minWidth: "250px" }}>
+                  <h5
+                    style={{
+                      fontSize: "1.8rem",
+                      color: "var(--t-accent)",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    Sarasitha @graphyourworld
+                  </h5>
+                  <p
+                    style={{
+                      fontSize: "1.4rem",
+                      color: "var(--t-medium)",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    ⭐ 4.7 (523) | Level 2 ✦✦
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "1.3rem",
+                      color: "var(--t-secondary)",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    Creativity for your next level
+                  </p>
+                  <a
+                    href="https://www.fiverr.com/s/5r9wxjQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-default btn-hover btn-hover-accent"
+                    style={{ fontSize: "1.3rem" }}
+                  >
+                    <span className="btn-caption">View Fiverr Profile</span>
+                    <i className="ph-bold ph-arrow-square-out"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Technical Competencies Grid */}
-      <div className="content__block grid-block block-large">
-        <div className="section-h3 section-h3-grid">
+      <div className="content__block block-large">
+        <div className="section-h3">
           <h3 className="h3__title animate-in-up">Technical Competencies</h3>
         </div>
         <div className="tools-cards d-flex justify-content-start flex-wrap">
@@ -144,24 +215,23 @@ const Resume = () => {
               key={category.id}
               className="tools-cards__item d-flex grid-item-s animate-card-5"
             >
-              <div className="tools-cards__card" style={{ width: "100%" }}>
-                <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-                  <i
-                    className={category.iconClass}
-                    style={{ fontSize: "4rem", color: "var(--accent)" }}
-                  ></i>
-                </div>
+              <div
+                className="tools-cards__card"
+                style={{ width: "100%", padding: "2rem" }}
+              >
                 <h5
-                  className="tools-cards__caption animate-in-up mb-3"
+                  className="tools-cards__caption animate-in-up"
                   style={{
                     fontSize: "1.8rem",
                     color: "var(--t-accent)",
                     marginTop: 0,
+                    marginBottom: "2rem",
+                    textAlign: "center",
                   }}
                 >
                   {category.title}
                 </h5>
-                <div className="d-flex flex-wrap justify-content-center gap-2">
+                <div className="d-flex flex-wrap justify-content-center gap-3">
                   {category.itemList.map((skill, i) => (
                     <span
                       key={i}
