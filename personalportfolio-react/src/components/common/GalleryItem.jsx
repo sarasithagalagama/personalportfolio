@@ -19,6 +19,10 @@ const GalleryItem = ({ item, onClick }) => {
           onClick(item);
         }}
       >
+        <div
+          className="picture"
+          style={{ backgroundImage: `url(${item.image})` }}
+        ></div>
         <img
           src={item.image}
           className="gallery__image"

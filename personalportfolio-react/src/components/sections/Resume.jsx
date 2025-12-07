@@ -1,7 +1,10 @@
 import React from "react";
 import SectionTitle from "../common/SectionTitle";
-import ToolCard from "../common/ToolCard";
-import { education, experience, tools } from "../../data/portfolioData";
+import {
+  education,
+  experience,
+  technicalCompetencies,
+} from "../../data/portfolioData";
 
 const Resume = () => {
   return (
@@ -130,17 +133,63 @@ const Resume = () => {
         </div>
       </div>
 
-      {/* Tools */}
-      <div className="content__block">
-        <div className="section-h3 section-h3-grid">
-          <h3 className="h3__title animate-in-up">My favourite tools</h3>
-        </div>
-      </div>
-
+      {/* Technical Competencies Grid */}
       <div className="content__block grid-block block-large">
+        <div className="section-h3 section-h3-grid">
+          <h3 className="h3__title animate-in-up">Technical Competencies</h3>
+        </div>
         <div className="tools-cards d-flex justify-content-start flex-wrap">
-          {tools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
+          {technicalCompetencies.map((category) => (
+            <div
+              key={category.id}
+              className="tools-cards__item d-flex grid-item-s animate-card-5"
+            >
+              <div className="tools-cards__card" style={{ width: "100%" }}>
+                <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+                  <i
+                    className={category.iconClass}
+                    style={{ fontSize: "4rem", color: "var(--accent)" }}
+                  ></i>
+                </div>
+                <h5
+                  className="tools-cards__caption animate-in-up mb-3"
+                  style={{
+                    fontSize: "1.8rem",
+                    color: "var(--t-accent)",
+                    marginTop: 0,
+                  }}
+                >
+                  {category.title}
+                </h5>
+                <div className="d-flex flex-wrap justify-content-center gap-2">
+                  {category.itemList.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="rounded-tag d-flex align-items-center gap-2"
+                      style={{
+                        fontSize: "1.3rem",
+                        padding: "0.5rem 1rem",
+                        border: "1px solid var(--stroke-elements)",
+                        color: "var(--t-medium)",
+                        margin: "0.2rem",
+                        background: "rgba(255,255,255,0.05)",
+                      }}
+                    >
+                      <i
+                        className={skill.icon}
+                        style={{
+                          fontSize: "1.6rem",
+                          color: skill.color ? skill.color : undefined,
+                          animation: "float 3s ease-in-out infinite",
+                          animationDelay: `${i * 0.2}s`,
+                        }}
+                      ></i>
+                      {skill.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

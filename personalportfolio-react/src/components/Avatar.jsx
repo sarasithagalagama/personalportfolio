@@ -37,21 +37,19 @@ const Avatar = () => {
           </div>
         </div>
 
-        {/* Data Caption #1 */}
         <div className="avatar__block">
           <h6>
             <small className="top">Specialization:</small>
-            Fullstack Developer
+            Creative Designer
             <br />
-            Java, Spring Boot, React & PostgreSQL
+            and fullstack developer
           </h6>
         </div>
 
-        {/* Data Caption #2 */}
         <div className="avatar__block">
           <h6>
-            <small className="top">Education:</small>
-            IT Undergraduate at SLIIT
+            <small className="top">Based in:</small>
+            Kottawa, Sri Lanka
           </h6>
         </div>
 
@@ -92,21 +90,26 @@ const Avatar = () => {
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://www.hackerrank.com/profile/sarasithagalaga1"
+                  href="https://www.behance.net/sarasithagalagama"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="ph-bold ph-code"></i>
+                  <i className="ph-bold ph-behance-logo"></i>
                 </a>
               </li>
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://www.credly.com/users/sarasitha-galagama"
+                  href="https://www.fiverr.com/sarasithag"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    fontFamily: "sans-serif",
+                  }}
                 >
-                  <i className="ph-bold ph-certificate"></i>
+                  fi
                 </a>
               </li>
             </ul>

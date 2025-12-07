@@ -2,3 +2,23 @@
 @import url('./loaders/loader.css');
 @import url('./plugins-original.css');
 @import url('./main-original.css');
+
+/* Theme Overrides */
+[color-scheme="light"] .image-background {
+  display: none !important;
+}
+
+[color-scheme="light"] body {
+  background-color: #ffffff !important;
+}
+
+[color-scheme="light"] .headline__subtitle {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}

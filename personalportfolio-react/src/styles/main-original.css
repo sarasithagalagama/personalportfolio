@@ -53,7 +53,8 @@
 /* Template Backgrounds Start */
 /* ------------------------------------------------*/
 .image-background {
-  background-image: url("https://dummyimage.com/2560x1440/4d4d4d/636363");
+  background-image: url("https://images.pexels.com/photos/3052727/pexels-photo-3052727.jpeg");
+  opacity: 0.2;
 }
 
 /* ------------------------------------------------*/
