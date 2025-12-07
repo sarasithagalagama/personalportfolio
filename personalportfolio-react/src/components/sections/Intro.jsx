@@ -27,12 +27,12 @@ const Intro = () => {
               C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"
             />
           </svg>
-          <span>Let's meet!</span>
+          <span>Hello, I'm</span>
         </p>
         <h1 className="headline__title animate-headline">
           I'm Sarasitha Galagama
           <br />
-          Digital designer and illustrator.
+          Fullstack Developer & IT Undergraduate
         </h1>
         <div className="headline__btnholder d-flex flex-column flex-sm-row">
           <a

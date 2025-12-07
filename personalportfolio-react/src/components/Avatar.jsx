@@ -41,17 +41,17 @@ const Avatar = () => {
         <div className="avatar__block">
           <h6>
             <small className="top">Specialization:</small>
-            UI/UX designer
+            Fullstack Developer
             <br />
-            and frontend developer
+            Java, Spring Boot, React & PostgreSQL
           </h6>
         </div>
 
         {/* Data Caption #2 */}
         <div className="avatar__block">
           <h6>
-            <small className="top">Based in:</small>
-            Odesa, Ukraine
+            <small className="top">Education:</small>
+            IT Undergraduate at SLIIT
           </h6>
         </div>
 
@@ -62,27 +62,27 @@ const Avatar = () => {
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://dribbble.com/"
+                  href="https://linkedin.com/in/sarasitha-galagama"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="ph-bold ph-dribbble-logo"></i>
+                  <i className="ph-bold ph-linkedin-logo"></i>
                 </a>
               </li>
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://www.behance.net/"
+                  href="https://github.com/sarasithagalagama"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="ph-bold ph-behance-logo"></i>
+                  <i className="ph-bold ph-github-logo"></i>
                 </a>
               </li>
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/sarasitha_galagama/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -92,21 +92,21 @@ const Avatar = () => {
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://www.twitch.tv/"
+                  href="https://www.hackerrank.com/profile/sarasithagalaga1"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="ph-bold ph-twitch-logo"></i>
+                  <i className="ph-bold ph-code"></i>
                 </a>
               </li>
               <li className="socials-square__item">
                 <a
                   className="socials-square__link btn"
-                  href="https://www.pinterest.com/"
+                  href="https://www.credly.com/users/sarasitha-galagama"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="ph-bold ph-pinterest-logo"></i>
+                  <i className="ph-bold ph-certificate"></i>
                 </a>
               </li>
             </ul>
