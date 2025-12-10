@@ -154,6 +154,36 @@ section {
   max-width: 100%;
 }
 
+/* Fix grid alignment - ensure cards align at top */
+.grid-block .row {
+  align-items: flex-start !important;
+}
+
+.grid-item {
+  display: flex;
+  align-items: stretch;
+}
+
+.grid-item__inner,
+.gallery__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Override the margin-top that causes misalignment */
+.grid-block .grid-item {
+  margin-top: 0 !important;
+  margin-bottom: 3rem !important;
+  align-self: flex-start !important;
+}
+
+@media only screen and (min-width: 1400px) {
+  .grid-block .grid-item {
+    margin-bottom: 5rem !important;
+  }
+}
+
 /* Smooth transitions for responsive changes */
 @media (prefers-reduced-motion: no-preference) {
   * {

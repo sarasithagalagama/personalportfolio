@@ -2,17 +2,15 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { portfolioItems } from "../data/portfolioData";
 
-const FullStackProjects = () => {
+const UIUXDesigns = () => {
   const navigate = useNavigate();
 
-  // Filter only Full Stack projects
-  const fullStackProjects = portfolioItems.filter(
-    (item) => item.category === "Full Stack Projects"
+  const uiuxProjects = portfolioItems.filter(
+    (item) => item.category === "UI/UX Designs"
   );
 
   return (
-    <section id="fullstack-projects" className="inner portfolio">
-      {/* Back Button */}
+    <section id="uiux-designs" className="inner portfolio">
       <div className="content__block">
         <button
           onClick={() => navigate("/")}
@@ -24,7 +22,6 @@ const FullStackProjects = () => {
         </button>
       </div>
 
-      {/* Section Title */}
       <div className="content__block block-large">
         <p className="h2__subtitle animate-in-up">
           <svg
@@ -43,23 +40,21 @@ const FullStackProjects = () => {
               C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"
             />
           </svg>
-          <span>Full Stack Projects</span>
+          <span>UI/UX Designs</span>
         </p>
         <h2 className="h2__title animate-in-up">
-          Complete Web Applications & Systems
+          User Interface & Experience Design
         </h2>
         <p className="h2__text animate-in-up">
-          Explore my full-stack development projects featuring modern
-          technologies, scalable architectures, and comprehensive solutions from
-          frontend to backend.
+          Explore my UI/UX design projects featuring intuitive interfaces,
+          user-centered design, and beautiful visual aesthetics.
         </p>
       </div>
 
-      {/* Projects Grid */}
       <div className="content__block grid-block">
         <div className="container-fluid p-0">
           <div className="row g-0 justify-content-start">
-            {fullStackProjects.map((item) => (
+            {uiuxProjects.map((item) => (
               <div
                 key={item.id}
                 className="col-12 col-sm-6 col-lg-4 grid-item animate-card-2"
@@ -72,26 +67,28 @@ const FullStackProjects = () => {
                     <div className="gallery__content">
                       <h5 className="gallery__title">{item.title}</h5>
                       <p className="gallery__text">{item.description}</p>
-                      <div
-                        className="gallery__tags"
-                        style={{ marginTop: "1rem" }}
-                      >
-                        {item.technologies?.map((tech, i) => (
-                          <span
-                            key={i}
-                            style={{
-                              display: "inline-block",
-                              padding: "0.3rem 0.8rem",
-                              margin: "0.2rem",
-                              background: "rgba(255,255,255,0.1)",
-                              borderRadius: "0.5rem",
-                              fontSize: "1.1rem",
-                            }}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                      {item.tags && (
+                        <div
+                          className="gallery__tags"
+                          style={{ marginTop: "1rem" }}
+                        >
+                          {item.tags.map((tag, i) => (
+                            <span
+                              key={i}
+                              style={{
+                                display: "inline-block",
+                                padding: "0.3rem 0.8rem",
+                                margin: "0.2rem",
+                                background: "rgba(255,255,255,0.1)",
+                                borderRadius: "0.5rem",
+                                fontSize: "1.1rem",
+                              }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                       <Link
                         to={`/project/${item.id}`}
                         className="btn btn-sm btn-default btn-hover btn-hover-accent"
@@ -112,4 +109,4 @@ const FullStackProjects = () => {
   );
 };
 
-export default FullStackProjects;
+export default UIUXDesigns;

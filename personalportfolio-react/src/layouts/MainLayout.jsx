@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import Header from "../components/Header";
@@ -6,6 +6,19 @@ import Avatar from "../components/Avatar";
 
 const MainLayout = () => {
   const { theme, toggleTheme } = useTheme();
+
+  // Hide loader after component mounts
+  useEffect(() => {
+    const loader = document.getElementById("loader");
+    if (loader) {
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }, 500);
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -19,6 +32,13 @@ const MainLayout = () => {
 
       {/* Header */}
       <Header theme={theme} toggleTheme={toggleTheme} />
+
+      {/* Gradient Background with Animated Blurs */}
+      <div className="gradient-background">
+        <div className="blur"></div>
+        <div className="blur"></div>
+        <div className="blur"></div>
+      </div>
 
       {/* Image Background Layer */}
       <div

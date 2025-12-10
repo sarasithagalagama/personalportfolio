@@ -25,12 +25,17 @@ const Portfolio = () => {
   ];
 
   const handleCategoryClick = (categoryTitle) => {
-    // Navigate to separate page for Full Stack Projects
-    if (categoryTitle === "Full Stack Projects") {
-      navigate("/fullstack-projects");
-    } else {
-      setActiveCategory(categoryTitle);
-      setView("projects");
+    // Navigate to separate pages for each category
+    const routes = {
+      "Full Stack Projects": "/fullstack-projects",
+      "UI/UX Designs": "/uiux-designs",
+      "Web Tools": "/web-tools",
+      "Freelance Projects": "/freelance-projects",
+      "Graphic Design": "/graphic-design",
+    };
+
+    if (routes[categoryTitle]) {
+      navigate(routes[categoryTitle]);
     }
   };
 

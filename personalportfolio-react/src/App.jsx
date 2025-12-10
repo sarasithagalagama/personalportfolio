@@ -1,32 +1,28 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import FullStackProjects from "./pages/FullStackProjects";
+import UIUXDesigns from "./pages/UIUXDesigns";
+import WebTools from "./pages/WebTools";
+import FreelanceProjects from "./pages/FreelanceProjects";
+import GraphicDesign from "./pages/GraphicDesign";
+import ProjectDetail from "./pages/ProjectDetail";
 import "./styles/main.css";
 import "./styles/responsive-fixes.css";
 
 function App() {
-  // Hide loader after component mounts
-  useEffect(() => {
-    const loader = document.getElementById("loader");
-    if (loader) {
-      // Add a small delay to ensure everything is loaded
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 500);
-      }, 500);
-    }
-  }, []);
-
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="fullstack-projects" element={<FullStackProjects />} />
+          <Route path="uiux-designs" element={<UIUXDesigns />} />
+          <Route path="web-tools" element={<WebTools />} />
+          <Route path="freelance-projects" element={<FreelanceProjects />} />
+          <Route path="graphic-design" element={<GraphicDesign />} />
+          <Route path="project/:id" element={<ProjectDetail />} />
         </Route>
       </Routes>
     </Router>
