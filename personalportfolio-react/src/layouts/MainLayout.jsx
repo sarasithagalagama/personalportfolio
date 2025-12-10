@@ -33,13 +33,6 @@ const MainLayout = () => {
       {/* Header */}
       <Header theme={theme} toggleTheme={toggleTheme} />
 
-      {/* Gradient Background with Animated Blurs */}
-      <div className="gradient-background">
-        <div className="blur"></div>
-        <div className="blur"></div>
-        <div className="blur"></div>
-      </div>
-
       {/* Image Background Layer */}
       <div
         id="imageBackground"

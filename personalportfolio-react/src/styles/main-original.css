@@ -96,24 +96,24 @@
   --t-opp-bright--light: #ebf0f7;
   --t-opp-medium--light: #C7C6D3;
   --t-opp-muted--light: #A1A1AF;
-  --gradient-one--light: #A8D0FF;   /* Light Sky Blue */
-  --gradient-two--light: #FFB89A;   /* Light Coral/Peach */
-  --gradient-three--light: #FFE9A3;  /* Light Gold/Cream */
+  --gradient-one--light: #CEC4EF;
+  --gradient-two--light: #f5c5cd;
+  --gradient-three--light: #ac8fe3;
   /* dark color scheme */
   --base--dark: #111111;
   --base-tint--dark: #161616;
   --base-shade--dark: #000000;
-  --accent--dark: #5B9FFF;  /* Deeper Blue - better contrast */
-  --secondary--dark: #FF8A65;  /* Vibrant Coral */
-  --secondary-rgba--dark: rgba(91,159,255,0.2);
+  --accent--dark: #E4B8BF;
+  --secondary--dark: #CEC4EF;
+  --secondary-rgba--dark: rgba(206,196,239,0.2);
   --stroke-controls--dark: #4B4B51;
   --stroke-controls-neutral--dark: rgba(255,255,255,0.3);
   --stroke-elements--dark: #303033;
   --t-bright--dark: #e9e9f1;
   --t-medium--dark: #C7C6D3;
   --t-muted--dark: #A1A1AF;
-  --t-accent--dark: #64B5F6;  /* Medium Blue for accent text */
-  --t-secondary--dark: #FFD54F;  /* Warm Gold for secondary text */
+  --t-accent--dark: #E1BAC5;
+  --t-secondary--dark: #CEC4EF;
   --t-disabled--dark: #8B8A91;
   --t-placeholder--dark: #58585E;
   --base-opp--dark: #fafafa;
