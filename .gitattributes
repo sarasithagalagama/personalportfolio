@@ -1,0 +1,8 @@
+# Hide CSS files from diffs and language statistics
+*.css linguist-generated=true
+*.css linguist-vendored=true
+*.css -diff
+
+# Optional: Also hide minified files
+*.min.css linguist-generated=true
+*.min.js linguist-generated=true
