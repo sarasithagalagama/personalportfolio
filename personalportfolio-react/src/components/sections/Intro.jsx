@@ -38,6 +38,15 @@ const Intro = () => {
           <a
             className="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline"
             href="#portfolio"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 12px rgba(102, 126, 234, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
           >
             <span className="btn-caption">My Works</span>
             <i className="ph-bold ph-squares-four"></i>
@@ -45,6 +54,15 @@ const Intro = () => {
           <a
             className="btn mobile-vertical btn-default btn-hover btn-hover-outline-mobile animate-headline"
             href="#0"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 12px rgba(102, 126, 234, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
           >
             <span className="btn-caption">Download CV</span>
             <i className="ph-bold ph-download-simple"></i>

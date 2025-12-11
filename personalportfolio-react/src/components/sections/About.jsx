@@ -3,7 +3,7 @@ import SectionTitle from "../common/SectionTitle";
 
 const About = () => {
   const infoCardStyle = {
-    padding: "2rem 1.5rem",
+    padding: "1.5rem 1.25rem",
     background: "rgba(255, 255, 255, 0.02)",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     borderRadius: "12px",
@@ -13,15 +13,14 @@ const About = () => {
   };
 
   const infoIconStyle = {
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     marginBottom: "1rem",
     display: "block",
-    color: "var(--color-accent)",
-    opacity: 0.9,
+    color: "var(--accent-color)",
   };
 
   const infoTitleStyle = {
-    fontSize: "0.85rem",
+    fontSize: "0.75rem",
     textTransform: "uppercase",
     letterSpacing: "1px",
     marginBottom: "0.75rem",
@@ -98,7 +97,13 @@ const About = () => {
                   style={infoIconStyle}
                 ></i>
                 <h6 style={infoTitleStyle}>Education</h6>
-                <span>BSc (Hons) IT, SLIIT</span>
+                <span style={{ fontSize: "0.875rem", lineHeight: "1.5" }}>
+                  BSc (Hons) in Information Technology
+                  <br />
+                  <small style={{ opacity: 0.8 }}>
+                    Specialising in Information Systems Engineering
+                  </small>
+                </span>
               </div>
             </div>
           </div>
@@ -114,6 +119,15 @@ const About = () => {
                 <a
                   className="btn mobile-vertical btn-default btn-hover btn-hover-accent"
                   href="#0"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 12px rgba(102, 126, 234, 0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
                 >
                   <span className="btn-caption">Download CV</span>
                   <i className="ph-bold ph-download-simple"></i>

@@ -190,6 +190,54 @@ export const portfolioItems = [
     link: "#0",
     category: "Graphic Design",
   },
+  // Fiverr Projects
+  {
+    id: 21,
+    title: "Movie Poster Design",
+    tags: ["Photoshop", "Poster Design"],
+    image: "https://dummyimage.com/800x600/2c2c2c/ffffff&text=Movie+Poster",
+    fullImage:
+      "https://dummyimage.com/1400x1400/2c2c2c/ffffff&text=Movie+Poster",
+    description:
+      "Creative movie poster designs including 'Never Curse the Sun'.",
+    descriptionClass: "",
+    link: "https://www.fiverr.com/users/graphyourworld/portfolio/",
+    category: "Graphic Design",
+  },
+  {
+    id: 22,
+    title: "Fairy Folk Poster",
+    tags: ["Manipulation", "Photoshop"],
+    image: "https://dummyimage.com/800x600/4a1d96/ffffff&text=Fairy+Folk",
+    fullImage: "https://dummyimage.com/1400x1400/4a1d96/ffffff&text=Fairy+Folk",
+    description: "Fantasy themed movie poster design with complex compositing.",
+    descriptionClass: "opposite",
+    link: "https://www.fiverr.com/users/graphyourworld/portfolio/",
+    category: "Graphic Design",
+  },
+  {
+    id: 23,
+    title: "Vantage Branding",
+    tags: ["Logo Design", "Identity"],
+    image: "https://dummyimage.com/800x600/0f172a/ffffff&text=Vantage+Logo",
+    fullImage:
+      "https://dummyimage.com/1400x1400/0f172a/ffffff&text=Vantage+Logo",
+    description: "Professional logo design and brand identity for Vantage.",
+    descriptionClass: "",
+    link: "https://www.fiverr.com/users/graphyourworld/portfolio/",
+    category: "Graphic Design",
+  },
+  {
+    id: 24,
+    title: "Photo Retouching",
+    tags: ["Retouching", "Editing"],
+    image: "https://dummyimage.com/800x600/be123c/ffffff&text=Retouching",
+    fullImage: "https://dummyimage.com/1400x1400/be123c/ffffff&text=Retouching",
+    description: "High-end professional photo editing and manipulation.",
+    descriptionClass: "opposite",
+    link: "https://www.fiverr.com/users/graphyourworld/portfolio/",
+    category: "Graphic Design",
+  },
 ];
 
 export const services = [

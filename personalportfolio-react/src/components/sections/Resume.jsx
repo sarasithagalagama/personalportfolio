@@ -134,71 +134,119 @@ const Resume = () => {
 
           {/* Fiverr Profile Card */}
           <div className="row g-0 mt-4">
-            <div className="col-12 col-lg-10">
+            <div className="col-12">
               <div
                 className="fiverr-profile-card animate-in-up"
                 style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--stroke-elements)",
-                  borderRadius: "1.5rem",
-                  padding: "2rem",
+                  background:
+                    "linear-gradient(135deg, rgba(29, 191, 115, 0.1), rgba(0, 178, 45, 0.05))",
+                  border: "1px solid rgba(29, 191, 115, 0.2)",
+                  borderRadius: "1rem",
+                  padding: "2.5rem",
                   display: "flex",
-                  alignItems: "center",
-                  gap: "2rem",
-                  flexWrap: "wrap",
+                  flexDirection: "column",
+                  gap: "1.5rem",
                 }}
               >
-                <img
-                  src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/5e5c5c5c5c5c5c5c5c5c5c5c/JPEG_20210101_010101_1234567890.jpg"
-                  alt="Fiverr Profile"
+                <div
                   style={{
-                    width: "120px",
-                    height: "120px",
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    border: "3px solid var(--accent)",
-                    flexShrink: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1rem",
+                    flexWrap: "wrap",
                   }}
-                />
-                <div style={{ flex: 1, minWidth: "250px" }}>
-                  <h5
+                >
+                  <div
                     style={{
-                      fontSize: "1.8rem",
-                      color: "var(--t-accent)",
-                      marginBottom: "0.5rem",
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #1DBF73, #00b22d)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
                     }}
                   >
-                    Sarasitha @graphyourworld
-                  </h5>
-                  <p
-                    style={{
-                      fontSize: "1.4rem",
-                      color: "var(--t-medium)",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    ⭐ 4.7 (523+) | Level 2 ✦✦
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "1.3rem",
-                      color: "var(--t-secondary)",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    Creativity for your next level
-                  </p>
-                  <a
-                    href="https://www.fiverr.com/s/5r9wxjQ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-default btn-hover btn-hover-accent"
-                    style={{ fontSize: "1.3rem" }}
-                  >
-                    <span className="btn-caption">View Fiverr Profile</span>
-                    <i className="ph-bold ph-arrow-square-out"></i>
-                  </a>
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 16 16"
+                      fill="white"
+                    >
+                      <path d="M13 13V5H5v-.5C5 3.673 5.673 3 6.5 3H8V0H6.5A4.505 4.505 0 0 0 2 4.5V13H0v3h16v-3h-3zm-3 0h-2.5v-2h-2v2H3V5.5h7V13z" />
+                    </svg>
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h4
+                      style={{
+                        fontSize: "1.25rem",
+                        fontWeight: "600",
+                        marginBottom: "0.25rem",
+                        color: "var(--text-color)",
+                      }}
+                    >
+                      Sarasitha @graphyourworld
+                    </h4>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        flexWrap: "wrap",
+                        fontSize: "0.875rem",
+                        opacity: 0.8,
+                      }}
+                    >
+                      <span>⭐ 4.7 (523+)</span>
+                      <span>•</span>
+                      <span>Level 2 Seller ✦✦</span>
+                    </div>
+                  </div>
                 </div>
+
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    lineHeight: "1.6",
+                    opacity: 0.85,
+                    margin: 0,
+                  }}
+                >
+                  Creativity for your next level - Delivering exceptional design
+                  solutions with 523+ completed projects and maintaining a
+                  4.7-star rating.
+                </p>
+
+                <a
+                  href="https://www.fiverr.com/s/Q7odZjy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-default btn-hover"
+                  style={{
+                    alignSelf: "flex-start",
+                    background: "#667eea",
+                    color: "#fff !important",
+                    border: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 20px rgba(102, 126, 234, 0.4)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  <span className="btn-caption" style={{ color: "#fff" }}>
+                    View Fiverr Profile
+                  </span>
+                  <i
+                    className="ph-bold ph-arrow-square-out"
+                    style={{ color: "#fff" }}
+                  ></i>
+                </a>
               </div>
             </div>
           </div>
@@ -224,7 +272,7 @@ const Resume = () => {
             >
               <h4
                 style={{
-                  fontSize: "1.6rem",
+                  fontSize: "1.25rem",
                   color: "var(--t-accent)",
                   marginBottom: "1.5rem",
                   fontWeight: "600",
@@ -244,7 +292,7 @@ const Resume = () => {
                     key={i}
                     className="rounded-tag d-flex align-items-center gap-2"
                     style={{
-                      fontSize: "1.3rem",
+                      fontSize: "1rem",
                       padding: "0.6rem 1.2rem",
                       border: "1px solid var(--stroke-elements)",
                       color: "var(--t-medium)",
@@ -266,7 +314,7 @@ const Resume = () => {
                     <i
                       className={skill.icon}
                       style={{
-                        fontSize: "1.6rem",
+                        fontSize: "1.25rem",
                         color: skill.color ? skill.color : undefined,
                       }}
                     ></i>

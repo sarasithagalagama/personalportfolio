@@ -110,6 +110,15 @@ const Header = ({ theme, toggleTheme }) => {
           id="notify-trigger"
           className="header__trigger btn"
           href="mailto:example@example.com?subject=Message%20from%20your%20site"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow =
+              "0 4px 12px rgba(102, 126, 234, 0.3)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
         >
           <span className="trigger__caption">Let's Talk</span>
           <i className="ph-bold ph-chat-dots"></i>

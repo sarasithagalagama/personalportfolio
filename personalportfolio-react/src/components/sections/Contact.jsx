@@ -76,13 +76,13 @@ const Contact = () => {
 
       <div
         className="content__block section-grid-title"
-        style={{ marginTop: "3rem", marginBottom: "3rem" }}
+        style={{ marginTop: "2rem", marginBottom: "2rem" }}
       >
         <div className="row g-4">
           {/* Contact Info */}
           <div className="col-12 col-lg-4">
             <div style={{ position: "sticky", top: "2rem" }}>
-              <h3 style={{ marginBottom: "1.5rem", fontSize: "1.5rem" }}>
+              <h3 style={{ marginBottom: "1.5rem", fontSize: "1.25rem" }}>
                 Get in Touch
               </h3>
               <p
@@ -175,7 +175,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h4 style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>
+                <h4 style={{ marginBottom: "1rem", fontSize: "1rem" }}>
                   Follow Me
                 </h4>
                 <div
@@ -200,15 +200,17 @@ const Contact = () => {
                         transition: "all 0.3s ease",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background =
-                          "var(--accent-color)";
-                        e.currentTarget.style.color = "#fff";
+                        e.currentTarget.style.background = "#667eea";
+                        e.currentTarget.style.color = "#ffffff";
                         e.currentTarget.style.transform = "translateY(-3px)";
+                        e.currentTarget.style.boxShadow =
+                          "0 4px 12px rgba(102, 126, 234, 0.4)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.background = "var(--base-tint)";
                         e.currentTarget.style.color = "var(--accent-color)";
                         e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "none";
                       }}
                     >
                       <i
@@ -218,49 +220,6 @@ const Contact = () => {
                     </a>
                   ))}
                 </div>
-              </div>
-
-              {/* Fiverr Button */}
-              <div style={{ marginTop: "2rem" }}>
-                <a
-                  href="https://www.fiverr.com/s/Q7odZjy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    padding: "1rem 2rem",
-                    background: "linear-gradient(135deg, #1DBF73, #00b22d)",
-                    color: "#fff",
-                    borderRadius: "var(--_radius-m)",
-                    textDecoration: "none",
-                    fontWeight: "600",
-                    fontSize: "1rem",
-                    transition: "all 0.3s ease",
-                    boxShadow: "0 4px 15px rgba(29, 191, 115, 0.3)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-3px)";
-                    e.currentTarget.style.boxShadow =
-                      "0 8px 25px rgba(29, 191, 115, 0.4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow =
-                      "0 4px 15px rgba(29, 191, 115, 0.3)";
-                  }}
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                  >
-                    <path d="M13 13V5H5v-.5C5 3.673 5.673 3 6.5 3H8V0H6.5A4.505 4.505 0 0 0 2 4.5V13H0v3h16v-3h-3zm-3 0h-2.5v-2h-2v2H3V5.5h7V13z" />
-                  </svg>
-                  <span>Contact on Fiverr</span>
-                </a>
               </div>
             </div>
           </div>
@@ -274,7 +233,7 @@ const Contact = () => {
                 padding: "2.5rem",
               }}
             >
-              <h3 style={{ marginBottom: "1.5rem", fontSize: "1.5rem" }}>
+              <h3 style={{ marginBottom: "1.5rem", fontSize: "1.25rem" }}>
                 Send Me a Message
               </h3>
               <form onSubmit={handleSubmit}>
@@ -284,7 +243,7 @@ const Contact = () => {
                       style={{
                         display: "block",
                         marginBottom: "0.5rem",
-                        fontSize: "0.95rem",
+                        fontSize: "0.875rem",
                         fontWeight: "500",
                       }}
                     >
@@ -374,8 +333,8 @@ const Contact = () => {
                       type="submit"
                       style={{
                         padding: "1rem 2.5rem",
-                        background: "var(--accent-color)",
-                        color: "#fff",
+                        background: "#667eea",
+                        color: "#ffffff",
                         border: "none",
                         borderRadius: "var(--_radius-m)",
                         fontSize: "1rem",
@@ -387,12 +346,14 @@ const Contact = () => {
                         transition: "all 0.3s ease",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "translateY(-2px)";
+                        e.currentTarget.style.transform =
+                          "translateY(-2px) scale(1.02)";
                         e.currentTarget.style.boxShadow =
-                          "0 10px 25px rgba(0,0,0,0.2)";
+                          "0 8px 20px rgba(102, 126, 234, 0.4)";
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.transform =
+                          "translateY(0) scale(1)";
                         e.currentTarget.style.boxShadow = "none";
                       }}
                     >

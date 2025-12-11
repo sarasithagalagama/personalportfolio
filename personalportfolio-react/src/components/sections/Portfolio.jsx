@@ -37,7 +37,7 @@ const Portfolio = () => {
       {/* Filter Tabs */}
       <div
         className="content__block section-grid-title"
-        style={{ marginTop: "0.5rem" }}
+        style={{ marginTop: "2rem" }}
       >
         <div
           style={{
@@ -69,11 +69,15 @@ const Portfolio = () => {
               onMouseEnter={(e) => {
                 if (activeFilter !== category) {
                   e.currentTarget.style.background = "var(--base-shade)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
                 }
               }}
               onMouseLeave={(e) => {
                 if (activeFilter !== category) {
                   e.currentTarget.style.background = "var(--base-tint)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
                 }
               }}
             >
@@ -170,7 +174,7 @@ const Portfolio = () => {
                     <h4
                       style={{
                         marginBottom: "0.75rem",
-                        fontSize: "1.2rem",
+                        fontSize: "1.125rem",
                         fontWeight: "600",
                       }}
                     >
@@ -180,7 +184,7 @@ const Portfolio = () => {
                       style={{
                         marginBottom: "1.25rem",
                         opacity: 0.75,
-                        fontSize: "0.95rem",
+                        fontSize: "0.875rem",
                         lineHeight: "1.6",
                         flex: 1,
                       }}
@@ -198,19 +202,26 @@ const Portfolio = () => {
                         border: "1px solid var(--accent-color)",
                         borderRadius: "var(--_radius-s)",
                         cursor: "pointer",
-                        fontSize: "0.9rem",
+                        fontSize: "0.875rem",
                         fontWeight: "500",
                         transition: "all 0.3s ease",
                         alignSelf: "flex-start",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background =
-                          "var(--accent-color)";
-                        e.currentTarget.style.color = "#fff";
+                        e.currentTarget.style.background = "#667eea";
+                        e.currentTarget.style.borderColor = "#667eea";
+                        e.currentTarget.style.color = "#ffffff";
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                        e.currentTarget.style.boxShadow =
+                          "0 4px 12px rgba(102, 126, 234, 0.4)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.borderColor =
+                          "var(--accent-color)";
                         e.currentTarget.style.color = "var(--accent-color)";
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "none";
                       }}
                     >
                       View Details →
@@ -262,14 +273,19 @@ const Portfolio = () => {
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--accent-color)";
-                e.currentTarget.style.borderColor = "var(--accent-color)";
-                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.background = "#667eea";
+                e.currentTarget.style.borderColor = "#667eea";
+                e.currentTarget.style.color = "#ffffff";
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow =
+                  "0 4px 12px rgba(102, 126, 234, 0.4)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
                 e.currentTarget.style.borderColor = "var(--stroke-elements)";
                 e.currentTarget.style.color = "var(--text-color)";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               {activeFilter === "All"
