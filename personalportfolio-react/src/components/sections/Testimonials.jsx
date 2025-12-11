@@ -36,7 +36,10 @@ const Testimonials = () => {
   const testimonial = testimonials[currentIndex];
 
   return (
-    <div className="content__block block-large">
+    <div
+      className="content__block block-large"
+      style={{ marginBottom: "1rem" }}
+    >
       <div
         className="testimonials-slider"
         style={{

@@ -32,7 +32,7 @@ const Intro = () => {
         <h1 className="headline__title animate-headline">
           I'm Sarasitha Galagama
           <br />
-          Fullstack Developer & IT Undergraduate
+          Creative Designer & IT Undergraduate
         </h1>
         <div className="headline__btnholder d-flex flex-column flex-sm-row">
           <a

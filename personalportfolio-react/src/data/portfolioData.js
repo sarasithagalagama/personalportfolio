@@ -196,7 +196,9 @@ export const services = [
   {
     id: 1,
     title: "Fullstack Development",
+    icon: "ph-bold ph-code",
     tags: ["Web Applications", "API Design"],
+    technologies: ["Java Spring Boot", "React", "PostgreSQL", "REST APIs"],
     description:
       "Building scalable web applications using Java Spring Boot, React, and PostgreSQL.",
     image: "https://dummyimage.com/1200x900/2c2c2c/636363&text=Fullstack+Dev",
@@ -204,7 +206,9 @@ export const services = [
   {
     id: 2,
     title: "UI/UX Design",
+    icon: "ph-bold ph-figma-logo",
     tags: ["Figma", "Prototyping"],
+    technologies: ["Figma", "Wireframing", "Prototyping", "User Research"],
     description:
       "Designing intuitive and accessible user interfaces for mobile and web applications.",
     image: "https://dummyimage.com/1200x900/2c2c2c/636363&text=UI/UX+Design",
@@ -212,7 +216,9 @@ export const services = [
   {
     id: 3,
     title: "Database Design",
+    icon: "ph-bold ph-database",
     tags: ["SQL", "Relational Models"],
+    technologies: ["MySQL", "PostgreSQL", "MongoDB", "Query Optimization"],
     description:
       "Architecting efficient database schemas and optimizing queries for performance.",
     image: "https://dummyimage.com/1200x900/2c2c2c/636363&text=Database",
@@ -225,10 +231,8 @@ export const technicalCompetencies = [
     title: "Languages & Frameworks",
     itemList: [
       { name: "Java", icon: "devicon-java-plain colored" },
-      { name: "C/C++", icon: "devicon-cplusplus-plain colored" },
       { name: "Python", icon: "devicon-python-plain colored" },
       { name: "JavaScript", icon: "devicon-javascript-plain colored" },
-      { name: ".NET", icon: "devicon-dotnetcore-plain colored" },
       { name: "Spring Boot", icon: "devicon-spring-original colored" },
       { name: "PHP", icon: "devicon-php-plain colored" },
     ],
@@ -242,7 +246,6 @@ export const technicalCompetencies = [
       { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
       { name: "Firebase", icon: "devicon-firebase-plain colored" },
       { name: "Supabase", icon: "devicon-supabase-plain colored" },
-      { name: "Redis", icon: "devicon-redis-plain colored" },
     ],
   },
   {

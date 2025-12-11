@@ -177,7 +177,7 @@ const Resume = () => {
                       marginBottom: "0.5rem",
                     }}
                   >
-                    ⭐ 4.7 (523) | Level 2 ✦✦
+                    ⭐ 4.7 (523+) | Level 2 ✦✦
                   </p>
                   <p
                     style={{
