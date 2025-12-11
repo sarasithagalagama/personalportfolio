@@ -1,5 +1,5 @@
 import React from "react";
-import { certifications } from "../../data/portfolioData";
+import { certifications } from "../../data";
 
 const Certifications = () => {
   return (

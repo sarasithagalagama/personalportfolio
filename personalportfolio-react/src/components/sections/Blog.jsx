@@ -1,5 +1,5 @@
 import React from "react";
-import { blogArticles } from "../../data/portfolioData";
+import { blogArticles } from "../../data";
 
 const Blog = () => {
   return (

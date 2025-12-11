@@ -1,11 +1,7 @@
 import React from "react";
 import SectionTitle from "../common/SectionTitle";
 import Testimonials from "./Testimonials";
-import {
-  education,
-  experience,
-  technicalCompetencies,
-} from "../../data/portfolioData";
+import { education, experience, technicalCompetencies } from "../../data";
 
 const Resume = () => {
   return (
@@ -192,30 +188,13 @@ const Resume = () => {
                   href="https://www.fiverr.com/s/Q7odZjy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-default btn-hover"
+                  className="btn btn-default btn-hover btn-hover-accent"
                   style={{
                     alignSelf: "flex-start",
-                    background: "#667eea",
-                    color: "#fff !important",
-                    border: "none",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow =
-                      "0 8px 20px rgba(102, 126, 234, 0.4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <span className="btn-caption" style={{ color: "#fff" }}>
-                    View Fiverr Profile
-                  </span>
-                  <i
-                    className="ph-bold ph-arrow-square-out"
-                    style={{ color: "#fff" }}
-                  ></i>
+                  <span className="btn-caption">View Fiverr Profile</span>
+                  <i className="ph-bold ph-arrow-square-out"></i>
                 </a>
               </div>
             </div>

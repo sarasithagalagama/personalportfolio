@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { portfolioItems } from "../data/portfolioData";
+import { portfolioItems } from "../data";
 
 const ProjectDetail = () => {
   const { id } = useParams();

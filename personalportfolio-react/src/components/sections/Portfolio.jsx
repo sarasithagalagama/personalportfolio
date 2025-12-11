@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SectionTitle from "../common/SectionTitle";
-import { portfolioItems } from "../../data/portfolioData";
+import { portfolioItems } from "../../data";
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -261,36 +261,17 @@ const Portfolio = () => {
                   navigate(routes[activeFilter]);
                 }
               }}
+              className="btn btn-default btn-hover btn-hover-accent"
               style={{
                 padding: "1rem 2.5rem",
-                background: "transparent",
-                color: "var(--text-color)",
-                border: "2px solid var(--stroke-elements)",
-                borderRadius: "var(--_radius-m)",
-                cursor: "pointer",
                 fontSize: "1rem",
-                fontWeight: "500",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#667eea";
-                e.currentTarget.style.borderColor = "#667eea";
-                e.currentTarget.style.color = "#ffffff";
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 12px rgba(102, 126, 234, 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.borderColor = "var(--stroke-elements)";
-                e.currentTarget.style.color = "var(--text-color)";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
               }}
             >
-              {activeFilter === "All"
-                ? "View All Projects"
-                : `View All ${activeFilter}`}
+              <span className="btn-caption">
+                {activeFilter === "All"
+                  ? "View All Projects"
+                  : `View All ${activeFilter}`}
+              </span>
             </button>
           </div>
         )}

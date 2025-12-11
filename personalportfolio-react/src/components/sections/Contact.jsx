@@ -331,30 +331,17 @@ const Contact = () => {
                   <div className="col-12">
                     <button
                       type="submit"
+                      className="btn btn-default btn-hover btn-hover-accent"
                       style={{
-                        padding: "1rem 2.5rem",
-                        background: "#667eea",
-                        color: "#ffffff",
+                        padding: "0 2rem",
                         border: "none",
-                        borderRadius: "var(--_radius-m)",
                         fontSize: "1rem",
                         fontWeight: "500",
                         cursor: "pointer",
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "0.75rem",
-                        transition: "all 0.3s ease",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform =
-                          "translateY(-2px) scale(1.02)";
-                        e.currentTarget.style.boxShadow =
-                          "0 8px 20px rgba(102, 126, 234, 0.4)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform =
-                          "translateY(0) scale(1)";
-                        e.currentTarget.style.boxShadow = "none";
+                        minWidth: "180px",
                       }}
                     >
                       <span>Send Message</span>

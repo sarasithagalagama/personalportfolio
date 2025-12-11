@@ -2,6 +2,7 @@
 @import url('./loaders/loader.css');
 @import url('./plugins-original.css');
 @import url('./main-original.css');
+@import url('./responsive-fixes.css');
 
 /* Theme Overrides */
 [color-scheme="light"] .image-background {
@@ -25,13 +26,13 @@
 
 /* Button Gradient Styling - Theme-Specific */
 
-/* Dark Theme - Purple/Blue Gradient */
+/* Dark Theme - Match default theme gradient */
 [color-scheme="dark"] .btn-hover-accent {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #d4c5e8 0%, #c5b5dc 100%) !important;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%) !important;
   border: none !important;
-  color: #1a1a1a !important;
+  color: var(--t-opp-bright) !important;
   transition: all 0.3s ease;
 }
 
@@ -42,7 +43,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #c5b5dc 0%, #b5a5cc 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease;
@@ -61,16 +62,16 @@
 [color-scheme="dark"] .btn-hover-accent span {
   position: relative;
   z-index: 1;
-  color: #1a1a1a !important;
+  color: var(--t-opp-bright) !important;
 }
 
-/* Light Theme - Complementary Style */
+/* Light Theme - Match default theme gradient */
 [color-scheme="light"] .btn-hover-accent {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #9b7dd4 0%, #8b6dc4 100%) !important;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%) !important;
   border: none !important;
-  color: #ffffff !important;
+  color: var(--t-opp-bright) !important;
   transition: all 0.3s ease;
 }
 
@@ -81,7 +82,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #ab8de4 0%, #9b7dd4 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease;
@@ -100,7 +101,7 @@
 [color-scheme="light"] .btn-hover-accent span {
   position: relative;
   z-index: 1;
-  color: #ffffff !important;
+  color: var(--t-opp-bright) !important;
 }
 
 /* Contact Icon Boxes - Theme-Specific */
@@ -123,31 +124,59 @@
   color: #1a1a1a !important;
 }
 
-/* Reduce excessive section spacing */
-.inner {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
-}
-
-.content__block {
-  margin-bottom: 2rem !important;
-}
-
-.content__block.block-large {
-  margin-bottom: 3rem !important;
-}
-
-/* Tighter spacing for About section */
-#about .content__block {
-  margin-bottom: 1.5rem !important;
-}
-
-/* Tighter spacing for Certifications */
-#certifications .content__block.block-large {
-  margin-bottom: 2rem !important;
-}
-
-/* Add standard padding above Portfolio, Resume, Contact and About section */
-#portfolio, #resume, #contact , #about{
+/* Specific Section Padding Overrides */
+#resume,
+#contact,
+#about,
+#certifications {
   padding-top: 10rem !important;
+}
+
+.inner:not(.intro):not(.main) {
+  /* Removed generic padding to rely on specific section padding */
+}
+
+/* Fix Back to Home button overlap */
+.portfolio .content__block:first-child {
+  margin-top: 8rem;
+}
+
+/* Make sections larger and more organized */
+.h2__subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.h2__title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.h2__text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* Larger card text */
+.portfolio-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-card p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Reduce empty space in About section */
+#about .content__block {
+  margin-bottom: 0.5rem;
+}
+
+/* Larger Section Grid Titles */
+.section-h3 .h3__title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }

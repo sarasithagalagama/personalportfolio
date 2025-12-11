@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { portfolioItems } from "../data/portfolioData";
+import { portfolioItems } from "../data";
 
 const WebTools = () => {
   const navigate = useNavigate();
