@@ -17,15 +17,11 @@ A modern, responsive personal portfolio website built with React and Vite, showc
 - **Contact Section**: Easy way for potential clients/employers to reach out
 - **Resume Section**: Comprehensive skills and experience display
 
-## 📸 Screenshots
+## 📸 Portfolio Preview
 
-|                               Full Stack Projects                               |                             UI/UX Designs                             |
-| :-----------------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| ![Full Stack](personalportfolio-react/public/img/portfolio/fullstack-cover.jpg) | ![UI/UX](personalportfolio-react/public/img/portfolio/uiux-cover.jpg) |
-
-|                                   Web Tools                                   |                               Freelance Projects                               |
-| :---------------------------------------------------------------------------: | :----------------------------------------------------------------------------: |
-| ![Web Tools](personalportfolio-react/public/img/portfolio/webtools-cover.jpg) | ![Freelance](personalportfolio-react/public/img/portfolio/freelance-cover.jpg) |
+<div align="center">
+  <img src="personalportfolio-react/public/img/home-preview.png" alt="Portfolio Home Page" width="100%" />
+</div>
 
 ## 🛠️ Tech Stack
 
