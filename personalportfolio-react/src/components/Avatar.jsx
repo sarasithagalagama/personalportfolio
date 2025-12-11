@@ -49,7 +49,7 @@ const Avatar = () => {
         <div className="avatar__block">
           <h6>
             <small className="top">Based in:</small>
-            Kottawa, Sri Lanka
+            Colombo, Sri Lanka
           </h6>
         </div>
 

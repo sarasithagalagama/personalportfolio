@@ -40,7 +40,7 @@ const About = () => {
 
       <SectionTitle
         subtitle="About Me"
-        title="Crafting Digital Experiences with Code & Design"
+        title="Crafting Digital Experiences with Code & Creativity"
       />
 
       {/* Introduction */}
@@ -51,15 +51,22 @@ const About = () => {
               <div className="about-descr">
                 <p className="about-descr__text animate-in-up">
                   I'm a passionate IT undergraduate at SLIIT, specializing in
-                  fullstack development and UI/UX design. With expertise in
-                  Java, Spring Boot, React, and PostgreSQL, I build scalable web
-                  applications that solve real-world problems.
+                  Information Systems Engineering. A proud alumnus of Ananda
+                  College, I've always been driven by curiosity and a love for
+                  technology.
                 </p>
                 <p className="about-descr__text animate-in-up">
-                  My journey combines technical excellence with creative design
-                  thinking. As a Level 2 Seller on Fiverr with 523+ completed
-                  projects, I've helped 170+ clients bring their digital visions
-                  to life while maintaining a 4.7-star rating.
+                  With expertise in Java, Spring Boot, React, and PostgreSQL, I
+                  build scalable web applications that solve real-world
+                  problems. As a Level 2 Seller on Fiverr with over 4 years of
+                  experience, I've successfully delivered 523+ projects for 170+
+                  clients worldwide, maintaining a 4.7-star rating.
+                </p>
+                <p className="about-descr__text animate-in-up">
+                  My work combines technical excellence with creative design
+                  thinking, specializing in full-stack development, UI/UX
+                  design, and graphic design. I focus on creating user-centered
+                  solutions that are both beautiful and functional.
                 </p>
               </div>
             </div>
@@ -68,10 +75,10 @@ const About = () => {
       </div>
 
       {/* Contact Info */}
-      <div className="content__block grid-block" style={{ marginTop: "2rem" }}>
+      <div className="content__block grid-block">
         <div className="container-fluid p-0">
           <div className="row g-0 align-items-stretch">
-            <div className="col-12 col-md-4 grid-item animate-card-2">
+            <div className="col-12 col-md-6 grid-item animate-card-2">
               <div className="about-info-card" style={infoCardStyle}>
                 <i className="ph-bold ph-envelope" style={infoIconStyle}></i>
                 <h6 style={infoTitleStyle}>Email</h6>
@@ -83,27 +90,11 @@ const About = () => {
                 </a>
               </div>
             </div>
-            <div className="col-12 col-md-4 grid-item animate-card-2">
+            <div className="col-12 col-md-6 grid-item animate-card-2">
               <div className="about-info-card" style={infoCardStyle}>
                 <i className="ph-bold ph-map-pin" style={infoIconStyle}></i>
                 <h6 style={infoTitleStyle}>Location</h6>
-                <span>Sri Lanka</span>
-              </div>
-            </div>
-            <div className="col-12 col-md-4 grid-item animate-card-2">
-              <div className="about-info-card" style={infoCardStyle}>
-                <i
-                  className="ph-bold ph-graduation-cap"
-                  style={infoIconStyle}
-                ></i>
-                <h6 style={infoTitleStyle}>Education</h6>
-                <span style={{ fontSize: "0.875rem", lineHeight: "1.5" }}>
-                  BSc (Hons) in Information Technology
-                  <br />
-                  <small style={{ opacity: 0.8 }}>
-                    Specialising in Information Systems Engineering
-                  </small>
-                </span>
+                <span>Based in: Colombo, Sri Lanka</span>
               </div>
             </div>
           </div>
@@ -111,7 +102,7 @@ const About = () => {
       </div>
 
       {/* CTA */}
-      <div className="content__block grid-block" style={{ marginTop: "2rem" }}>
+      <div className="content__block grid-block">
         <div className="container-fluid p-0">
           <div className="row g-0">
             <div className="col-12 grid-item text-center">

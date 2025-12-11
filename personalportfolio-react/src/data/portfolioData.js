@@ -344,20 +344,20 @@ export const technicalCompetencies = [
 export const education = [
   {
     id: 1,
-    date: "Feb 2024 – Present",
-    title: "BSc (Hons) in Information Technology",
-    source: "SLIIT",
-    sourceLink: "https://www.sliit.lk/",
-    description:
-      "Specializing in Artificial Intelligence. Academic Achievement: Maintained a Cumulative GPA of 3.3+.",
+    institution: "SLIIT",
+    date: "Jun 2024 - Present",
+    degree:
+      "BSc (Hons) in Information Technology - Specialising in Information Systems Engineering",
+    grade: "",
+    activities: "",
   },
   {
-    id: 3,
-    date: "2009 – 2022",
-    title: "G.C.E. Advanced Level (Physical Science)",
-    source: "Ananda College, Colombo 10.",
-    sourceLink: "https://www.anandacollege.edu.lk/",
-    description: "Secondary Education.",
+    id: 2,
+    institution: "Ananda College",
+    date: "Jan 2009 - 2022",
+    degree: "",
+    grade: "G.C.E Advanced Level, Physical Sciences - Mathematics",
+    activities: "Ananda College ICT Society | ACBU",
   },
 ];
 
@@ -370,5 +370,92 @@ export const experience = [
     sourceLink: "https://www.fiverr.com/sarasithag",
     description:
       "Market Viability: Achieved Level 2 Seller status, successfully completing 523+ orders for over 170+ unique clients with a sustained 4.7-star rating. Project Management: Managed end-to-end commercial projects, ensuring timely delivery, quality control, and client satisfaction in a high-pressure environment. Visual Strategy: Provided high-volume digital assets that maximized user engagement and improved visual hierarchy for clients across multiple sectors.",
+  },
+];
+
+export const certifications = [
+  {
+    id: 1,
+    title: "Fiverr Level 2 Seller",
+    issuer: "Fiverr",
+    date: "2023",
+    icon: "ph-bold ph-trophy",
+    color: "#1DBF73",
+    description:
+      "Achieved Level 2 Seller status with 523+ completed orders and 4.7-star rating",
+    link: "https://www.fiverr.com/sarasithag",
+  },
+  {
+    id: 2,
+    title: "Meta Social Media Marketing Specialization",
+    issuer: "Coursera (Meta)",
+    date: "Jan 2025",
+    icon: "ph-bold ph-graduation-cap",
+    color: "#0668E1",
+    description:
+      "Professional certificate in Social Media Marketing from Meta via Coursera",
+    link: "https://www.coursera.org/account/accomplishments/specialization/ZJA8WAONNS48",
+  },
+  {
+    id: 3,
+    title: "View All Certifications",
+    issuer: "Credly",
+    date: "2024",
+    icon: "ph-bold ph-certificate",
+    color: "#FF6B00",
+    description:
+      "View my verified professional certifications and achievements on Credly",
+    link: "https://www.credly.com/users/sarasitha-galagama/badges",
+  },
+];
+
+export const blogArticles = [
+  {
+    id: 1,
+    title: "Building Scalable Web Applications with Spring Boot",
+    excerpt:
+      "Learn how to architect and build enterprise-grade applications using Spring Boot and modern best practices.",
+    date: "Dec 2024",
+    readTime: "8 min read",
+    category: "Development",
+    image: "https://dummyimage.com/800x600/667eea/ffffff&text=Spring+Boot",
+    link: "#0",
+    tags: ["Spring Boot", "Java", "Backend"],
+  },
+  {
+    id: 2,
+    title: "The Art of Minimalist UI Design",
+    excerpt:
+      "Exploring the principles of minimalism in modern interface design and how less can truly be more.",
+    date: "Nov 2024",
+    readTime: "6 min read",
+    category: "Design",
+    image: "https://dummyimage.com/800x600/9b7dd4/ffffff&text=UI+Design",
+    link: "#0",
+    tags: ["UI/UX", "Design", "Minimalism"],
+  },
+  {
+    id: 3,
+    title: "Mastering React Hooks in 2024",
+    excerpt:
+      "A comprehensive guide to using React Hooks effectively in your modern web applications.",
+    date: "Oct 2024",
+    readTime: "10 min read",
+    category: "Development",
+    image: "https://dummyimage.com/800x600/61dafb/ffffff&text=React+Hooks",
+    link: "#0",
+    tags: ["React", "JavaScript", "Frontend"],
+  },
+  {
+    id: 4,
+    title: "Color Theory for Digital Designers",
+    excerpt:
+      "Understanding color psychology and how to create harmonious color palettes for your designs.",
+    date: "Sep 2024",
+    readTime: "7 min read",
+    category: "Design",
+    image: "https://dummyimage.com/800x600/f59e0b/ffffff&text=Color+Theory",
+    link: "#0",
+    tags: ["Design", "Color Theory", "Branding"],
   },
 ];

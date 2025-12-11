@@ -22,3 +22,132 @@
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
+
+/* Button Gradient Styling - Theme-Specific */
+
+/* Dark Theme - Purple/Blue Gradient */
+[color-scheme="dark"] .btn-hover-accent {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #d4c5e8 0%, #c5b5dc 100%) !important;
+  border: none !important;
+  color: #1a1a1a !important;
+  transition: all 0.3s ease;
+}
+
+[color-scheme="dark"] .btn-hover-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #c5b5dc 0%, #b5a5cc 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+[color-scheme="dark"] .btn-hover-accent:hover::before {
+  opacity: 1;
+}
+
+[color-scheme="dark"] .btn-hover-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 181, 220, 0.4);
+}
+
+[color-scheme="dark"] .btn-hover-accent i,
+[color-scheme="dark"] .btn-hover-accent span {
+  position: relative;
+  z-index: 1;
+  color: #1a1a1a !important;
+}
+
+/* Light Theme - Complementary Style */
+[color-scheme="light"] .btn-hover-accent {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #9b7dd4 0%, #8b6dc4 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+[color-scheme="light"] .btn-hover-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #ab8de4 0%, #9b7dd4 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+[color-scheme="light"] .btn-hover-accent:hover::before {
+  opacity: 1;
+}
+
+[color-scheme="light"] .btn-hover-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(155, 125, 212, 0.4);
+}
+
+[color-scheme="light"] .btn-hover-accent i,
+[color-scheme="light"] .btn-hover-accent span {
+  position: relative;
+  z-index: 1;
+  color: #ffffff !important;
+}
+
+/* Contact Icon Boxes - Theme-Specific */
+
+/* Dark Theme - Lavender Gradient with White Icons */
+[color-scheme="dark"] .contact-icon-box {
+  background: linear-gradient(135deg, #d4c5e8 0%, #c5b5dc 100%) !important;
+}
+
+[color-scheme="dark"] .contact-icon-box i {
+  color: #ffffff !important;
+}
+
+/* Light Theme - Light Background with Black Icons */
+[color-scheme="light"] .contact-icon-box {
+  background: linear-gradient(135deg, #e8e0f5 0%, #f0ebf8 100%) !important;
+}
+
+[color-scheme="light"] .contact-icon-box i {
+  color: #1a1a1a !important;
+}
+
+/* Reduce excessive section spacing */
+.inner {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.content__block {
+  margin-bottom: 2rem !important;
+}
+
+.content__block.block-large {
+  margin-bottom: 3rem !important;
+}
+
+/* Tighter spacing for About section */
+#about .content__block {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Tighter spacing for Certifications */
+#certifications .content__block.block-large {
+  margin-bottom: 2rem !important;
+}
+
+/* Add standard padding above Portfolio, Resume, Contact and About section */
+#portfolio, #resume, #contact , #about{
+  padding-top: 10rem !important;
+}

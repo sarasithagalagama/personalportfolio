@@ -32,7 +32,7 @@ const Contact = () => {
     {
       icon: "ph-bold ph-map-pin",
       title: "Location",
-      value: "Sri Lanka",
+      value: "Based in: Colombo, Sri Lanka",
       link: null,
     },
     {
@@ -125,11 +125,11 @@ const Contact = () => {
                     }}
                   >
                     <div
+                      className="contact-icon-box"
                       style={{
                         width: "50px",
                         height: "50px",
                         borderRadius: "var(--_radius-s)",
-                        background: "linear-gradient(135deg, #764ba2, #667eea)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -138,7 +138,7 @@ const Contact = () => {
                     >
                       <i
                         className={info.icon}
-                        style={{ fontSize: "1.5rem", color: "#fff" }}
+                        style={{ fontSize: "1.5rem" }}
                       ></i>
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>

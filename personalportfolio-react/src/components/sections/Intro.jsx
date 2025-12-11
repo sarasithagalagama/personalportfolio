@@ -30,9 +30,9 @@ const Intro = () => {
           <span>Hello, I'm</span>
         </p>
         <h1 className="headline__title animate-headline">
-          I'm Sarasitha Galagama
+          Sarasitha Galagama
           <br />
-          Creative Designer & IT Undergraduate
+          Designer by Heart, Developer by Craft
         </h1>
         <div className="headline__btnholder d-flex flex-column flex-sm-row">
           <a
