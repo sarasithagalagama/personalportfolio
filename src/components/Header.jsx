@@ -89,7 +89,7 @@ const Header = () => {
               </nav>
               {/* / END NAV DESIGN AREA */}
             </div>
-            <div className="menu-btns d-flex align-items-center">
+            <div className="menu-btns d-none d-lg-flex align-items-center">
               <Link to="/contact" className="theme-btn">
                 Hire Me <i className="ri-shake-hands-line"></i>
               </Link>

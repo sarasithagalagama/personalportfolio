@@ -841,7 +841,7 @@ Version      : 1.0
         display: block;
         padding: 25px 0;
         overflow-x: hidden;
-        background: #333;
+        background: transparent;
         max-height: calc(100vh - 100px);
     }
 
@@ -852,9 +852,13 @@ Version      : 1.0
 
 @media only screen and (max-width: 991px) {
     .main-menu .navbar-collapse {
-        left: 45%;
-        width: 50%;
+        left: 0;
+        width: 100%;
         position: absolute;
+        top: 100%;
+        z-index: 999;
+        background: #000;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 

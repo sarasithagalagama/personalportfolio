@@ -134,3 +134,242 @@
     justify-content: center;
   }
 }
+
+/* ============================================
+   QUICK STATS STYLES
+   ============================================ */
+
+.quick-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+  .quick-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-box {
+  background: #1f1f1f; /* Darker background */
+  color: #fff;
+  border-radius: 12px;
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassmorphism subtle effect */
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  z-index: 1;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(235, 93, 58, 0.15); /* Using primary color glow */
+}
+
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #b0b0b0;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   FIVERR STRIP STYLES
+   ============================================ */
+/* ============================================
+   FIVERR STRIP STYLES (Glassmorphism Box)
+   ============================================ */
+.fiverr-area {
+    padding: 85px 0;
+    position: relative;
+    background: transparent;
+}
+
+/* ============================================
+   SINGLE PROJECT PAGE STYLES
+   ============================================ */
+
+.single-project-hero-area {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.sub-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.project-hero-content h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.project-meta ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.project-meta ul li {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.project-meta ul li span {
+    color: #888;
+    margin-right: 8px;
+    font-weight: 400;
+}
+
+.project-details-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-weight: 700;
+}
+
+.project-details-content h3:first-child {
+    margin-top: 0;
+}
+
+.project-details-content p {
+    margin-bottom: 25px;
+    color: #b0b0b0;
+    line-height: 1.8;
+}
+
+.list-style-one {
+    list-style: none;
+    padding: 0;
+}
+
+.list-style-one li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: #b0b0b0;
+}
+
+.list-style-one li::before {
+    content: '\2713'; /* Checkmark */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.widget-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.widget-services ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.widget-services ul li {
+    margin-bottom: 12px;
+}
+
+.widget-services ul li a {
+    color: #b0b0b0;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.widget-services ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.social-style-one a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-style-one a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+/* ============================================
+   BRANDED BUTTON STYLES
+   ============================================ */
+
+/* Fiverr Button */
+.fiverr-btn {
+  min-width: 220px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Behance Button */
+.behance-btn {
+  min-width: 220px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+}

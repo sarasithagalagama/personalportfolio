@@ -24,23 +24,24 @@ const WorksPage = () => {
               <li data-filter="*" className="current">
                 Show All
               </li>
-              <li data-filter=".design">Design</li>
-              <li data-filter=".branding">Branding</li>
-              <li data-filter=".marketing">Marketing</li>
-              <li data-filter=".game">Game</li>
+              <li data-filter=".design-branding">Design & Branding</li>
+              <li data-filter=".ui-ux">UI/UX & Web</li>
+              <li data-filter=".full-stack">Full‑Stack Apps</li>
+              <li data-filter=".ai-ml">AI & ML Projects</li>
+              <li data-filter=".dashboards">Dashboards & Data</li>
             </ul>
             <div className="row project-masonry-active">
               {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item branding game">
+              <div className="col-lg-4 col-md-6 item design-branding">
                 <div className="project-item style-two wow fadeInUp delay-0-3s">
                   <div className="project-image">
                     <img
                       src="/assets/images/projects/work1.jpg"
                       alt="Project"
                     />
-                    <a href="single-project.html" className="details-btn">
+                    <Link to="/single-project" className="details-btn">
                       <i className="ri-arrow-right-up-line"></i>
-                    </a>
+                    </Link>
                   </div>
                   <div className="project-content">
                     <span className="sub-title">Branding</span>
@@ -50,7 +51,7 @@ const WorksPage = () => {
               </div>
               {/* START PORTFOLIO DESIGN AREA */}
               {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item design marketing graphics">
+              <div className="col-lg-4 col-md-6 item ui-ux">
                 <div className="project-item style-two wow fadeInUp delay-0-4s">
                   <div className="project-image">
                     <img
@@ -72,7 +73,7 @@ const WorksPage = () => {
               </div>
               {/* / END SINGLE PORTFOLIO DESIGN AREA */}
               {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item game graphics">
+              <div className="col-lg-4 col-md-6 item design-branding">
                 <div className="project-item style-two wow fadeInUp delay-0-5s">
                   <div className="project-image">
                     <img
@@ -94,7 +95,7 @@ const WorksPage = () => {
               </div>
               {/* / END SINGLE PORTFOLIO DESIGN AREA */}
               {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item design game">
+              <div className="col-lg-4 col-md-6 item ui-ux">
                 <div className="project-item style-two wow fadeInUp delay-0-6s">
                   <div className="project-image">
                     <img
@@ -116,7 +117,7 @@ const WorksPage = () => {
               </div>
               {/* / END SINGLE PORTFOLIO DESIGN AREA */}
               {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item branding game">
+              <div className="col-lg-4 col-md-6 item full-stack">
                 <div className="project-item style-two wow fadeInUp delay-0-7s">
                   <div className="project-image">
                     <img
@@ -138,7 +139,7 @@ const WorksPage = () => {
               </div>
               {/* START PORTFOLIO DESIGN AREA */}
               {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item design marketing graphics">
+              <div className="col-lg-4 col-md-6 item full-stack">
                 <div className="project-item style-two wow fadeInUp delay-0-8s">
                   <div className="project-image">
                     <img
@@ -172,13 +173,14 @@ const WorksPage = () => {
             {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-12">
               <div className="about-content-part call-to-action-part wow fadeInUp delay-0-2s text-center">
-                <h2>
-                  Are You Ready to kickstart your project with a touch of magic?
-                </h2>
+                <h2>Ready to kickstart something awesome?</h2>
                 <p>
-                  Reach out and let's make it happen ✨. I'm also available for
-                  full-time or Part-time opportunities to push the boundaries of
-                  design and deliver exceptional work.
+                  Let’s turn your ideas into clean visuals and working
+                  products—from brand graphics to thoughtful UI/UX and full web
+                  experiences. I’m open to freelance, part‑time, and full‑time
+                  roles where I can blend creative design, UI/UX, and full‑stack
+                  development to build things that actually work for users and
+                  businesses.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">

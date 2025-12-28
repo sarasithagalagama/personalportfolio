@@ -27,8 +27,8 @@ const ContactPage = () => {
                     <div className="contact-icon">
                       <i className="ri-map-pin-line"></i>
                     </div>
-                    <h2>our office:</h2>
-                    <p>Jurain,Dhaka Bangladesh</p>
+                    <h2>Location:</h2>
+                    <p>Kottawa, Sri Lanka</p>
                   </div>
                   {/* / END CONTACT SINGLEDESIGN AREA */}
                   {/* START CONTACT SINGLEDESIGN AREA */}
@@ -39,8 +39,16 @@ const ContactPage = () => {
                     <div className="contact-icon">
                       <i className="ri-phone-line"></i>
                     </div>
-                    <h2>contact number:</h2>
-                    <p>+1234321321</p>
+                    <h2>Contact Number:</h2>
+                    <p>
+                      <a
+                        href="https://wa.me/94712175244"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        +94 71 217 5244
+                      </a>
+                    </p>
                   </div>
                   {/* / END CONTACT SINGLEDESIGN AREA */}
                   {/* START CONTACT SINGLEDESIGN AREA */}
@@ -51,8 +59,12 @@ const ContactPage = () => {
                     <div className="contact-icon">
                       <i className="ri-mail-line"></i>
                     </div>
-                    <h2>Email us:</h2>
-                    <p>websitename@mail.com</p>
+                    <h2>Email Me:</h2>
+                    <p>
+                      <a href="mailto:contact@sarasitha.me">
+                        contact@sarasitha.me
+                      </a>
+                    </p>
                   </div>
                   {/* / END CONTACT SINGLEDESIGN AREA */}
                 </div>
@@ -145,13 +157,14 @@ const ContactPage = () => {
             {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-12">
               <div className="about-content-part call-to-action-part wow fadeInUp delay-0-2s text-center">
-                <h2>
-                  Are You Ready to kickstart your project with a touch of magic?
-                </h2>
+                <h2>Ready to kickstart something awesome?</h2>
                 <p>
-                  Reach out and let's make it happen ✨. I'm also available for
-                  full-time or Part-time opportunities to push the boundaries of
-                  design and deliver exceptional work.
+                  Let’s turn your ideas into clean visuals and working
+                  products—from brand graphics to thoughtful UI/UX and full web
+                  experiences. I’m open to freelance, part‑time, and full‑time
+                  roles where I can blend creative design, UI/UX, and full‑stack
+                  development to build things that actually work for users and
+                  businesses.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">

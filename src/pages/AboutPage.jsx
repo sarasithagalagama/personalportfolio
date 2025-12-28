@@ -21,22 +21,22 @@ const AboutPage = () => {
             {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-8">
               <div className="about-content-part wow fadeInUp delay-0-2s">
-                <h2>I'm Bentos Walker, a product designer.</h2>
+                <h2>I’m Sarasitha Galagama</h2>
                 <p>
-                  I am a San francisco-based product designer with a focus on
-                  web design, illustration, a visual development. I have a
-                  diverse range of experience having worked across various
-                  fields and industries.
+                  A creative designer and full‑stack developer with a soft spot
+                  for clean interfaces, bold visuals, and well‑behaved code. As
+                  an Information Systems Engineering undergraduate at SLIIT and
+                  a freelance designer with 4+ years of Fiverr experience, I
+                  enjoy moving from UI layouts and prototypes to
+                  production‑ready web apps that solve real problems.
                 </p>
                 <p>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old. Richard McClintock,
-                  a Latin professor at Hampden-Sydney College in Virginia,
-                  looked up one of the more obscure Latin words, consectetur,
-                  from a Lorem Ipsum passage, and going through the cites of the
-                  word in classical literature, discovered the undoubtable
-                  source.
+                  When I’m not experimenting with layouts in Figma, you’ll
+                  usually find me wiring up APIs, refining front‑end states, or
+                  building small AI and data‑driven tools. My journey from
+                  Ananda College, Colombo to university and freelance work has
+                  shaped me into someone who cares about both the user
+                  experience and the engineering behind it.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">
@@ -64,38 +64,46 @@ const AboutPage = () => {
                     {/* START SINGLE RESUME DESIGN AREA */}
                     <div className="resume-item wow fadeInUp delay-0-3s">
                       <div className="icon">
-                        <i className="ri-book-line"></i>
+                        <i className="ri-briefcase-line"></i>
                       </div>
                       <div className="content">
-                        <span className="years">2021 - Present</span>
-                        <h4>Themeforest Market</h4>
-                        <span className="company"> Web Designer </span>
+                        <span className="years">2020 - Present</span>
+                        <h4>Freelance Creative Designer</h4>
+                        <span className="company">Fiverr & Upwork</span>
+                        <p
+                          style={{
+                            marginTop: "10px",
+                            color: "#b0b0b0",
+                            fontSize: "14px",
+                          }}
+                        >
+                          Designing movie posters, album covers, thumbnails, and
+                          social media creatives for clients worldwide.
+                        </p>
                       </div>
                     </div>
                     {/* / END SINGLE RESUME DESIGN AREA */}
                     {/* START SINGLE RESUME DESIGN AREA */}
                     <div className="resume-item wow fadeInUp delay-0-3s">
                       <div className="icon">
-                        <i className="ri-book-line"></i>
+                        <i className="ri-code-s-slash-line"></i>
                       </div>
                       <div className="content">
-                        <span className="years">2021 - 2023</span>
-                        <h4>Envato Theme Developer</h4>
-                        <span className="company">Web Development</span>
-                      </div>
-                    </div>
-                    {/* / END SINGLE RESUME DESIGN AREA */}
-                    {/* START SINGLE RESUME DESIGN AREA */}
-                    <div className="resume-item wow fadeInUp delay-0-3s">
-                      <div className="icon">
-                        <i className="ri-book-line"></i>
-                      </div>
-                      <div className="content">
-                        <span className="years">2021 - 2022</span>
-                        <h4> Marketing Expert GRP</h4>
+                        <span className="years">2023 - Present</span>
+                        <h4>Full‑Stack / UI Developer</h4>
                         <span className="company">
-                          Web Developer & Business Partner
+                          Personal & Academic Projects
                         </span>
+                        <p
+                          style={{
+                            marginTop: "10px",
+                            color: "#b0b0b0",
+                            fontSize: "14px",
+                          }}
+                        >
+                          Building web apps, dashboards, and tools using modern
+                          stacks while focusing on clean, usable interfaces.
+                        </p>
                       </div>
                     </div>
                     {/* / END SINGLE RESUME DESIGN AREA */}
@@ -111,40 +119,29 @@ const AboutPage = () => {
                     {/* START SINGLE RESUME DESIGN AREA */}
                     <div className="resume-item wow fadeInUp delay-0-3s">
                       <div className="icon">
-                        <i className="ri-book-line"></i>
+                        <i className="ri-graduation-cap-line"></i>
                       </div>
                       <div className="content">
-                        <span className="years">2013 - 2015</span>
-                        <h4>Bachelor Degree of Information Technology</h4>
-                        <span className="company">
-                          State University bangladesh
-                        </span>
+                        <span className="years">2023 - Present</span>
+                        <h4>
+                          BSc (Hons) in Information Technology Specializing in
+                          Information Systems Engineering
+                        </h4>
+                        <span className="company">SLIIT, Malabe</span>
                       </div>
                     </div>
                     {/* / END SINGLE RESUME DESIGN AREA */}
                     {/* START SINGLE RESUME DESIGN AREA */}
                     <div className="resume-item wow fadeInUp delay-0-3s">
                       <div className="icon">
-                        <i className="ri-book-line"></i>
+                        <i className="ri-school-line"></i>
                       </div>
                       <div className="content">
-                        <span className="years">2021 - 2024</span>
-                        <h4>Higher secoundery Education </h4>
+                        <span className="years">2009 - 2022</span>
+                        <h4>Ananda College, Colombo</h4>
                         <span className="company">
-                          Premium College United VC
+                          Physical Science – Maths stream
                         </span>
-                      </div>
-                    </div>
-                    {/* / END SINGLE RESUME DESIGN AREA */}
-                    {/* START SINGLE RESUME DESIGN AREA */}
-                    <div className="resume-item wow fadeInUp delay-0-3s">
-                      <div className="icon">
-                        <i className="ri-book-line"></i>
-                      </div>
-                      <div className="content">
-                        <span className="years">2021 - 2024</span>
-                        <h4>Webster College</h4>
-                        <span className="company"> UI/UX Design </span>
                       </div>
                     </div>
                     {/* / END SINGLE RESUME DESIGN AREA */}
@@ -276,13 +273,14 @@ const AboutPage = () => {
             {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-12">
               <div className="about-content-part call-to-action-part wow fadeInUp delay-0-2s text-center">
-                <h2>
-                  Are You Ready to kickstart your project with a touch of magic?
-                </h2>
+                <h2>Ready to kickstart something awesome?</h2>
                 <p>
-                  Reach out and let's make it happen ✨. I'm also available for
-                  full-time or Part-time opportunities to push the boundaries of
-                  design and deliver exceptional work.
+                  Let’s turn your ideas into clean visuals and working
+                  products—from brand graphics to thoughtful UI/UX and full web
+                  experiences. I’m open to freelance, part‑time, and full‑time
+                  roles where I can blend creative design, UI/UX, and full‑stack
+                  development to build things that actually work for users and
+                  businesses.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">

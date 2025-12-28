@@ -23,8 +23,8 @@ const ServicePage = () => {
                   <i className="ri-global-fill"></i>
                   <h4>Brand Identity Design</h4>
                   <p>
-                    Bentos gives you the blocks & kits you need to create a true
-                    website within minutes.
+                    Crafting unique and memorable brand identities that resonate
+                    with your target audience and stand out in the market.
                   </p>
                 </div>
               </div>
@@ -35,8 +35,8 @@ const ServicePage = () => {
                   <i className="ri-quill-pen-line"></i>
                   <h4>Website Design</h4>
                   <p>
-                    Bentos gives you the blocks & kits you need to create a true
-                    website within minutes.
+                    Designing modern, responsive, and user-friendly websites
+                    tailored to your specific business needs and goals.
                   </p>
                 </div>
               </div>
@@ -47,8 +47,8 @@ const ServicePage = () => {
                   <i className="ri-pantone-fill"></i>
                   <h4>Application Design</h4>
                   <p>
-                    Bentos gives you the blocks & kits you need to create a true
-                    website within minutes.
+                    Creating intuitive and engaging mobile and web application
+                    designs that ensure a seamless user experience.
                   </p>
                 </div>
               </div>
@@ -197,13 +197,14 @@ const ServicePage = () => {
             {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-12">
               <div className="about-content-part call-to-action-part wow fadeInUp delay-0-2s text-center">
-                <h2>
-                  Are You Ready to kickstart your project with a touch of magic?
-                </h2>
+                <h2>Ready to kickstart something awesome?</h2>
                 <p>
-                  Reach out and let's make it happen ✨. I'm also available for
-                  full-time or Part-time opportunities to push the boundaries of
-                  design and deliver exceptional work.
+                  Let’s turn your ideas into clean visuals and working
+                  products—from brand graphics to thoughtful UI/UX and full web
+                  experiences. I’m open to freelance, part‑time, and full‑time
+                  roles where I can blend creative design, UI/UX, and full‑stack
+                  development to build things that actually work for users and
+                  businesses.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">
