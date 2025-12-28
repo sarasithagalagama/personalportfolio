@@ -213,7 +213,7 @@
    FIVERR STRIP STYLES (Glassmorphism Box)
    ============================================ */
 .fiverr-area {
-    padding: 85px 0;
+    padding: 15px 0;
     position: relative;
     background: transparent;
 }
@@ -372,4 +372,60 @@
   justify-content: center;
   display: inline-flex;
   align-items: center;
+}
+
+/* ============================================
+   SKILLS SECTION STYLES
+   ============================================ */
+.skills-area {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.skill-category {
+    margin-bottom: 30px;
+}
+
+.skill-category h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Divider */
+}
+
+.skill-category h4 i {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05); /* Dark theme glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Pill shape */
+    color: #b0b0b0;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(235, 93, 58, 0.2);
 }

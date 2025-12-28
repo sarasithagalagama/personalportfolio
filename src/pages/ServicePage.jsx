@@ -12,7 +12,7 @@ const ServicePage = () => {
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
                   <p>Services</p>
-                  <h2>Quality Services</h2>
+                  <h2>Quality services for modern brands</h2>
                 </div>
               </div>
             </div>
@@ -20,11 +20,11 @@ const ServicePage = () => {
               {/* START SINGLE SERVICE DESIGN AREA */}
               <div className="col-lg-4 col-md-6">
                 <div className="service-item wow fadeInUp delay-0-2s">
-                  <i className="ri-global-fill"></i>
-                  <h4>Brand Identity Design</h4>
+                  <i className="ri-brush-line"></i>
+                  <h4>Creative & Brand Design</h4>
                   <p>
-                    Crafting unique and memorable brand identities that resonate
-                    with your target audience and stand out in the market.
+                    Crafting posters, album covers, thumbnails, and social media
+                    visuals that are bold, consistent, and platform‑ready.
                   </p>
                 </div>
               </div>
@@ -32,11 +32,12 @@ const ServicePage = () => {
               {/* START SINGLE SERVICE DESIGN AREA */}
               <div className="col-lg-4 col-md-6">
                 <div className="service-item wow fadeInUp delay-0-4s">
-                  <i className="ri-quill-pen-line"></i>
-                  <h4>Website Design</h4>
+                  <i className="ri-layout-line"></i>
+                  <h4>UI/UX & Web Design</h4>
                   <p>
-                    Designing modern, responsive, and user-friendly websites
-                    tailored to your specific business needs and goals.
+                    Designing clean, responsive interfaces for landing pages,
+                    dashboards, and web apps, with a focus on clarity and
+                    usability.
                   </p>
                 </div>
               </div>
@@ -44,11 +45,11 @@ const ServicePage = () => {
               {/* START SINGLE SERVICE DESIGN AREA */}
               <div className="col-lg-4 col-md-6">
                 <div className="service-item wow fadeInUp delay-0-6s">
-                  <i className="ri-pantone-fill"></i>
-                  <h4>Application Design</h4>
+                  <i className="ri-code-s-slash-line"></i>
+                  <h4>Full‑Stack & Data‑Driven Apps</h4>
                   <p>
-                    Creating intuitive and engaging mobile and web application
-                    designs that ensure a seamless user experience.
+                    Building and deploying web apps and AI‑driven tools, from
+                    APIs and databases to dashboards and simple ML integrations.
                   </p>
                 </div>
               </div>
@@ -67,7 +68,7 @@ const ServicePage = () => {
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
                   <p>Pricing</p>
-                  <h2>Flexible Pricing Plan</h2>
+                  <h2>Flexible engagement options</h2>
                 </div>
               </div>
             </div>
@@ -76,36 +77,35 @@ const ServicePage = () => {
               <div className="col-lg-4 col-md-6">
                 <div className="pricing-item wow fadeInUp delay-0-2s">
                   <div className="pricing-header">
-                    <h4 className="title">Basic</h4>
+                    <h4 className="title">Starter</h4>
                     <p className="save-percent">
-                      Have design ready to build? <br />
-                      or small budget
+                      Best for: Single poster, thumbnail, or small design task.
                     </p>
-                    <span className="price">15</span>
                   </div>
                   <div className="pricing-details">
+                    <p
+                      style={{
+                        marginBottom: "10px",
+                        color: "var(--main-color)",
+                      }}
+                    >
+                      Includes:
+                    </p>
                     <ul>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Need your
-                        wireframe
+                        <i className="ri-arrow-right-line"></i>1–2 design
+                        concepts
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Design with
-                        Figma, Framer
+                        <i className="ri-arrow-right-line"></i>Basic revisions
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Product Design
-                      </li>
-                      <li className="unable">
-                        <i className="ri-arrow-right-line"></i>Digital Marketing
-                      </li>
-                      <li className="unable">
-                        <i className="ri-arrow-right-line"></i>Custom Support
+                        <i className="ri-arrow-right-line"></i>Web‑ready exports
                       </li>
                     </ul>
-                    <a href="#" className="theme-btn">
+                    <Link to="/contact" className="theme-btn">
                       Order Now <i className="ri-shopping-basket-line"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -114,35 +114,41 @@ const ServicePage = () => {
               <div className="col-lg-4 col-md-6">
                 <div className="pricing-item wow fadeInUp delay-0-4s">
                   <div className="pricing-header">
-                    <h4 className="title">Standard</h4>
+                    <h4 className="title">Design & UI</h4>
                     <p className="save-percent">
-                      Not have any design? <br />
-                      Leave its for me
+                      Best for: A full set of visuals or a small website/landing
+                      page.
                     </p>
-                    <span className="price">59</span>
                   </div>
                   <div className="pricing-details">
+                    <p
+                      style={{
+                        marginBottom: "10px",
+                        color: "var(--main-color)",
+                      }}
+                    >
+                      Includes:
+                    </p>
                     <ul>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Website Design
+                        <i className="ri-arrow-right-line"></i>Brand kit or page
+                        UI
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Mobile Apps
-                        Design
+                        <i className="ri-arrow-right-line"></i>Component‑based
+                        design
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Product Design
+                        <i className="ri-arrow-right-line"></i>Responsive
+                        layouts
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Digital Marketing
-                      </li>
-                      <li className="unable">
-                        <i className="ri-arrow-right-line"></i>Custom Support
+                        <i className="ri-arrow-right-line"></i>Asset hand‑off
                       </li>
                     </ul>
-                    <a href="#" className="theme-btn">
+                    <Link to="/contact" className="theme-btn">
                       Order Now <i className="ri-shopping-basket-line"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -151,35 +157,41 @@ const ServicePage = () => {
               <div className="col-lg-4 col-md-6">
                 <div className="pricing-item wow fadeInUp delay-0-4s">
                   <div className="pricing-header">
-                    <h4 className="title">Standard</h4>
+                    <h4 className="title">Product & Dev</h4>
                     <p className="save-percent">
-                      Not have any design? <br />
-                      Leave its for me
+                      Best for: End‑to‑end mini‑projects (site + backend or
+                      dashboard + data).
                     </p>
-                    <span className="price">59</span>
                   </div>
                   <div className="pricing-details">
+                    <p
+                      style={{
+                        marginBottom: "10px",
+                        color: "var(--main-color)",
+                      }}
+                    >
+                      Includes:
+                    </p>
                     <ul>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Website Design
+                        <i className="ri-arrow-right-line"></i>UI/UX
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Mobile Apps
-                        Design
+                        <i className="ri-arrow-right-line"></i>Front‑end
+                        implementation
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Product Design
+                        <i className="ri-arrow-right-line"></i>Simple
+                        backend/API
                       </li>
                       <li>
-                        <i className="ri-arrow-right-line"></i>Digital Marketing
-                      </li>
-                      <li className="unable">
-                        <i className="ri-arrow-right-line"></i>Custom Support
+                        <i className="ri-arrow-right-line"></i>Basic
+                        deployment/support
                       </li>
                     </ul>
-                    <a href="#" className="theme-btn">
+                    <Link to="/contact" className="theme-btn">
                       Order Now <i className="ri-shopping-basket-line"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

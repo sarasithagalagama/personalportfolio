@@ -155,6 +155,104 @@ const AboutPage = () => {
       </section>
       {/* / END RESUME EXPERIENCE DESIGN AREA */}
 
+      {/* START SKILLS DESIGN AREA */}
+      <section id="skills" className="skills-area">
+        <div className="container">
+          <div className="container-inner">
+            <div className="row">
+              <div className="col-xl-12 col-lg-12">
+                <div className="section-title text-center wow fadeInUp delay-0-2s">
+                  <p>Skills</p>
+                  <h2>Technical Proficiency</h2>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="skill-category wow fadeInUp delay-0-2s">
+                  <h4>
+                    <i className="ri-code-s-slash-line"></i>
+                    Languages & Frameworks
+                  </h4>
+                  <div className="skill-tags">
+                    <span className="skill-tag">Java</span>
+                    <span className="skill-tag">Python</span>
+                    <span className="skill-tag">JavaScript</span>
+                    <span className="skill-tag">Spring Boot</span>
+                    <span className="skill-tag">PHP</span>
+                  </div>
+                </div>
+
+                <div className="skill-category wow fadeInUp delay-0-3s">
+                  <h4>
+                    <i className="ri-database-2-line"></i>
+                    Databases & Platforms
+                  </h4>
+                  <div className="skill-tags">
+                    <span className="skill-tag">MySQL</span>
+                    <span className="skill-tag">PostgreSQL</span>
+                    <span className="skill-tag">MongoDB</span>
+                    <span className="skill-tag">Firebase</span>
+                    <span className="skill-tag">Supabase</span>
+                  </div>
+                </div>
+
+                <div className="skill-category wow fadeInUp delay-0-4s">
+                  <h4>
+                    <i className="ri-brush-line"></i>
+                    Design & UX Tools
+                  </h4>
+                  <div className="skill-tags">
+                    <span className="skill-tag">Figma</span>
+                    <span className="skill-tag">Photoshop</span>
+                    <span className="skill-tag">Illustrator</span>
+                    <span className="skill-tag">Wireframing</span>
+                    <span className="skill-tag">Prototyping</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <div className="skill-category wow fadeInUp delay-0-2s">
+                  <h4>
+                    <i className="ri-server-line"></i>
+                    DevOps & Infrastructure
+                  </h4>
+                  <div className="skill-tags">
+                    <span className="skill-tag">Docker</span>
+                    <span className="skill-tag">Git</span>
+                    <span className="skill-tag">Linux</span>
+                    <span className="skill-tag">Vercel</span>
+                    <span className="skill-tag">CI/CD</span>
+                    <span className="skill-tag">Postman</span>
+                    <span className="skill-tag">AWS</span>
+                    <span className="skill-tag">Azure</span>
+                    <span className="skill-tag">Oracle Cloud</span>
+                  </div>
+                </div>
+
+                <div className="skill-category wow fadeInUp delay-0-3s">
+                  <h4>
+                    <i className="ri-lightbulb-flash-line"></i>
+                    Concepts & Methodologies
+                  </h4>
+                  <div className="skill-tags">
+                    <span className="skill-tag">OOP</span>
+                    <span className="skill-tag">REST</span>
+                    <span className="skill-tag">Microservices</span>
+                    <span className="skill-tag">Distributed Systems</span>
+                    <span className="skill-tag">Agile</span>
+                    <span className="skill-tag">SDLC</span>
+                    <span className="skill-tag">Design Thinking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* / END SKILLS DESIGN AREA */}
+
       {/* START TESTIMONIALS DESIGN AREA */}
       <section className="testimonials-area">
         <div className="container">
