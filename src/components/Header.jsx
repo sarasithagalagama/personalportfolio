@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  /* Theme state removed */
   const location = useLocation();
 
   useEffect(() => {
@@ -19,18 +19,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (theme === "light") {
-      document.body.classList.add("light-mode");
-    } else {
-      document.body.classList.remove("light-mode");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
+  /* Theme toggle useEffect removed */
 
   return (
     <header className={`main-header ${isFixed ? "fixed-header" : ""}`}>
@@ -104,22 +93,6 @@ const Header = () => {
               <Link to="/contact" className="theme-btn">
                 Hire Me <i className="ri-shake-hands-line"></i>
               </Link>
-              <button
-                className="theme-toggle-btn"
-                onClick={toggleTheme}
-                aria-label="Toggle Theme"
-                title={
-                  theme === "light"
-                    ? "Switch to Dark Mode"
-                    : "Switch to Light Mode"
-                }
-              >
-                {theme === "light" ? (
-                  <i className="ri-moon-line"></i>
-                ) : (
-                  <i className="ri-sun-line"></i>
-                )}
-              </button>
             </div>
           </div>
         </div>

@@ -35,7 +35,10 @@ const Home = () => {
             {/* START ABOUT IMAGE DESIGN AREA */}
             <div className="col-lg-4">
               <div className="about-image-part wow fadeInUp delay-0-3s">
-                <img src="/assets/images/about/profile.jpg" alt="About Me" />
+                <img
+                  src="/assets/images/about/profile-pic2.png"
+                  alt="About Me"
+                />
                 <h2>Sarasitha Galagama</h2>
                 <p>I am a Web Designer based in san francisco.</p>
                 <div className="about-social text-center">
