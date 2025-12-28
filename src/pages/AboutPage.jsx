@@ -162,7 +162,7 @@ const AboutPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <p>Testinomials</p>
+                  <p>Testimonials</p>
                   <h2>What clients say!</h2>
                 </div>
               </div>
@@ -172,81 +172,100 @@ const AboutPage = () => {
                 <div className="testimonials-wrap">
                   {/* START SINGLE TESTIMONIALS DESIGN AREA */}
                   <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="author">
+                    <div className="testimonial-image">
                       <img
-                        src="/assets/images/testimonials/author1.jpg"
-                        alt="Author"
+                        src="/assets/images/testimonials/review1.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
                       />
-                    </div>
-                    <div className="text">
-                      Financial planners help people to knowledge in about how
-                      to invest and in save their moneye the most efficient way
-                      eve plan ners help people tioniio know ledige in about
-                      how.
-                    </div>
-                    <div className="testi-des">
-                      <h5>Zonathon Doe</h5>
-                      <span>CEO & Founder X</span>
                     </div>
                   </div>
                   {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
                   {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-4s">
-                    <div className="author">
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
                       <img
-                        src="/assets/images/testimonials/author2.jpg"
-                        alt="Author"
+                        src="/assets/images/testimonials/review2.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
                       />
-                    </div>
-                    <div className="text">
-                      Financial planners help people to knowledge in about how
-                      to invest and in save their moneye the most efficient way
-                      eve plan ners help people tioniio know ledige in about
-                      how.
-                    </div>
-                    <div className="testi-des">
-                      <h5>Liana Marie</h5>
-                      <span>Lead Designer Meta</span>
                     </div>
                   </div>
                   {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
                   {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-2s">
-                    <div className="author">
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
                       <img
-                        src="/assets/images/testimonials/author1.jpg"
-                        alt="Author"
+                        src="/assets/images/testimonials/review3.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
                       />
-                    </div>
-                    <div className="text">
-                      Financial planners help people to knowledge in about how
-                      to invest and in save their moneye the most efficient way
-                      eve plan ners help people tioniio know ledige in about
-                      how.
-                    </div>
-                    <div className="testi-des">
-                      <h5>Zonathon Doe</h5>
-                      <span>CEO & Founder X</span>
                     </div>
                   </div>
                   {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
                   {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-4s">
-                    <div className="author">
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
                       <img
-                        src="/assets/images/testimonials/author2.jpg"
-                        alt="Author"
+                        src="/assets/images/testimonials/review4.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
                       />
                     </div>
-                    <div className="text">
-                      Financial planners help people to knowledge in about how
-                      to invest and in save their moneye the most efficient way
-                      eve plan ners help people tioniio know ledige in about
-                      how.
+                  </div>
+                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
+                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
+                      <img
+                        src="/assets/images/testimonials/review5.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
+                      />
                     </div>
-                    <div className="testi-des">
-                      <h5>Liana Marie</h5>
-                      <span>Lead Designer Meta</span>
+                  </div>
+                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
+                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
+                      <img
+                        src="/assets/images/testimonials/review6.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
+                      />
+                    </div>
+                  </div>
+                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
+                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
+                      <img
+                        src="/assets/images/testimonials/review7.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
+                      />
+                    </div>
+                  </div>
+                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
+                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
+                      <img
+                        src="/assets/images/testimonials/review8.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
+                      />
+                    </div>
+                  </div>
+                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
+                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
+                  <div className="testimonial-item wow fadeInUp delay-0-3s">
+                    <div className="testimonial-image">
+                      <img
+                        src="/assets/images/testimonials/review9.png?v=2"
+                        alt="Client Review"
+                        style={{ width: "100%", borderRadius: "10px" }}
+                      />
                     </div>
                   </div>
                   {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
