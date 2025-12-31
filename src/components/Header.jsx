@@ -69,11 +69,7 @@ const Header = () => {
                         about
                       </Link>
                     </li>
-                    <li>
-                      <Link className="nav-link-click" to="/services">
-                        services
-                      </Link>
-                    </li>
+
                     <li>
                       <Link className="nav-link-click" to="/works">
                         works

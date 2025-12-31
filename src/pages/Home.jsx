@@ -1,7 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { projectsData } from "../data/projectsData";
 
 const Home = () => {
+  const [activeFilter, setActiveFilter] = useState("*");
+
+  const filteredProjects =
+    activeFilter === "*"
+      ? projectsData
+      : projectsData.filter(
+          (project) => project.filterCategory === activeFilter
+        );
+
   useEffect(() => {
     // Animation or other side effects can go here if needed in the future
   }, []);
@@ -136,6 +146,62 @@ const Home = () => {
       </section>
       {/* / END ABOUT DESIGN AREA */}
 
+      {/* START SERVICE DESIGN AREA */}
+      <section id="services" className="services-area">
+        <div className="container">
+          <div className="container-inner">
+            <div className="row">
+              <div className="col-xl-12 col-lg-12">
+                <div className="section-title text-center wow fadeInUp delay-0-2s">
+                  <p>Services</p>
+                  <h2>Quality services for modern brands</h2>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {/* START SINGLE SERVICE DESIGN AREA */}
+              <div className="col-lg-4 col-md-6">
+                <div className="service-item wow fadeInUp delay-0-2s">
+                  <i className="ri-brush-line"></i>
+                  <h4>Creative & Brand Design</h4>
+                  <p>
+                    Crafting posters, album covers, thumbnails, and social media
+                    visuals that are bold, consistent, and platform‑ready.
+                  </p>
+                </div>
+              </div>
+              {/* / END SINGLE SERVICE DESIGN AREA */}
+              {/* START SINGLE SERVICE DESIGN AREA */}
+              <div className="col-lg-4 col-md-6">
+                <div className="service-item wow fadeInUp delay-0-4s">
+                  <i className="ri-layout-line"></i>
+                  <h4>UI/UX & Web Design</h4>
+                  <p>
+                    Designing clean, responsive interfaces for landing pages,
+                    dashboards, and web apps, with a focus on clarity and
+                    usability.
+                  </p>
+                </div>
+              </div>
+              {/* / END SINGLE SERVICE DESIGN AREA */}
+              {/* START SINGLE SERVICE DESIGN AREA */}
+              <div className="col-lg-4 col-md-6">
+                <div className="service-item wow fadeInUp delay-0-6s">
+                  <i className="ri-code-s-slash-line"></i>
+                  <h4>Full‑Stack & Data‑Driven Apps</h4>
+                  <p>
+                    Building and deploying web apps and AI‑driven tools, from
+                    APIs and databases to dashboards and simple ML integrations.
+                  </p>
+                </div>
+              </div>
+              {/* / END SINGLE SERVICE DESIGN AREA */}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* / END SERVICE DESIGN AREA */}
+
       {/* START PORTFOLIO DESIGN AREA */}
       <section id="portfolio" className="projects-area">
         <div className="container">
@@ -153,145 +219,66 @@ const Home = () => {
               </div>
             </div>
             <ul className="project-filter filter-btns-one justify-content-left pb-15 wow fadeInUp delay-0-2s">
-              <li data-filter="*" className="current">
+              <li
+                onClick={() => setActiveFilter("*")}
+                className={activeFilter === "*" ? "current" : ""}
+              >
                 Show All
               </li>
-              <li data-filter=".design-branding">Design & Branding</li>
-              <li data-filter=".ui-ux">UI/UX & Web</li>
-              <li data-filter=".full-stack">Full‑Stack Apps</li>
-              <li data-filter=".ai-ml">AI & ML Projects</li>
-              <li data-filter=".dashboards">Dashboards & Data</li>
+              <li
+                onClick={() => setActiveFilter("design-branding")}
+                className={activeFilter === "design-branding" ? "current" : ""}
+              >
+                Design & Branding
+              </li>
+              <li
+                onClick={() => setActiveFilter("ui-ux")}
+                className={activeFilter === "ui-ux" ? "current" : ""}
+              >
+                UI/UX & Web
+              </li>
+              <li
+                onClick={() => setActiveFilter("full-stack")}
+                className={activeFilter === "full-stack" ? "current" : ""}
+              >
+                Full‑Stack Apps
+              </li>
+              <li
+                onClick={() => setActiveFilter("ai-ml")}
+                className={activeFilter === "ai-ml" ? "current" : ""}
+              >
+                AI & ML Projects
+              </li>
+              <li
+                onClick={() => setActiveFilter("dashboards")}
+                className={activeFilter === "dashboards" ? "current" : ""}
+              >
+                Dashboards & Data
+              </li>
             </ul>
             <div className="row project-masonry-active">
-              {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item design-branding">
-                <div className="project-item style-two wow fadeInUp delay-0-3s">
-                  <div className="project-image">
-                    <img
-                      src="/assets/images/projects/work1.jpg"
-                      alt="Project"
-                    />
-                    <Link to="/single-project" className="details-btn">
-                      <i className="ri-arrow-right-up-line"></i>
-                    </Link>
-                  </div>
-                  <div className="project-content">
-                    <span className="sub-title">Branding</span>
-                    <h3>Mobile Application Design</h3>
-                  </div>
-                </div>
-              </div>
-              {/* START PORTFOLIO DESIGN AREA */}
-              {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item ui-ux">
-                <div className="project-item style-two wow fadeInUp delay-0-4s">
-                  <div className="project-image">
-                    <img
-                      src="/assets/images/projects/work2.jpg"
-                      alt="Project"
-                    />
-                    <a
-                      href="https://www.youtube.com/watch?v=qZEPs3vmYB4"
-                      className="details-btn popup-youtube"
-                    >
-                      <i className="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
-                  <div className="project-content">
-                    <span className="sub-title">Design</span>
-                    <h3>Website Makeup Design</h3>
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
+                >
+                  <div className="project-item style-two">
+                    <div className="project-image">
+                      <img src={project.img} alt={project.title} />
+                      <Link
+                        to={`/single-project/${project.id}`}
+                        className="details-btn"
+                      >
+                        <i className="ri-arrow-right-up-line"></i>
+                      </Link>
+                    </div>
+                    <div className="project-content">
+                      <span className="sub-title">{project.subTitle}</span>
+                      <h3>{project.title}</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* / END SINGLE PORTFOLIO DESIGN AREA */}
-              {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item design-branding">
-                <div className="project-item style-two wow fadeInUp delay-0-5s">
-                  <div className="project-image">
-                    <img
-                      src="/assets/images/projects/work3.jpg"
-                      alt="Project"
-                    />
-                    <a
-                      href="/assets/images/projects/work3.jpg"
-                      className="details-btn work-popup"
-                    >
-                      <i className="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
-                  <div className="project-content">
-                    <span className="sub-title">Graphics</span>
-                    <h3>Brand Identity and Motion Design</h3>
-                  </div>
-                </div>
-              </div>
-              {/* / END SINGLE PORTFOLIO DESIGN AREA */}
-              {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item ui-ux">
-                <div className="project-item style-two wow fadeInUp delay-0-6s">
-                  <div className="project-image">
-                    <img
-                      src="/assets/images/projects/work4.jpg"
-                      alt="Project"
-                    />
-                    <a
-                      href="/assets/images/projects/work4.jpg"
-                      className="details-btn work-popup"
-                    >
-                      <i className="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
-                  <div className="project-content">
-                    <span className="sub-title">Game</span>
-                    <h3>Mobile Application Design</h3>
-                  </div>
-                </div>
-              </div>
-              {/* / END SINGLE PORTFOLIO DESIGN AREA */}
-              {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item full-stack">
-                <div className="project-item style-two wow fadeInUp delay-0-7s">
-                  <div className="project-image">
-                    <img
-                      src="/assets/images/projects/work5.jpg"
-                      alt="Project"
-                    />
-                    <a
-                      href="/assets/images/projects/work5.jpg"
-                      className="details-btn work-popup"
-                    >
-                      <i className="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
-                  <div className="project-content">
-                    <span className="sub-title">Branding</span>
-                    <h3>Application Design</h3>
-                  </div>
-                </div>
-              </div>
-              {/* START PORTFOLIO DESIGN AREA */}
-              {/* START SINGLE PORTFOLIO DESIGN AREA */}
-              <div className="col-lg-4 col-md-6 item full-stack">
-                <div className="project-item style-two wow fadeInUp delay-0-8s">
-                  <div className="project-image">
-                    <img
-                      src="/assets/images/projects/work6.jpg"
-                      alt="Project"
-                    />
-                    <a
-                      href="https://www.youtube.com/watch?v=qZEPs3vmYB4"
-                      className="details-btn popup-youtube"
-                    >
-                      <i className="ri-arrow-right-up-line"></i>
-                    </a>
-                  </div>
-                  <div className="project-content">
-                    <span className="sub-title">Design</span>
-                    <h3>Website Development</h3>
-                  </div>
-                </div>
-              </div>
-              {/* / END SINGLE PORTFOLIO DESIGN AREA */}
+              ))}
             </div>
           </div>
         </div>

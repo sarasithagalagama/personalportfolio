@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const AboutPage = () => {
   return (
@@ -268,113 +271,30 @@ const AboutPage = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="testimonials-wrap">
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review1.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review2.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review3.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review4.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review5.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review6.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review7.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review8.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                  {/* START SINGLE TESTIMONIALS DESIGN AREA */}
-                  <div className="testimonial-item wow fadeInUp delay-0-3s">
-                    <div className="testimonial-image">
-                      <img
-                        src="/assets/images/testimonials/review9.png?v=2"
-                        alt="Client Review"
-                        style={{ width: "100%", borderRadius: "10px" }}
-                      />
-                    </div>
-                  </div>
-                  {/* / END SINGLE TESTIMONIALS DESIGN AREA */}
-                </div>
-                <div className="slider-arrows wow fadeInUp delay-0-6s text-center pt-40">
-                  <button className="testimonial-prev">
-                    <i className="ri-arrow-left-s-line"></i>
-                  </button>
-                  <button className="testimonial-next">
-                    <i className="ri-arrow-right-s-line"></i>
-                  </button>
+                  <Swiper
+                    modules={[Autoplay]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                    className="testimonials-swiper"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                      <SwiperSlide key={num}>
+                        <div className="testimonial-item wow fadeInUp delay-0-3s">
+                          <div className="testimonial-image">
+                            <img
+                              src={`/assets/images/testimonials/review${num}.png?v=2`}
+                              alt={`Client Review ${num}`}
+                              style={{ width: "100%", borderRadius: "10px" }}
+                            />
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </div>
             </div>

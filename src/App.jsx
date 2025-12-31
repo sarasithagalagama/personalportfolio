@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
-import ServicePage from "./pages/ServicePage";
+
 import WorksPage from "./pages/WorksPage";
 import ContactPage from "./pages/ContactPage";
 import SingleProjectPage from "./pages/SingleProjectPage";
@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        {/* Assuming Home and AboutPage routes were present before the snippet */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicePage />} />
         <Route path="/works" element={<WorksPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/single-project" element={<SingleProjectPage />} />
+        <Route path="/single-project/:id" element={<SingleProjectPage />} />
       </Routes>
       <Footer />
     </div>

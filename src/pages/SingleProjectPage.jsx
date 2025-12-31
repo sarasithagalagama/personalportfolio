@@ -1,135 +1,161 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { projectsData } from "../data/projectsData";
 
 const SingleProjectPage = () => {
+  const { id } = useParams();
+  const project = projectsData.find((p) => p.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  if (!project) {
+    return (
+      <div className="container pt-100 pb-100 text-center">
+        <h2>Project Not Found</h2>
+        <Link to="/works" className="theme-btn mt-20">
+          Back to Works
+        </Link>
+      </div>
+    );
+  }
+
+  // Find next project index to cycle through
+  const currentIndex = projectsData.findIndex((p) => p.id === id);
+  const nextProjectIndex = (currentIndex + 1) % projectsData.length;
+  const nextProject = projectsData[nextProjectIndex];
+
   return (
     <>
-      {/* START PROJECT HERO AREA */}
-      <section
-        className="single-project-hero-area"
-        style={{ paddingTop: "150px", paddingBottom: "80px" }}
-      >
+      {/* 1. SPLIT HERO SECTION */}
+      <section className="single-project-hero-area pt-150 pb-100">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="project-hero-content text-center wow fadeInUp delay-0-2s">
-                <span className="sub-title">UI/UX Design</span>
-                <h2>Mobile Banking App Reimagined</h2>
-                <div className="project-meta">
-                  <ul>
-                    <li>
-                      <span>Client:</span> FinTech Corp
-                    </li>
-                    <li>
-                      <span>Date:</span> Dec 2024
-                    </li>
-                    <li>
-                      <span>Category:</span> UI/UX & App
-                    </li>
-                    <li>
-                      <span>Duration:</span> 4 Weeks
-                    </li>
-                  </ul>
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="row align-items-center">
+                {/* Left Content */}
+                <div className="col-lg-6">
+                  <div className="project-hero-content wow fadeInUp delay-0-2s">
+                    <span
+                      className="sub-title mb-15"
+                      style={{
+                        color: "var(--primary-color)",
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        letterSpacing: "2px",
+                        textTransform: "uppercase",
+                        display: "block",
+                      }}
+                    >
+                      {project.category}
+                    </span>
+                    <h1
+                      className="mb-30"
+                      style={{
+                        fontSize: "52px",
+                        lineHeight: "1.1",
+                        fontWeight: "700",
+                        color: "var(--heading-color)",
+                      }}
+                    >
+                      {project.title}
+                    </h1>
+                    <p
+                      className="mb-40"
+                      style={{
+                        fontSize: "18px",
+                        lineHeight: "1.6",
+                        color: "var(--subtitle-color)",
+                        maxWidth: "90%",
+                      }}
+                    >
+                      {project.description ||
+                        `${project.subTitle} - A comprehensive ${project.category} built with modern technologies.`}
+                    </p>
+
+                    {/* Project Stats (Mini Grid) */}
+                    <div className="project-stats mb-40 d-flex gap-5">
+                      <div>
+                        <span
+                          className="d-block text-uppercase"
+                          style={{
+                            fontSize: "12px",
+                            letterSpacing: "1px",
+                            color: "gray",
+                          }}
+                        >
+                          Client
+                        </span>
+                        <span style={{ fontWeight: "600", color: "#fff" }}>
+                          {project.client}
+                        </span>
+                      </div>
+                      <div>
+                        <span
+                          className="d-block text-uppercase"
+                          style={{
+                            fontSize: "12px",
+                            letterSpacing: "1px",
+                            color: "gray",
+                          }}
+                        >
+                          Duration
+                        </span>
+                        <span style={{ fontWeight: "600", color: "#fff" }}>
+                          {project.duration}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="project-btns d-flex gap-3">
+                      {project.preview && (
+                        <a
+                          href={project.preview}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="theme-btn"
+                        >
+                          Live Preview <i className="ri-external-link-line"></i>
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="theme-btn"
+                        >
+                          View Code <i className="ri-github-fill"></i>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* END PROJECT HERO AREA */}
 
-      {/* START PROJECT IMAGE */}
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="project-main-image wow fadeInUp delay-0-3s mb-50">
-              <img
-                src="/assets/images/projects/work1.jpg"
-                alt="Project Main"
-                className="img-fluid w-100 rounded-3"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* END PROJECT IMAGE */}
-
-      {/* START PROJECT CONTENT AREA */}
-      <section className="single-project-content-area pb-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="project-details-content wow fadeInUp delay-0-2s">
-                <h3>The Challenge</h3>
-                <p>
-                  The main challenge was to simplify complex financial data into
-                  an intuitive, user-friendly interface. Users reported feeling
-                  overwhelmed by the existing app's cluttered dashboard and
-                  hidden transaction features. Our goal was to reduce friction
-                  for common tasks like transfers and bill payments while
-                  maintaining a secure and professional feel.
-                </p>
-
-                <h3>The Solution</h3>
-                <p>
-                  We adopted a "clean and card-based" design system. Key changes
-                  included:
-                </p>
-                <ul className="list-style-one mb-40">
-                  <li>
-                    Simplified Navigation: Reduced bottom tabs from 5 to 3.
-                  </li>
-                  <li>
-                    Smart Dashboard: Auto-categorized spending charts on the
-                    home screen.
-                  </li>
-                  <li>
-                    Quick Actions: A floating action button for instant
-                    transfers.
-                  </li>
-                  <li>Dark Mode: Fully supported system-wide dark theme.</li>
-                </ul>
-
-                <h3>The Result</h3>
-                <p>
-                  After the redesign, user engagement increased by 40%, and
-                  support tickets regarding "how to find X feature" dropped by
-                  60%. The app now holds a 4.8-star rating on the App Store.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4">
-              <div className="project-sidebar wow fadeInUp delay-0-4s">
-                <div className="widget widget-services">
-                  <h4 className="widget-title">Technologies Used</h4>
-                  <ul>
-                    <li>
-                      <a href="#">Figma</a>
-                    </li>
-                    <li>
-                      <a href="#">React Native</a>
-                    </li>
-                    <li>
-                      <a href="#">Node.js</a>
-                    </li>
-                    <li>
-                      <a href="#">GraphQL</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="widget widget-share mt-40">
-                  <h4 className="widget-title">Share</h4>
-                  <div className="social-style-one">
-                    <a href="#">
-                      <i className="ri-facebook-fill"></i>
-                    </a>
-                    <a href="#">
-                      <i className="ri-twitter-fill"></i>
-                    </a>
-                    <a href="#">
-                      <i className="ri-linkedin-fill"></i>
-                    </a>
+                {/* Right Image */}
+                <div className="col-lg-6">
+                  <div className="project-hero-image wow fadeInUp delay-0-4s mt-50 mt-lg-0">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="img-fluid rounded-4"
+                      style={{
+                        boxShadow: "-20px 20px 50px rgba(0,0,0,0.5)",
+                        border: "1px solid var(--border-color)",
+                        transform: "perspective(1000px) rotateY(-5deg)",
+                        transition: "transform 0.5s ease",
+                      }}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style.transform =
+                          "perspective(1000px) rotateY(0deg)")
+                      }
+                      onMouseOut={(e) =>
+                        (e.currentTarget.style.transform =
+                          "perspective(1000px) rotateY(-5deg)")
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -137,23 +163,307 @@ const SingleProjectPage = () => {
           </div>
         </div>
       </section>
-      {/* END PROJECT CONTENT AREA */}
 
-      {/* START NEXT PROJECT AREA */}
-      <section className="next-project-area pb-100">
+      {/* 2. MAIN CONTENT AREA */}
+      <section className="single-project-content-area pb-100">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="next-project-inner text-center wow fadeInUp delay-0-2s">
-                <Link to="/single-project" className="theme-btn">
-                  Next Project <i className="ri-arrow-right-line"></i>
-                </Link>
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              {/* Tech Stack Bar */}
+              <div className="tech-stack-bar mb-80 p-4 border border-dark rounded-3 bg-dark bg-opacity-10 wow fadeInUp delay-0-2s">
+                <h6
+                  className="text-center mb-3 text-uppercase text-muted"
+                  style={{ fontSize: "12px", letterSpacing: "2px" }}
+                >
+                  Technologies Used
+                </h6>
+                <div className="d-flex flex-wrap justify-content-center gap-3">
+                  {project.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="badge bg-transparent border border-secondary text-light px-3 py-2 fw-normal"
+                      style={{ fontSize: "14px" }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Dynamic Sections */}
+              <div className="project-details-content wow fadeInUp delay-0-3s">
+                {project.projectSections.map((section, index) => (
+                  <div key={index} className="section-block mb-60">
+                    <h3
+                      className="mb-30"
+                      style={{
+                        fontSize: "28px",
+                        fontWeight: "700",
+                        color: "var(--heading-color)",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--primary-color)",
+                          marginRight: "10px",
+                        }}
+                      >
+                        #
+                      </span>
+                      {section.title}
+                    </h3>
+
+                    <div
+                      className="section-body pl-20"
+                      style={{
+                        borderLeft: "1px solid rgba(255,255,255,0.1)",
+                        paddingLeft: "30px",
+                      }}
+                    >
+                      {Array.isArray(section.content) ? (
+                        section.content.map((block, bIndex) => {
+                          if (
+                            typeof block === "string" ||
+                            block.type === "paragraph"
+                          ) {
+                            return (
+                              <p
+                                key={bIndex}
+                                className="mb-20"
+                                style={{
+                                  fontSize: "18px",
+                                  lineHeight: "1.8",
+                                  color: "#a0a0a0",
+                                }}
+                              >
+                                {block.text || block}
+                              </p>
+                            );
+                          }
+                          if (block.type === "blockquote") {
+                            return (
+                              <blockquote
+                                key={bIndex}
+                                className="p-4 my-4 rounded"
+                                style={{
+                                  background:
+                                    "linear-gradient(90deg, rgba(var(--primary-rgb), 0.1) 0%, transparent 100%)", // approximate gradient
+                                  borderLeft: "4px solid var(--primary-color)",
+                                }}
+                              >
+                                <p
+                                  className="mb-0 fst-italic text-light"
+                                  style={{ fontSize: "18px" }}
+                                >
+                                  "{block.text}"
+                                </p>
+                              </blockquote>
+                            );
+                          }
+                          if (block.type === "list") {
+                            return (
+                              <ul key={bIndex} className="list-unstyled mb-30">
+                                {block.items.map((item, i) => (
+                                  <li
+                                    key={i}
+                                    className="mb-15 d-flex align-items-start"
+                                    style={{ fontSize: "18px", color: "#ccc" }}
+                                  >
+                                    <i
+                                      className="ri-arrow-right-s-line me-2"
+                                      style={{
+                                        color: "var(--primary-color)",
+                                        marginTop: "3px",
+                                      }}
+                                    ></i>
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            );
+                          }
+                          if (block.type === "code") {
+                            return (
+                              <div
+                                key={bIndex}
+                                className="code-block p-4 rounded-3 mb-30 bg-black border border-dark"
+                              >
+                                <pre
+                                  className="m-0 text-success text-opacity-75 font-monospace"
+                                  style={{ fontSize: "14px" }}
+                                >
+                                  <code>{block.code}</code>
+                                </pre>
+                              </div>
+                            );
+                          }
+                          return null;
+                        })
+                      ) : (
+                        <p
+                          style={{
+                            fontSize: "18px",
+                            lineHeight: "1.8",
+                            color: "#a0a0a0",
+                          }}
+                        >
+                          {section.content}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {/* Project Gallery */}
+                {project.images && project.images.length > 0 && (
+                  <div className="project-gallery mb-60 wow fadeInUp delay-0-2s">
+                    <h3
+                      className="mb-30"
+                      style={{
+                        fontSize: "28px",
+                        fontWeight: "700",
+                        color: "var(--heading-color)",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--primary-color)",
+                          marginRight: "10px",
+                        }}
+                      >
+                        #
+                      </span>
+                      Project Gallery
+                    </h3>
+                    <div className="row g-4">
+                      {project.images.map((imgSrc, index) => (
+                        <div key={index} className="col-md-6">
+                          <div className="gallery-item rounded-3 overflow-hidden border border-dark">
+                            <img
+                              src={imgSrc}
+                              alt={`Gallery ${index + 1}`}
+                              className="img-fluid w-100"
+                              style={{
+                                transition: "transform 0.5s ease",
+                                cursor: "pointer",
+                              }}
+                              onMouseOver={(e) =>
+                                (e.currentTarget.style.transform =
+                                  "scale(1.05)")
+                              }
+                              onMouseOut={(e) =>
+                                (e.currentTarget.style.transform = "scale(1)")
+                              }
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Share This Project */}
+                <div className="project-share pt-60 border-top border-dark mt-60 wow fadeInUp delay-0-2s">
+                  <div className="row align-items-center">
+                    <div className="col-lg-6">
+                      <span className="text-white fw-bold d-block mb-3 mb-lg-0 text-center text-lg-start">
+                        Share This Project :
+                      </span>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="social-style-one d-flex gap-3 justify-content-center justify-content-lg-end">
+                        <a
+                          href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="d-flex align-items-center justify-content-center"
+                          style={{
+                            width: "45px",
+                            height: "45px",
+                            borderRadius: "50%",
+                            background: "#111",
+                            border: "1px solid #333",
+                            color: "#fff",
+                          }}
+                        >
+                          <i className="ri-facebook-fill"></i>
+                        </a>
+                        <a
+                          href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="d-flex align-items-center justify-content-center"
+                          style={{
+                            width: "45px",
+                            height: "45px",
+                            borderRadius: "50%",
+                            background: "#111",
+                            border: "1px solid #333",
+                            color: "#fff",
+                          }}
+                        >
+                          <i className="ri-twitter-x-line"></i>
+                        </a>
+                        <a
+                          href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="d-flex align-items-center justify-content-center"
+                          style={{
+                            width: "45px",
+                            height: "45px",
+                            borderRadius: "50%",
+                            background: "#111",
+                            border: "1px solid #333",
+                            color: "#fff",
+                          }}
+                        >
+                          <i className="ri-linkedin-fill"></i>
+                        </a>
+                        <a
+                          href={`https://wa.me/?text=${window.location.href}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="d-flex align-items-center justify-content-center"
+                          style={{
+                            width: "45px",
+                            height: "45px",
+                            borderRadius: "50%",
+                            background: "#111",
+                            border: "1px solid #333",
+                            color: "#fff",
+                          }}
+                        >
+                          <i className="ri-whatsapp-line"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* END NEXT PROJECT AREA */}
+
+      {/* NEXT PROJECT NAV */}
+      <section className="next-project-area pb-100 text-center">
+        <div className="container">
+          <hr className="mb-80 opacity-25" />
+          <span
+            className="sub-title mb-15 d-block"
+            style={{ color: "var(--primary-color)" }}
+          >
+            Next Project
+          </span>
+          <h2 className="mb-40 text-white">{nextProject.title}</h2>
+          <Link to={`/single-project/${nextProject.id}`} className="theme-btn">
+            View Case Study <i className="ri-arrow-right-line"></i>
+          </Link>
+        </div>
+      </section>
     </>
   );
 };
