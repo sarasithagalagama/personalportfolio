@@ -127,7 +127,7 @@ const SingleProjectPage = () => {
                           rel="noopener noreferrer"
                           className="theme-btn"
                         >
-                          View Code <i className="ri-github-fill"></i>
+                          GitHub Repo <i className="ri-github-fill"></i>
                         </a>
                       )}
                     </div>
@@ -170,25 +170,28 @@ const SingleProjectPage = () => {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               {/* Tech Stack Bar */}
-              <div className="tech-stack-bar mb-80 p-4 border border-dark rounded-3 bg-dark bg-opacity-10 wow fadeInUp delay-0-2s">
-                <h6
-                  className="text-center mb-3 text-uppercase text-muted"
-                  style={{ fontSize: "12px", letterSpacing: "2px" }}
-                >
-                  Technologies Used
-                </h6>
-                <div className="d-flex flex-wrap justify-content-center gap-3">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="badge bg-transparent border border-secondary text-light px-3 py-2 fw-normal"
-                      style={{ fontSize: "14px" }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {/* Tech Stack Bar (Conditional) */}
+              {project.technologies && project.technologies.length > 0 && (
+                <div className="tech-stack-bar mb-80 p-4 border border-dark rounded-3 bg-dark bg-opacity-10 wow fadeInUp delay-0-2s">
+                  <h6
+                    className="text-center mb-3 text-uppercase text-muted"
+                    style={{ fontSize: "12px", letterSpacing: "2px" }}
+                  >
+                    Technologies Used
+                  </h6>
+                  <div className="d-flex flex-wrap justify-content-center gap-3">
+                    {project.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="badge bg-transparent border border-secondary text-light px-3 py-2 fw-normal"
+                        style={{ fontSize: "14px" }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Dynamic Sections */}
               <div className="project-details-content wow fadeInUp delay-0-3s">
@@ -344,7 +347,7 @@ const SingleProjectPage = () => {
                             <img
                               src={imgSrc}
                               alt={`Gallery ${index + 1}`}
-                              className="img-fluid w-100"
+                              className="img-fluid d-block mx-auto"
                               style={{
                                 transition: "transform 0.5s ease",
                                 cursor: "pointer",

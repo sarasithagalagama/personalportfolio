@@ -8,8 +8,10 @@ const WorksPage = () => {
   const filteredProjects =
     activeFilter === "*"
       ? projectsData
-      : projectsData.filter(
-          (project) => project.filterCategory === activeFilter
+      : projectsData.filter((project) =>
+          Array.isArray(project.filterCategory)
+            ? project.filterCategory.includes(activeFilter)
+            : project.filterCategory === activeFilter
         );
 
   return (
@@ -68,29 +70,50 @@ const WorksPage = () => {
                 Dashboards & Data
               </li>
             </ul>
-            <div className="row project-masonry-active">
-              {filteredProjects.map((project) => (
-                <div
-                  key={project.id}
-                  className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
-                >
-                  <div className="project-item style-two">
-                    <div className="project-image">
-                      <img src={project.img} alt={project.title} />
-                      <Link
-                        to={`/single-project/${project.id}`}
-                        className="details-btn"
-                      >
-                        <i className="ri-arrow-right-up-line"></i>
-                      </Link>
-                    </div>
-                    <div className="project-content">
-                      <span className="sub-title">{project.subTitle}</span>
-                      <h3>{project.title}</h3>
+            <div className="row">
+              {filteredProjects.length > 0 ? (
+                filteredProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
+                  >
+                    <div className="project-item style-two">
+                      <div className="project-image">
+                        <img src={project.img} alt={project.title} />
+                        <Link
+                          to={`/single-project/${project.id}`}
+                          className="details-btn"
+                        >
+                          <i className="ri-arrow-right-up-line"></i>
+                        </Link>
+                      </div>
+                      <div className="project-content">
+                        <span className="sub-title">{project.subTitle}</span>
+                        <h3>{project.title}</h3>
+                      </div>
                     </div>
                   </div>
+                ))
+              ) : (
+                <div
+                  className="col-lg-12 text-center"
+                  style={{
+                    minHeight: "300px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <h3 style={{ color: "var(--heading-color)" }}>
+                    More projects loading...
+                  </h3>
+                  <p>
+                    I'm currently curating detailed case studies for this
+                    category. Check back soon!
+                  </p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
