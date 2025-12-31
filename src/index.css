@@ -433,21 +433,28 @@
    MOBILE RESPONSIVENESS FIXES
    ============================================ */
 
+
 @media (max-width: 991px) {
     /* Header/Navigation Fixes */
     .main-header {
         padding: 15px 0;
     }
 
-    /* Fix Logo Wrapping */
+    /* Fix Logo Wrapping - Aggressive */
     .logo h2,
     .mobile-logo h2 {
-        font-size: 20px !important; /* Smaller size to prevent wrapping */
+        font-size: 18px !important;
         white-space: nowrap;
         margin: 0;
         line-height: 1;
+        display: inline-block;
     }
     
+    .logo a, .mobile-logo a {
+        display: block;
+    }
+
+    /* Rest of the mobile menu styles remain... */
     .navbar-collapse {
         background: #1f1f1f;
         padding: 20px;
@@ -476,67 +483,73 @@
         display: block;
         padding: 12px 0;
         font-size: 16px;
-        color: #e0e0e0 !important; /* Ensure visible text */
+        color: #e0e0e0 !important;
     }
 
     /* Hero & Profile Fixes */
     .about-image-part img {
         width: 100%;
-        max-width: 280px; /* Smaller profile image */
+        max-width: 250px; /* Even smaller for better fit */
         height: auto;
         object-fit: contain;
-        margin: 0 auto 20px;
+        margin: 0 auto 15px;
         display: block;
     }
 
     .about-image-part h2,
     .about-content-part h2,
     .section-title h2 {
-        font-size: 28px !important;
-        line-height: 1.3;
-        margin-bottom: 15px;
+        font-size: 26px !important; /* Reduced from 28px */
+        line-height: 1.2;
+        margin-bottom: 12px;
         word-wrap: break-word;
+        hyphens: auto;
     }
     
-    .about-content-part p,
-    .about-image-part p,
-    .section-title p {
-        font-size: 15px;
-        line-height: 1.6;
-        color: #c0c0c0 !important; /* Lighter text for better contrast */
-        margin-bottom: 20px;
-    }
-
-    /* Social Icons in Hero */
+    /* Social Icons - Fix Padding & Wrapping */
     .about-social ul {
         justify-content: center;
-        gap: 15px;
+        gap: 10px; /* Reduced gap */
+        padding: 0; /* CRITICAL: Remove default padding */
+        margin: 0 0 25px 0;
+        display: flex;
+        flex-wrap: wrap; 
+    }
+
+    .about-social ul li {
+        list-style: none; /* Ensure no bullets */
     }
 
     .about-social ul li a {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
         background: rgba(255,255,255,0.05);
         border: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
     }
 
-    /* Buttons on Mobile */
+    /* Buttons on Mobile - Prevent Overflow */
     .hero-btns {
         flex-direction: column;
         width: 100%;
         gap: 12px !important;
+        padding: 0 10px; /* Add internal padding safe zone */
     }
     
     .hero-btns .theme-btn {
         width: 100%;
         min-width: auto;
         justify-content: center;
-        padding: 12px 25px;
+        padding: 12px 15px; /* Reduced side padding */
         font-size: 15px;
+        box-sizing: border-box; /* Critical for width: 100% */
     }
 
-    /* FILTER BUTTONS - High Contrast Fix */
+    /* Re-add filter styles */
     .project-filter {
         display: flex;
         flex-wrap: nowrap;
@@ -544,20 +557,21 @@
         padding-bottom: 15px;
         gap: 10px;
         -webkit-overflow-scrolling: touch;
-        justify-content: flex-start; /* Align left to invite scrolling */
+        justify-content: flex-start;
         margin-bottom: 30px;
     }
     
     .project-filter li {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 13px;
+        padding: 8px 14px;
         background: rgba(255,255,255,0.1); 
         border: 1px solid rgba(255,255,255,0.2);
-        color: #ffffff !important; /* Force white text */
+        color: #ffffff !important;
         border-radius: 50px;
         white-space: nowrap;
         opacity: 0.9;
         font-weight: 500;
+        flex-shrink: 0;
     }
     
     .project-filter li.current {
@@ -567,21 +581,6 @@
         opacity: 1;
     }
 
-    /* Project Cards */
-    .project-item .project-content h3 {
-        font-size: 22px;
-    }
-    
-    .project-item .project-content .sub-title {
-        font-size: 13px;
-        color: var(--primary-color);
-        margin-bottom: 8px;
-    }
-
-    .row.g-4 {
-        --bs-gutter-y: 1.5rem; /* Reduce vertical gap between cards */
-    }
-    
     /* Stats Grid */
     .quick-stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -589,14 +588,14 @@
     }
     
     .stat-box {
-        font-size: 22px;
+        font-size: 20px;
         padding: 15px;
     }
     
     /* Section Spacing */
     .about-area, .services-area, .projects-area, .fiverr-area, .call-to-action-area, .contact-area {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     /* Footer Mobile */
@@ -609,16 +608,23 @@
     .social-minimal {
         justify-content: center;
     }
+    
+    .footer-brand-text {
+       justify-content: center;
+    }
 }
 
-@media (max-width: 400px) {
-    /* Even smaller layout adjustments */
+/* Extra support for small screens (Galaxy S23/S24/S25 Base Models) */
+@media (max-width: 380px) {
     .logo h2, .mobile-logo h2 {
-        font-size: 18px !important;
+        font-size: 17px !important; /* Force smaller logo text */
     }
     
-    .project-filter li {
-        padding: 6px 14px;
-        font-size: 13px;
+    .theme-btn {
+        font-size: 14px !important;
+    }
+    
+    .hero-btns {
+        padding: 0;
     }
 }
