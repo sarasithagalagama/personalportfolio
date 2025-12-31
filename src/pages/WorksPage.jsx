@@ -4,10 +4,13 @@ import { projectsData } from "../data/projectsData";
 
 const WorksPage = () => {
   const [activeFilter, setActiveFilter] = useState("*");
-  const [visibleCount, setVisibleCount] = useState(6);
+  // Default to 5 (desktop) initially to match server/desktop expectation, effects will update it
+  const [visibleCount, setVisibleCount] = useState(5);
 
   useEffect(() => {
-    setVisibleCount(6);
+    // Dynamically set count based on window width
+    const getInitialCount = () => (window.innerWidth < 768 ? 2 : 5);
+    setVisibleCount(getInitialCount());
   }, [activeFilter]);
 
   const filteredProjects =
@@ -100,15 +103,25 @@ const WorksPage = () => {
                       </div>
                     </div>
                   ))}
-                  {visibleCount < filteredProjects.length && (
+                  {filteredProjects.length > getInitialCount() && (
                     <div className="col-lg-12 text-center mt-60">
-                      <button
-                        className="theme-btn"
-                        onClick={() => setVisibleCount((prev) => prev + 6)}
-                      >
-                        Load More Projects{" "}
-                        <i className="ri-arrow-down-line"></i>
-                      </button>
+                      {visibleCount < filteredProjects.length ? (
+                        <button
+                          className="theme-btn"
+                          onClick={() => setVisibleCount((prev) => prev + 6)}
+                        >
+                          Load More Projects{" "}
+                          <i className="ri-arrow-down-line"></i>
+                        </button>
+                      ) : (
+                        <button
+                          className="theme-btn"
+                          onClick={() => setVisibleCount(getInitialCount())}
+                        >
+                          Show Less Projects{" "}
+                          <i className="ri-arrow-up-line"></i>
+                        </button>
+                      )}
                     </div>
                   )}
                 </>

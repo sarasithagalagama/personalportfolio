@@ -76,8 +76,8 @@ const ContactPage = () => {
                     id="contactForm"
                     className="contactForm"
                     name="contactForm"
-                    action="assets/php/form-process.php"
-                    method="post"
+                    action="https://formspree.io/f/mvzgopvk"
+                    method="POST"
                   >
                     <div className="row">
                       <div className="col-md-6">

@@ -1,0 +1,4 @@
+*.css linguist-vendored
+*.scss linguist-vendored
+*.min.js linguist-vendored
+public/assets/js/* linguist-vendored

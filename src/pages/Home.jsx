@@ -4,6 +4,22 @@ import { projectsData } from "../data/projectsData";
 
 const Home = () => {
   const [activeFilter, setActiveFilter] = useState("*");
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Reset showAll when filter changes
+  useEffect(() => {
+    setShowAll(false);
+  }, [activeFilter]);
 
   const filteredProjects =
     activeFilter === "*"
@@ -13,6 +29,11 @@ const Home = () => {
             ? project.filterCategory.includes(activeFilter)
             : project.filterCategory === activeFilter
         );
+
+  const initialCount = isMobile ? 2 : 6;
+  const displayedProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, initialCount);
 
   useEffect(() => {
     // Animation or other side effects can go here if needed in the future
@@ -254,8 +275,8 @@ const Home = () => {
               </li>
             </ul>
             <div className="row g-4">
-              {filteredProjects.length > 0 ? (
-                filteredProjects.map((project) => (
+              {displayedProjects.length > 0 ? (
+                displayedProjects.map((project) => (
                   <div
                     key={project.id}
                     className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
@@ -298,6 +319,23 @@ const Home = () => {
                 </div>
               )}
             </div>
+            {filteredProjects.length > initialCount && (
+              <div className="row">
+                <div className="col-lg-12 text-center mt-60">
+                  <button
+                    onClick={() => setShowAll(!showAll)}
+                    className="theme-btn"
+                  >
+                    {showAll ? "Show Less" : "Load More"}{" "}
+                    <i
+                      className={
+                        showAll ? "ri-arrow-up-line" : "ri-arrow-down-line"
+                      }
+                    ></i>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
