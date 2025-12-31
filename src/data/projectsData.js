@@ -417,7 +417,131 @@ export const projectsData = [
         content: [
           {
             type: "paragraph",
-            text: "Volume 02 represents a further evolution in visual storytelling, featuring a diverse range of genres from high-octane action to subtle indie dramas. This collection focuses on high-impact composition and advanced photo-manipulation techniques to create industry-standard theatrical one-sheets.",
+            text: "A curated collection of cinematic movie posters designed for independent films and high-concept personal projects. This volume showcases a mastery of visual storytelling, where lighting, composition, and typography merge to establish a distinct mood for each genre—from psychological thrillers to period dramas.",
+          },
+        ],
+      },
+      {
+        title: "Design Philosophy",
+        content: [
+          {
+            type: "paragraph",
+            text: "Each poster is treated as a single-frame story. I focus on 'Key Art' principles: establishing a strong focal point, using color grading to evoke emotion (e.g., cold blues for suspense, warm ambers for drama), and ensuring the typography complements rather than distracts from the imagery.",
+          },
+        ],
+      },
+      {
+        title: "Key Techniques",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Advanced Compositing: Blending multiple assets seamlessly.",
+              "Color Grading: Using curves and lookup tables (LUTs) for cinematic looks.",
+              "Texturing: Adding grain, scratches, and lens flares for realism.",
+              "Typography: Custom kerning and layout for billing blocks and titles.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "movie-posters-vol4",
+    title: "Movie Poster Designs Vol-04",
+    category: "Design & Branding",
+    subTitle: "Cinematic Key Art Collection",
+    filterCategory: "design-branding",
+    img: "/assets/images/projects/movie-posters/cover-vol4.png",
+    client: "Fiverr Freelance Projects",
+    date: "2024 - 2025",
+    duration: "Completed",
+    github: "",
+    preview: "",
+    technologies: [
+      "Adobe Photoshop",
+      "Adobe Lightroom",
+      "Digital Compositing",
+      "Typography",
+    ],
+    images: [
+      "/assets/images/projects/movie-posters/cover-vol4.png",
+      "/assets/images/projects/movie-posters/grid-vol4.jpg",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Collection Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "A curated collection of cinematic movie posters designed for independent films and high-concept personal projects. This volume showcases a mastery of visual storytelling, where lighting, composition, and typography merge to establish a distinct mood for each genre—from psychological thrillers to period dramas.",
+          },
+        ],
+      },
+      {
+        title: "Design Philosophy",
+        content: [
+          {
+            type: "paragraph",
+            text: "Each poster is treated as a single-frame story. I focus on 'Key Art' principles: establishing a strong focal point, using color grading to evoke emotion (e.g., cold blues for suspense, warm ambers for drama), and ensuring the typography complements rather than distracts from the imagery.",
+          },
+        ],
+      },
+      {
+        title: "Key Techniques",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Advanced Compositing: Blending multiple assets seamlessly.",
+              "Color Grading: Using curves and lookup tables (LUTs) for cinematic looks.",
+              "Texturing: Adding grain, scratches, and lens flares for realism.",
+              "Typography: Custom kerning and layout for billing blocks and titles.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "movie-posters-vol5",
+    title: "Movie Poster Designs Vol-05",
+    category: "Design & Branding",
+    subTitle: "Advanced Key Art & Compositing",
+    filterCategory: "design-branding",
+    img: "/assets/images/projects/movie-posters/cover-vol5.png",
+    client: "Fiverr Freelance Projects",
+    date: "2024 - 2025",
+    duration: "Completed",
+    github: "",
+    preview: "",
+    technologies: [
+      "Adobe Photoshop",
+      "Adobe Lightroom",
+      "Digital Compositing",
+      "Typography",
+    ],
+    images: [
+      "/assets/images/projects/movie-posters/cover-vol5.png",
+      "/assets/images/projects/movie-posters/grid-vol5.jpg",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Collection Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "Volume 05 represents a further evolution in visual storytelling, featuring a diverse range of genres from high-octane action to subtle indie dramas. This collection focuses on high-impact composition and advanced photo-manipulation techniques to create industry-standard theatrical one-sheets.",
           },
         ],
       },
@@ -440,6 +564,68 @@ export const projectsData = [
               "Dynamic Lighting Effects: Using custom brushes and exposure blending for dramatic impact.",
               "Genre-Specific Color Grading: Tailoring palettes to evoke specific emotional responses.",
               "Title Treatment: Designing custom typography that acts as a visual anchor.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "movie-posters-vol6",
+    title: "Movie Poster Designs Vol-06",
+    category: "Design & Branding",
+    subTitle: "Cinematic Key Art Collection",
+    filterCategory: "design-branding",
+    img: "/assets/images/projects/movie-posters/cover-vol6.png",
+    client: "Fiverr Freelance Projects",
+    date: "2024 - 2025",
+    duration: "Completed",
+    github: "",
+    preview: "",
+    technologies: [
+      "Adobe Photoshop",
+      "Adobe Lightroom",
+      "Digital Compositing",
+      "Typography",
+    ],
+    images: [
+      "/assets/images/projects/movie-posters/cover-vol6.png",
+      "/assets/images/projects/movie-posters/grid-vol6.jpg",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Collection Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "A curated collection of cinematic movie posters designed for independent films and high-concept personal projects. This volume showcases a mastery of visual storytelling, where lighting, composition, and typography merge to establish a distinct mood for each genre—from psychological thrillers to period dramas.",
+          },
+        ],
+      },
+      {
+        title: "Design Philosophy",
+        content: [
+          {
+            type: "paragraph",
+            text: "Each poster is treated as a single-frame story. I focus on 'Key Art' principles: establishing a strong focal point, using color grading to evoke emotion (e.g., cold blues for suspense, warm ambers for drama), and ensuring the typography complements rather than distracts from the imagery.",
+          },
+        ],
+      },
+      {
+        title: "Key Techniques",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Advanced Compositing: Blending multiple assets seamlessly.",
+              "Color Grading: Using curves and lookup tables (LUTs) for cinematic looks.",
+              "Texturing: Adding grain, scratches, and lens flares for realism.",
+              "Typography: Custom kerning and layout for billing blocks and titles.",
             ],
           },
         ],

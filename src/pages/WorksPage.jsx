@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 
 const WorksPage = () => {
   const [activeFilter, setActiveFilter] = useState("*");
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  useEffect(() => {
+    setVisibleCount(6);
+  }, [activeFilter]);
 
   const filteredProjects =
     activeFilter === "*"
@@ -72,28 +77,41 @@ const WorksPage = () => {
             </ul>
             <div className="row g-4">
               {filteredProjects.length > 0 ? (
-                filteredProjects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
-                  >
-                    <div className="project-item style-two">
-                      <div className="project-image">
-                        <img src={project.img} alt={project.title} />
-                        <Link
-                          to={`/single-project/${project.id}`}
-                          className="details-btn"
-                        >
-                          <i className="ri-arrow-right-up-line"></i>
-                        </Link>
-                      </div>
-                      <div className="project-content">
-                        <span className="sub-title">{project.subTitle}</span>
-                        <h3>{project.title}</h3>
+                <>
+                  {filteredProjects.slice(0, visibleCount).map((project) => (
+                    <div
+                      key={project.id}
+                      className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
+                    >
+                      <div className="project-item style-two">
+                        <div className="project-image">
+                          <img src={project.img} alt={project.title} />
+                          <Link
+                            to={`/single-project/${project.id}`}
+                            className="details-btn"
+                          >
+                            <i className="ri-arrow-right-up-line"></i>
+                          </Link>
+                        </div>
+                        <div className="project-content">
+                          <span className="sub-title">{project.subTitle}</span>
+                          <h3>{project.title}</h3>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))
+                  ))}
+                  {visibleCount < filteredProjects.length && (
+                    <div className="col-lg-12 text-center mt-60">
+                      <button
+                        className="theme-btn"
+                        onClick={() => setVisibleCount((prev) => prev + 6)}
+                      >
+                        Load More Projects{" "}
+                        <i className="ri-arrow-down-line"></i>
+                      </button>
+                    </div>
+                  )}
+                </>
               ) : (
                 <div
                   className="col-lg-12 text-center"
