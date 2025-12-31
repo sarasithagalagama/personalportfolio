@@ -440,21 +440,21 @@
         padding: 15px 0;
     }
 
-    /* Fix Logo Wrapping - Aggressive */
+    /* Logo - Restoring larger size but preventing huge overflows */
     .logo h2,
     .mobile-logo h2 {
-        font-size: 18px !important;
-        white-space: nowrap;
+        font-size: 24px !important; /* Restored to a readable size */
         margin: 0;
-        line-height: 1;
-        display: inline-block;
+        line-height: 1.2;
+        display: block; /* Allow standard block behavior */
+        white-space: normal; /* Allow wrapping if absolutely necessary */
     }
     
     .logo a, .mobile-logo a {
         display: block;
     }
 
-    /* Rest of the mobile menu styles remain... */
+    /* Mobile Menu Container */
     .navbar-collapse {
         background: #1f1f1f;
         padding: 20px;
@@ -489,7 +489,7 @@
     /* Hero & Profile Fixes */
     .about-image-part img {
         width: 100%;
-        max-width: 250px; /* Even smaller for better fit */
+        max-width: 250px;
         height: auto;
         object-fit: contain;
         margin: 0 auto 15px;
@@ -499,30 +499,25 @@
     .about-image-part h2,
     .about-content-part h2,
     .section-title h2 {
-        font-size: 26px !important; /* Reduced from 28px */
+        font-size: 28px !important;
         line-height: 1.2;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
         word-wrap: break-word;
-        hyphens: auto;
     }
     
-    /* Social Icons - Fix Padding & Wrapping */
+    /* Social Icons - FORCE ONE ROW */
     .about-social ul {
         justify-content: center;
-        gap: 10px; /* Reduced gap */
-        padding: 0; /* CRITICAL: Remove default padding */
+        gap: 8px; /* Tighter gap */
+        padding: 0;
         margin: 0 0 25px 0;
         display: flex;
-        flex-wrap: wrap; 
-    }
-
-    .about-social ul li {
-        list-style: none; /* Ensure no bullets */
+        flex-wrap: nowrap; /* Force single row */
     }
 
     .about-social ul li a {
-        width: 42px;
-        height: 42px;
+        width: 38px; /* Slightly smaller to guarantee fit */
+        height: 38px;
         font-size: 18px;
         background: rgba(255,255,255,0.05);
         border: 1px solid rgba(255,255,255,0.1);
@@ -530,26 +525,27 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+        flex-shrink: 0; /* Prevent squishing */
     }
 
-    /* Buttons on Mobile - Prevent Overflow */
+    /* Buttons on Mobile */
     .hero-btns {
         flex-direction: column;
         width: 100%;
         gap: 12px !important;
-        padding: 0 10px; /* Add internal padding safe zone */
+        padding: 0 10px;
     }
     
     .hero-btns .theme-btn {
         width: 100%;
         min-width: auto;
         justify-content: center;
-        padding: 12px 15px; /* Reduced side padding */
+        padding: 12px 15px;
         font-size: 15px;
-        box-sizing: border-box; /* Critical for width: 100% */
+        box-sizing: border-box;
     }
 
-    /* Re-add filter styles */
+    /* Project Filters */
     .project-filter {
         display: flex;
         flex-wrap: nowrap;
@@ -569,7 +565,6 @@
         color: #ffffff !important;
         border-radius: 50px;
         white-space: nowrap;
-        opacity: 0.9;
         font-weight: 500;
         flex-shrink: 0;
     }
@@ -578,7 +573,21 @@
         background: var(--primary-color);
         color: #fff !important;
         border-color: var(--primary-color);
-        opacity: 1;
+    }
+
+    /* Project Cards Mobile Polish */
+    .project-item {
+        margin-bottom: 30px;
+    }
+    
+    .project-item .project-image {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .project-item .project-content h3 {
+        font-size: 20px; /* Readable title size */
+        margin-top: 15px;
     }
 
     /* Stats Grid */
@@ -611,20 +620,5 @@
     
     .footer-brand-text {
        justify-content: center;
-    }
-}
-
-/* Extra support for small screens (Galaxy S23/S24/S25 Base Models) */
-@media (max-width: 380px) {
-    .logo h2, .mobile-logo h2 {
-        font-size: 17px !important; /* Force smaller logo text */
-    }
-    
-    .theme-btn {
-        font-size: 14px !important;
-    }
-    
-    .hero-btns {
-        padding: 0;
     }
 }
