@@ -426,6 +426,199 @@
     background: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
-    transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(235, 93, 58, 0.2);
+}
+
+/* ============================================
+   MOBILE RESPONSIVENESS FIXES
+   ============================================ */
+
+@media (max-width: 991px) {
+    /* Header/Navigation Fixes */
+    .main-header {
+        padding: 15px 0;
+    }
+
+    /* Fix Logo Wrapping */
+    .logo h2,
+    .mobile-logo h2 {
+        font-size: 20px !important; /* Smaller size to prevent wrapping */
+        white-space: nowrap;
+        margin: 0;
+        line-height: 1;
+    }
+    
+    .navbar-collapse {
+        background: #1f1f1f;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        z-index: 1000;
+    }
+    
+    .main-menu .navigation > li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        margin: 0;
+    }
+    
+    .main-menu .navigation > li:last-child {
+        border-bottom: none;
+    }
+    
+    .main-menu .navigation > li > a {
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+        color: #e0e0e0 !important; /* Ensure visible text */
+    }
+
+    /* Hero & Profile Fixes */
+    .about-image-part img {
+        width: 100%;
+        max-width: 280px; /* Smaller profile image */
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .about-image-part h2,
+    .about-content-part h2,
+    .section-title h2 {
+        font-size: 28px !important;
+        line-height: 1.3;
+        margin-bottom: 15px;
+        word-wrap: break-word;
+    }
+    
+    .about-content-part p,
+    .about-image-part p,
+    .section-title p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #c0c0c0 !important; /* Lighter text for better contrast */
+        margin-bottom: 20px;
+    }
+
+    /* Social Icons in Hero */
+    .about-social ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .about-social ul li a {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Buttons on Mobile */
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px !important;
+    }
+    
+    .hero-btns .theme-btn {
+        width: 100%;
+        min-width: auto;
+        justify-content: center;
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+
+    /* FILTER BUTTONS - High Contrast Fix */
+    .project-filter {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 15px;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start; /* Align left to invite scrolling */
+        margin-bottom: 30px;
+    }
+    
+    .project-filter li {
+        font-size: 14px;
+        padding: 8px 16px;
+        background: rgba(255,255,255,0.1); 
+        border: 1px solid rgba(255,255,255,0.2);
+        color: #ffffff !important; /* Force white text */
+        border-radius: 50px;
+        white-space: nowrap;
+        opacity: 0.9;
+        font-weight: 500;
+    }
+    
+    .project-filter li.current {
+        background: var(--primary-color);
+        color: #fff !important;
+        border-color: var(--primary-color);
+        opacity: 1;
+    }
+
+    /* Project Cards */
+    .project-item .project-content h3 {
+        font-size: 22px;
+    }
+    
+    .project-item .project-content .sub-title {
+        font-size: 13px;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    .row.g-4 {
+        --bs-gutter-y: 1.5rem; /* Reduce vertical gap between cards */
+    }
+    
+    /* Stats Grid */
+    .quick-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .stat-box {
+        font-size: 22px;
+        padding: 15px;
+    }
+    
+    /* Section Spacing */
+    .about-area, .services-area, .projects-area, .fiverr-area, .call-to-action-area, .contact-area {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    /* Footer Mobile */
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-minimal {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Even smaller layout adjustments */
+    .logo h2, .mobile-logo h2 {
+        font-size: 18px !important;
+    }
+    
+    .project-filter li {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
 }
