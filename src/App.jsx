@@ -9,6 +9,8 @@ import WorksPage from "./pages/WorksPage";
 import ContactPage from "./pages/ContactPage";
 import SingleProjectPage from "./pages/SingleProjectPage";
 
+import { Analytics } from "@vercel/analytics/react";
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +24,7 @@ function App() {
         <Route path="/single-project/:id" element={<SingleProjectPage />} />
       </Routes>
       <Footer />
+      <Analytics />
     </div>
   );
 }

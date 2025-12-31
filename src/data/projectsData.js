@@ -334,7 +334,12 @@ export const projectsData = [
     duration: "Completed",
     github: "",
     preview: "",
-    technologies: [],
+    technologies: [
+      "Adobe Photoshop",
+      "Adobe Lightroom",
+      "Digital Compositing",
+      "Typography",
+    ],
     images: [
       "/assets/images/projects/movie-posters/cover.png",
       "/assets/images/projects/movie-posters/grid.jpg",
@@ -373,6 +378,68 @@ export const projectsData = [
               "Color Grading: Using curves and lookup tables (LUTs) for cinematic looks.",
               "Texturing: Adding grain, scratches, and lens flares for realism.",
               "Typography: Custom kerning and layout for billing blocks and titles.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "movie-posters-vol2",
+    title: "Movie Poster Designs Vol-02",
+    category: "Design & Branding",
+    subTitle: "Advanced Key Art & Compositing",
+    filterCategory: "design-branding",
+    img: "/assets/images/projects/movie-posters/cover-vol2.png",
+    client: "Fiverr Freelance Projects",
+    date: "2024 - 2025",
+    duration: "Completed",
+    github: "",
+    preview: "",
+    technologies: [
+      "Adobe Photoshop",
+      "Adobe Lightroom",
+      "Digital Compositing",
+      "Typography",
+    ],
+    images: [
+      "/assets/images/projects/movie-posters/cover-vol2.png",
+      "/assets/images/projects/movie-posters/grid-vol2.jpg",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Collection Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "Volume 02 represents a further evolution in visual storytelling, featuring a diverse range of genres from high-octane action to subtle indie dramas. This collection focuses on high-impact composition and advanced photo-manipulation techniques to create industry-standard theatrical one-sheets.",
+          },
+        ],
+      },
+      {
+        title: "Creative Direction",
+        content: [
+          {
+            type: "paragraph",
+            text: "For this series, the emphasis was on 'genre-blending'—combining elements of horror lighting with action dynamism, or romance with thriller undertones. The goal was to stop the scroll and instantly communicate the film's unique tone through color contrast and visual hierarchy.",
+          },
+        ],
+      },
+      {
+        title: "Key Techniques",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Hyper-Realistic Compositing: Integrating diverse elements with matching lighting and perspective.",
+              "Dynamic Lighting Effects: Using custom brushes and exposure blending for dramatic impact.",
+              "Genre-Specific Color Grading: Tailoring palettes to evoke specific emotional responses.",
+              "Title Treatment: Designing custom typography that acts as a visual anchor.",
             ],
           },
         ],

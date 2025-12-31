@@ -253,7 +253,7 @@ const Home = () => {
                 Dashboards & Data
               </li>
             </ul>
-            <div className="row">
+            <div className="row g-4">
               {filteredProjects.length > 0 ? (
                 filteredProjects.map((project) => (
                   <div

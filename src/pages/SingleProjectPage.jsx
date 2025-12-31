@@ -177,7 +177,7 @@ const SingleProjectPage = () => {
                     className="text-center mb-3 text-uppercase text-muted"
                     style={{ fontSize: "12px", letterSpacing: "2px" }}
                   >
-                    Technologies Used
+                    Tools & Technologies
                   </h6>
                   <div className="d-flex flex-wrap justify-content-center gap-3">
                     {project.technologies.map((tech, i) => (
