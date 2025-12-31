@@ -545,23 +545,29 @@
         box-sizing: border-box;
     }
 
-    /* Project Filters */
+    /* Project Filters - Scrollbar Hide & Style */
     .project-filter {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 15px;
+        padding-bottom: 5px; /* Reduced padding */
         gap: 10px;
         -webkit-overflow-scrolling: touch;
         justify-content: flex-start;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE 10+ */
+    }
+    
+    .project-filter::-webkit-scrollbar { 
+        display: none; /* Chrome/Safari */
     }
     
     .project-filter li {
         font-size: 13px;
-        padding: 8px 14px;
-        background: rgba(255,255,255,0.1); 
-        border: 1px solid rgba(255,255,255,0.2);
+        padding: 8px 16px;
+        background: rgba(255,255,255,0.08); 
+        border: 1px solid rgba(255,255,255,0.15);
         color: #ffffff !important;
         border-radius: 50px;
         white-space: nowrap;
@@ -575,19 +581,61 @@
         border-color: var(--primary-color);
     }
 
-    /* Project Cards Mobile Polish */
+    /* Project Cards Mobile - MATCHING SCREENSHOT EXACTLY */
     .project-item {
-        margin-bottom: 30px;
+        margin-bottom: 40px !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
     
     .project-item .project-image {
-        border-radius: 12px;
+        border-radius: 24px !important; /* Higher border radius */
         overflow: hidden;
+        margin-bottom: 20px;
+        width: 100%;
+        /* Force a vertical/portrait aspect ratio like the screenshot */
+        aspect-ratio: 3/4 !important; 
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        position: relative;
+    }
+    
+    .project-item .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+        object-position: top center; /* Focus on top logic */
+    }
+
+    /* Hide the overlay button to match the clean visual or make it minimal */
+    .project-item .details-btn {
+        display: none !important; 
+    }
+    
+    .project-item .project-content {
+        padding: 0 10px !important;
+        text-align: left !important;
     }
     
     .project-item .project-content h3 {
-        font-size: 20px; /* Readable title size */
-        margin-top: 15px;
+        font-size: 24px !important; 
+        margin-top: 5px;
+        margin-bottom: 8px;
+        color: #fff;
+        line-height: 1.3;
+        font-weight: 700;
+    }
+    
+    .project-item .project-content .sub-title {
+        font-size: 13px !important;
+        letter-spacing: 2px;
+        opacity: 0.6;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 600;
     }
 
     /* Stats Grid */

@@ -321,7 +321,7 @@ const AboutPage = () => {
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">
-                    Let's Talk <i className="ri-download-line"></i>
+                    Let's Talk <i className="ri-chat-3-line"></i>
                   </Link>
                 </div>
               </div>
