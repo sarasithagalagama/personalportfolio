@@ -1,7 +1,5 @@
 # Sarasitha Galagama - Personal Portfolio
 
-![Portfolio Screenshot](public/assets/images/readme-preview.png)
-
 A modern, responsive, and visually striking personal portfolio website built with **React** and **Vite**. This project showcases my work as a Creative Designer and Full-stack Developer, featuring a premium dark-themed UI, glassmorphism effects, and smooth animations.
 
 🔗 **Live Demo:** [sarasitha.me](https://sarasitha.me)
@@ -40,47 +38,8 @@ personalportfolio/
 ├── vite.config.js       # Vite configuration
 └── package.json         # Dependencies and scripts
 ```
-
-## ⚡ Getting Started
-
-Follow these steps to set up the project locally on your machine.
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/sarasithagalagama/personalportfolio.git
-    cd personalportfolio
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-3.  **Run the development server:**
-
-    ```bash
-    npm run dev
-    ```
-
-    Open [http://localhost:5173](http://localhost:5173) in your browser to view the site.
-
-## 🚀 Deployment
-
-This project is configured for deployment on **Vercel**.
-
-1.  Push your changes to GitHub.
-2.  Import the project into Vercel.
-3.  The `vercel.json` file handles SPA routing (rewrites to `index.html`).
-4.  Deploy!
+## Screenshots
+<img width="2864" height="7548" alt="image" src="https://github.com/user-attachments/assets/3cfab41f-cf07-4020-971d-f90fb30318fb" />
 
 ## 📬 Contact
 
@@ -88,9 +47,8 @@ This project is configured for deployment on **Vercel**.
 _Creative Designer & Full-stack Developer_
 
 - **Website**: [sarasitha.me](https://sarasitha.me)
-- **LinkedIn**: [linkedin.com/in/sarasitha](https://linkedin.com/in/sarasitha)
-- **GitHub**: [github.com/sarasitha](https://github.com/sarasitha)
-- **Email**: [contact@sarasitha.me](mailto:contact@sarasitha.me)
+- **LinkedIn**: [www.linkedin.com/in/sarasitha-galagama](www.linkedin.com/in/sarasitha-galagama)
+- **Email**: [sarasithagalagama@gmail.com](mailto:sarasithagalagama@gmail.com)
 
 ---
 
