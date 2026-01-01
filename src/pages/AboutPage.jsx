@@ -152,7 +152,7 @@ const AboutPage = () => {
                         <i className="ri-graduation-cap-line"></i>
                       </div>
                       <div className="content">
-                        <span className="years">2023 - Present</span>
+                        <span className="years">2024 - Present</span>
                         <h4>
                           BSc (Hons) in Information Technology Specializing in
                           Information Systems Engineering

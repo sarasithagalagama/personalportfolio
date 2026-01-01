@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Mousewheel, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Mousewheel, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/free-mode";
+import "swiper/css/effect-coverflow";
 import { galleryData } from "../data/galleryData";
 
 const GalleryPage = () => {
@@ -31,38 +31,56 @@ const GalleryPage = () => {
     <>
       <style>
         {`
-          .gallery-section {
-            padding: 80px 0;
+          .gallery-container {
+            padding: 40px 0 80px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            position: relative;
           }
-          
+
+          .swiper-gallery {
+            width: 100%;
+            padding: 40px 0;
+          }
+
+          /* Smooth continuous linear motion */
+          .swiper-wrapper {
+            transition-timing-function: linear !important;
+          }
+
           .swiper-slide {
-            width: auto !important; /* Allow natural width based on height */
-            height: 50vh; /* Fixed height for the strip */
-            transition: transform 0.3s ease;
+            background-position: center;
+            background-size: cover;
+            width: 280px; /* Mobile width */
+            height: 400px;
+            border-radius: 20px;
+            /* Glassmorphism backing */
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
           }
 
           .gallery-img {
+            display: block;
+            width: 100%;
             height: 100%;
-            width: auto;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            filter: grayscale(20%);
+            object-fit: cover;
+            border-radius: 20px;
+            pointer-events: none; /* Let the slide click handle it */
           }
 
-          .gallery-img:hover {
-            transform: scale(1.02);
-            filter: grayscale(0%);
-            box-shadow: 0 15px 40px rgba(235, 93, 58, 0.2); /* Primary color glow */
+          /* Active slide styling enhancement */
+          .swiper-slide-active {
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(235, 93, 58, 0.4);
           }
 
-          .swiper-slide:hover {
-            z-index: 10;
+          /* Desktop Override */
+          @media (min-width: 768px) {
+            .swiper-slide {
+              width: 500px;
+              height: 600px;
+            }
           }
 
           /* Lightbox */
@@ -121,19 +139,13 @@ const GalleryPage = () => {
             from { transform: scale(0.9); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
           }
-          
-          @media (max-width: 768px) {
-            .swiper-slide {
-              height: 40vh;
-            }
-          }
         `}
       </style>
 
       {/* START GALLERY HEADER AREA */}
       <section
         className="projects-area innerpage-single-area"
-        style={{ paddingBottom: "20px" }}
+        style={{ paddingBottom: "0" }}
       >
         <div className="container">
           <div className="container-inner">
@@ -141,9 +153,7 @@ const GalleryPage = () => {
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
                   <h2>Visual Gallery</h2>
-                  <p>
-                    Swipe to explore a curated stream of my latest visual works.
-                  </p>
+                  <p>Swipe through to explore the collection.</p>
                 </div>
               </div>
             </div>
@@ -151,36 +161,36 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      {/* SWIPER HORIZONTAL GALLERY */}
-      <section className="gallery-section wow fadeInUp delay-0-3s">
+      {/* COVERFLOW GALLERY */}
+      <section className="gallery-container wow fadeInUp delay-0-3s">
         <Swiper
-          modules={[FreeMode, Mousewheel, Autoplay]}
-          spaceBetween={30}
-          slidesPerView="auto"
-          freeMode={true}
-          mousewheel={true}
-          loop={true}
+          effect={"coverflow"}
           grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          loop={true}
+          mousewheel={true}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          speed={3000}
           autoplay={{
-            delay: 1, // continuous flow effect setup
+            delay: 0,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          speed={3000} // Slow constant speed for autoplay if wanted, roughly mimics a ticker
-          // Override speed for user interaction feel
-          style={{ width: "100%", paddingLeft: "5%", paddingRight: "5%" }}
+          modules={[EffectCoverflow, Mousewheel, Autoplay]}
+          className="swiper-gallery"
         >
           {shuffledGallery.map((image) => (
-            <SwiperSlide key={image.id}>
-              <img
-                src={image.src}
-                alt={image.title}
-                className="gallery-img"
-                onClick={() => setSelectedImage(image)}
-              />
+            <SwiperSlide key={image.id} onClick={() => setSelectedImage(image)}>
+              <img src={image.src} alt={image.title} className="gallery-img" />
             </SwiperSlide>
           ))}
-          {/* Duplicate for seamless feel if few images, though loop helps too */}
         </Swiper>
       </section>
 
