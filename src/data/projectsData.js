@@ -1,5 +1,76 @@
 export const projectsData = [
   {
+    id: "githype-github-finder",
+    title: "GitHype | Modern GitHub Profile Finder",
+    category: "Full-Stack Web App",
+    subTitle: "Discover Developers & Repos",
+    filterCategory: ["full-stack", "ui-ux"],
+    img: "/assets/images/projects/githype/cover.png",
+    client: "Personal Project",
+    date: "Jan 2026",
+    duration: "Completed",
+    github: "https://github.com/sarasithagalagama/github-user-finder",
+    preview: "https://githype.sarasitha.me/",
+    technologies: [
+      "React 18",
+      "Vite",
+      "Vanilla CSS",
+      "GitHub REST API",
+      "Glassmorphism",
+    ],
+    images: [
+      "/assets/images/projects/githype/cover.png",
+      "/assets/images/projects/githype/profile.png",
+      "/assets/images/projects/githype/classroom.png",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "GitHype is a modern, aesthetically pleasing GitHub user finder application built with React and Vite. It features a 'Neo-Glass Bento' design system, providing a premium and responsive user experience. It goes beyond simple search by offering a 'Community Classroom' to explore trending resources and learning paths.",
+          },
+        ],
+      },
+      {
+        title: "Key Features",
+        content: [
+          {
+            type: "list",
+            items: [
+              "🔍 Smart Search: Instant user search with real-time suggestions and debounced input.",
+              "👤 Detailed Profiles (Bento Grid): Identity cards, stats overview, location, and latest repositories.",
+              "🎓 Community Classroom: Curated roadmaps for Web Dev, Interviews, and CS.",
+              "🎨 Neo-Glass Bento Design: Deep blue/slate background, glassmorphism, and vibrant gradients.",
+              "🛠️ Optimized Performance: Debounced API calls and responsive layout.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Tech Stack",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Framework: React 18 & Vite",
+              "Styling: Vanilla CSS (CSS Variables, Flexbox, Grid)",
+              "API: GitHub REST API",
+              "Icons: Font Awesome 6",
+              "Fonts: Outfit (Headings) & Inter (Body)",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "the-path-political-compass",
     title: "The P.A.T.H. - Political Alignment Testing Hub",
     category: "Full-Stack Web App",
