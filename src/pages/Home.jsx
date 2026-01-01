@@ -277,13 +277,19 @@ const Home = () => {
             <div className="row g-4">
               {displayedProjects.length > 0 ? (
                 displayedProjects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
-                  >
+                  <div key={project.id} className="col-lg-4 col-md-6 item">
                     <div className="project-item style-two">
                       <div className="project-image">
-                        <img src={project.img} alt={project.title} />
+                        <Link
+                          to={`/single-project/${project.id}`}
+                          style={{
+                            display: "block",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        >
+                          <img src={project.img} alt={project.title} />
+                        </Link>
                         <Link
                           to={`/single-project/${project.id}`}
                           className="details-btn"
@@ -292,8 +298,13 @@ const Home = () => {
                         </Link>
                       </div>
                       <div className="project-content">
-                        <span className="sub-title">{project.subTitle}</span>
-                        <h3>{project.title}</h3>
+                        <Link
+                          to={`/single-project/${project.id}`}
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          <span className="sub-title">{project.subTitle}</span>
+                          <h3>{project.title}</h3>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -301,20 +312,18 @@ const Home = () => {
               ) : (
                 <div
                   className="col-lg-12 text-center"
-                  style={{
-                    minHeight: "300px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  style={{ padding: "60px 20px" }}
                 >
-                  <h3 style={{ color: "var(--heading-color)" }}>
-                    More projects loading...
+                  <h3
+                    style={{
+                      color: "var(--heading-color)",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    No projects found
                   </h3>
-                  <p>
-                    I'm currently curating detailed case studies for this
-                    category. Check back soon!
+                  <p style={{ color: "var(--text-color)", opacity: 0.8 }}>
+                    Try selecting a different category to see more projects.
                   </p>
                 </div>
               )}

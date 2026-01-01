@@ -115,8 +115,13 @@ const WorksPage = () => {
                         </Link>
                       </div>
                       <div className="project-content">
-                        <span className="sub-title">{project.subTitle}</span>
-                        <h3>{project.title}</h3>
+                        <Link
+                          to={`/single-project/${project.id}`}
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          <span className="sub-title">{project.subTitle}</span>
+                          <h3>{project.title}</h3>
+                        </Link>
                       </div>
                     </div>
                   </div>
