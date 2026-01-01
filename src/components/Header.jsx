@@ -76,6 +76,11 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
+                      <Link className="nav-link-click" to="/gallery">
+                        Gallery
+                      </Link>
+                    </li>
+                    <li>
                       <Link className="nav-link-click" to="/contact">
                         Contact
                       </Link>

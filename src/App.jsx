@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import WorksPage from "./pages/WorksPage";
 import ContactPage from "./pages/ContactPage";
 import SingleProjectPage from "./pages/SingleProjectPage";
+import GalleryPage from "./pages/GalleryPage";
 
 import { Analytics } from "@vercel/analytics/react";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/works" element={<WorksPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/single-project/:id" element={<SingleProjectPage />} />
       </Routes>

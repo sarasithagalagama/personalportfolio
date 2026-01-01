@@ -94,13 +94,19 @@ const WorksPage = () => {
             <div className="row g-4">
               {displayedProjects.length > 0 ? (
                 displayedProjects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
-                  >
+                  <div key={project.id} className="col-lg-4 col-md-6 item">
                     <div className="project-item style-two">
                       <div className="project-image">
-                        <img src={project.img} alt={project.title} />
+                        <Link
+                          to={`/single-project/${project.id}`}
+                          style={{
+                            display: "block",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        >
+                          <img src={project.img} alt={project.title} />
+                        </Link>
                         <Link
                           to={`/single-project/${project.id}`}
                           className="details-btn"
