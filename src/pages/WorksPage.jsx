@@ -4,13 +4,21 @@ import { projectsData } from "../data/projectsData";
 
 const WorksPage = () => {
   const [activeFilter, setActiveFilter] = useState("*");
-  // Default to 5 (desktop) initially to match server/desktop expectation, effects will update it
-  const [visibleCount, setVisibleCount] = useState(5);
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    // Dynamically set count based on window width
-    const getInitialCount = () => (window.innerWidth < 768 ? 2 : 5);
-    setVisibleCount(getInitialCount());
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Reset showAll when filter changes
+  useEffect(() => {
+    setShowAll(false);
   }, [activeFilter]);
 
   const filteredProjects =
@@ -21,6 +29,11 @@ const WorksPage = () => {
             ? project.filterCategory.includes(activeFilter)
             : project.filterCategory === activeFilter
         );
+
+  const initialCount = isMobile ? 2 : 6;
+  const displayedProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, initialCount);
 
   return (
     <div>
@@ -79,73 +92,65 @@ const WorksPage = () => {
               </li>
             </ul>
             <div className="row g-4">
-              {filteredProjects.length > 0 ? (
-                <>
-                  {filteredProjects.slice(0, visibleCount).map((project) => (
-                    <div
-                      key={project.id}
-                      className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
-                    >
-                      <div className="project-item style-two">
-                        <div className="project-image">
-                          <img src={project.img} alt={project.title} />
-                          <Link
-                            to={`/single-project/${project.id}`}
-                            className="details-btn"
-                          >
-                            <i className="ri-arrow-right-up-line"></i>
-                          </Link>
-                        </div>
-                        <div className="project-content">
-                          <span className="sub-title">{project.subTitle}</span>
-                          <h3>{project.title}</h3>
-                        </div>
+              {displayedProjects.length > 0 ? (
+                displayedProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="col-lg-4 col-md-6 item wow fadeInUp delay-0-3s"
+                  >
+                    <div className="project-item style-two">
+                      <div className="project-image">
+                        <img src={project.img} alt={project.title} />
+                        <Link
+                          to={`/single-project/${project.id}`}
+                          className="details-btn"
+                        >
+                          <i className="ri-arrow-right-up-line"></i>
+                        </Link>
+                      </div>
+                      <div className="project-content">
+                        <span className="sub-title">{project.subTitle}</span>
+                        <h3>{project.title}</h3>
                       </div>
                     </div>
-                  ))}
-                  {filteredProjects.length > getInitialCount() && (
-                    <div className="col-lg-12 text-center mt-60">
-                      {visibleCount < filteredProjects.length ? (
-                        <button
-                          className="theme-btn"
-                          onClick={() => setVisibleCount((prev) => prev + 6)}
-                        >
-                          Load More Projects{" "}
-                          <i className="ri-arrow-down-line"></i>
-                        </button>
-                      ) : (
-                        <button
-                          className="theme-btn"
-                          onClick={() => setVisibleCount(getInitialCount())}
-                        >
-                          Show Less Projects{" "}
-                          <i className="ri-arrow-up-line"></i>
-                        </button>
-                      )}
-                    </div>
-                  )}
-                </>
+                  </div>
+                ))
               ) : (
                 <div
                   className="col-lg-12 text-center"
-                  style={{
-                    minHeight: "300px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  style={{ padding: "60px 20px" }}
                 >
-                  <h3 style={{ color: "var(--heading-color)" }}>
-                    More projects loading...
+                  <h3
+                    style={{
+                      color: "var(--heading-color)",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    No projects found
                   </h3>
-                  <p>
-                    I'm currently curating detailed case studies for this
-                    category. Check back soon!
+                  <p style={{ color: "var(--text-color)", opacity: 0.8 }}>
+                    Try selecting a different category to see more projects.
                   </p>
                 </div>
               )}
             </div>
+            {filteredProjects.length > initialCount && (
+              <div className="row">
+                <div className="col-lg-12 text-center mt-60">
+                  <button
+                    onClick={() => setShowAll(!showAll)}
+                    className="theme-btn"
+                  >
+                    {showAll ? "Show Less" : "Load More"}{" "}
+                    <i
+                      className={
+                        showAll ? "ri-arrow-up-line" : "ri-arrow-down-line"
+                      }
+                    ></i>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
