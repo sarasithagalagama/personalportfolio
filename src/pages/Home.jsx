@@ -123,9 +123,9 @@ const Home = () => {
               <div className="about-content-part wow fadeInUp delay-0-2s">
                 <p>Hello! I’m Sarasitha Galagama,</p>
                 <h2>
-                  I enjoy turning ideas into pixels and code, and on good days
-                  both the designs and the servers cooperate, turning problems
-                  into clean interfaces and working features.
+                  A creative designer and full-stack developer focused on
+                  building intuitive interfaces and reliable, data-driven
+                  applications.
                 </h2>
                 <div className="adress-field">
                   <ul>
