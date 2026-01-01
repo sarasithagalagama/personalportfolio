@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Mousewheel, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
 import { galleryData } from "../data/galleryData";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [shuffledGallery, setShuffledGallery] = useState([]);
+
+  useEffect(() => {
+    // Fisher-Yates Shuffle
+    const shuffleArray = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+
+    setShuffledGallery(shuffleArray(galleryData));
+  }, []);
 
   // Close lightbox
   const closeLightbox = () => setSelectedImage(null);
@@ -12,65 +31,40 @@ const GalleryPage = () => {
     <>
       <style>
         {`
-          .masonry-grid {
-            column-count: 3;
-            column-gap: 24px;
-          }
-          @media (max-width: 992px) {
-            .masonry-grid {
-              column-count: 2;
-            }
-          }
-          @media (max-width: 576px) {
-            .masonry-grid {
-              column-count: 1;
-            }
-          }
-          .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 24px;
-            position: relative;
-            border-radius: 12px;
+          .gallery-section {
+            padding: 80px 0;
             overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-          }
-          .masonry-item:hover {
-            transform: translateY(-5px);
-          }
-          .masonry-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-          }
-          .masonry-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
             display: flex;
-            align-items: flex-end;
-            padding: 20px;
-          }
-          .masonry-item:hover .masonry-overlay {
-            opacity: 1;
-          }
-          .masonry-title {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-            transform: translateY(10px);
-            transition: transform 0.3s ease;
-          }
-          .masonry-item:hover .masonry-title {
-            transform: translateY(0);
+            flex-direction: column;
+            justify-content: center;
           }
           
+          .swiper-slide {
+            width: auto !important; /* Allow natural width based on height */
+            height: 50vh; /* Fixed height for the strip */
+            transition: transform 0.3s ease;
+          }
+
+          .gallery-img {
+            height: 100%;
+            width: auto;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            filter: grayscale(20%);
+          }
+
+          .gallery-img:hover {
+            transform: scale(1.02);
+            filter: grayscale(0%);
+            box-shadow: 0 15px 40px rgba(235, 93, 58, 0.2); /* Primary color glow */
+          }
+
+          .swiper-slide:hover {
+            z-index: 10;
+          }
+
           /* Lightbox */
           .lightbox-overlay {
             position: fixed;
@@ -84,37 +78,63 @@ const GalleryPage = () => {
             justify-content: center;
             align-items: center;
             animation: fadeIn 0.3s ease;
+            backdrop-filter: blur(10px);
           }
           .lightbox-content {
             max-width: 90%;
             max-height: 90vh;
             position: relative;
+            animation: zoomIn 0.3s ease;
           }
           .lightbox-img {
             max-width: 100%;
             max-height: 90vh;
-            border-radius: 4px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
           }
           .lightbox-close {
             position: absolute;
-            top: -40px;
+            top: -50px;
             right: 0;
             color: white;
             font-size: 30px;
             cursor: pointer;
-            background: none;
+            background: rgba(255,255,255,0.1);
             border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+          }
+          .lightbox-close:hover {
+            background: var(--primary-color);
+            transform: rotate(90deg);
           }
           @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
           }
+          @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+          }
+          
+          @media (max-width: 768px) {
+            .swiper-slide {
+              height: 40vh;
+            }
+          }
         `}
       </style>
 
       {/* START GALLERY HEADER AREA */}
-      <section className="projects-area innerpage-single-area">
+      <section
+        className="projects-area innerpage-single-area"
+        style={{ paddingBottom: "20px" }}
+      >
         <div className="container">
           <div className="container-inner">
             <div className="row">
@@ -122,50 +142,53 @@ const GalleryPage = () => {
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
                   <h2>Visual Gallery</h2>
                   <p>
-                    A collection of high-resolution visuals, concepts, and
-                    designs.
+                    Swipe to explore a curated stream of my latest visual works.
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* Masonry Grid */}
-            <div className="masonry-grid wow fadeInUp delay-0-3s">
-              {galleryData.map((image) => (
-                <div
-                  key={image.id}
-                  className="masonry-item"
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <img src={image.src} alt={image.title} />
-                  <div className="masonry-overlay">
-                    <div className="masonry-title">{image.title}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {galleryData.length === 0 && (
-              <div
-                className="col-lg-12 text-center"
-                style={{ padding: "60px 20px" }}
-              >
-                <h3
-                  style={{
-                    color: "var(--heading-color)",
-                    marginBottom: "10px",
-                  }}
-                >
-                  No images found
-                </h3>
-                <p style={{ color: "var(--text-color)", opacity: 0.8 }}>
-                  Try selecting a different category.
-                </p>
-              </div>
-            )}
           </div>
         </div>
       </section>
+
+      {/* SWIPER HORIZONTAL GALLERY */}
+      <section className="gallery-section wow fadeInUp delay-0-3s">
+        <Swiper
+          modules={[FreeMode, Mousewheel, Autoplay]}
+          spaceBetween={30}
+          slidesPerView="auto"
+          freeMode={true}
+          mousewheel={true}
+          loop={true}
+          grabCursor={true}
+          autoplay={{
+            delay: 1, // continuous flow effect setup
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={3000} // Slow constant speed for autoplay if wanted, roughly mimics a ticker
+          // Override speed for user interaction feel
+          style={{ width: "100%", paddingLeft: "5%", paddingRight: "5%" }}
+        >
+          {shuffledGallery.map((image) => (
+            <SwiperSlide key={image.id}>
+              <img
+                src={image.src}
+                alt={image.title}
+                className="gallery-img"
+                onClick={() => setSelectedImage(image)}
+              />
+            </SwiperSlide>
+          ))}
+          {/* Duplicate for seamless feel if few images, though loop helps too */}
+        </Swiper>
+      </section>
+
+      {shuffledGallery.length === 0 && (
+        <div className="container text-center py-5">
+          <h3>No images found</h3>
+        </div>
+      )}
 
       {/* Lightbox Modal */}
       {selectedImage && (

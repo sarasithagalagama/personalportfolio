@@ -411,6 +411,9 @@
 }
 
 .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.05); /* Dark theme glass effect */
     border: 1px solid rgba(255, 255, 255, 0.1);

@@ -3,6 +3,33 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import {
+  FaJava,
+  FaPython,
+  FaReact,
+  FaFigma,
+  FaGitAlt,
+  FaDocker,
+  FaLinux,
+  FaAws,
+  FaDraftingCompass,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiSpringboot,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiCanva,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+  SiFirebase,
+  SiVercel,
+} from "react-icons/si";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 const AboutPage = () => {
   return (
@@ -170,6 +197,7 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
+
             <div className="row">
               <div className="col-lg-6">
                 <div className="skill-category wow fadeInUp delay-0-2s">
@@ -178,39 +206,57 @@ const AboutPage = () => {
                     Languages & Frameworks
                   </h4>
                   <div className="skill-tags">
-                    <span className="skill-tag">Java</span>
-                    <span className="skill-tag">Python</span>
-                    <span className="skill-tag">JavaScript</span>
-                    <span className="skill-tag">Spring Boot</span>
-                    <span className="skill-tag">PHP</span>
+                    <span className="skill-tag">
+                      <FaJava /> Java
+                    </span>
+                    <span className="skill-tag">
+                      <FaPython /> Python
+                    </span>
+                    <span className="skill-tag">
+                      <SiJavascript /> JavaScript
+                    </span>
+                    <span className="skill-tag">
+                      <SiTypescript /> TypeScript
+                    </span>
+                    <span className="skill-tag">
+                      <SiSpringboot /> Spring Boot
+                    </span>
+                    <span className="skill-tag">
+                      <SiNextdotjs /> Next.js
+                    </span>
+                    <span className="skill-tag">
+                      <FaReact /> React
+                    </span>
+                    <span className="skill-tag">
+                      <SiTailwindcss /> Tailwind CSS
+                    </span>
                   </div>
                 </div>
 
                 <div className="skill-category wow fadeInUp delay-0-3s">
                   <h4>
-                    <i className="ri-database-2-line"></i>
-                    Databases & Platforms
-                  </h4>
-                  <div className="skill-tags">
-                    <span className="skill-tag">MySQL</span>
-                    <span className="skill-tag">PostgreSQL</span>
-                    <span className="skill-tag">MongoDB</span>
-                    <span className="skill-tag">Firebase</span>
-                    <span className="skill-tag">Supabase</span>
-                  </div>
-                </div>
-
-                <div className="skill-category wow fadeInUp delay-0-4s">
-                  <h4>
                     <i className="ri-brush-line"></i>
-                    Design & UX Tools
+                    Design & UX
                   </h4>
                   <div className="skill-tags">
-                    <span className="skill-tag">Figma</span>
-                    <span className="skill-tag">Photoshop</span>
-                    <span className="skill-tag">Illustrator</span>
-                    <span className="skill-tag">Wireframing</span>
-                    <span className="skill-tag">Prototyping</span>
+                    <span className="skill-tag">
+                      <FaFigma /> Figma
+                    </span>
+                    <span className="skill-tag">
+                      <SiAdobephotoshop /> Photoshop
+                    </span>
+                    <span className="skill-tag">
+                      <SiAdobeillustrator /> Illustrator
+                    </span>
+                    <span className="skill-tag">
+                      <SiCanva /> Canva
+                    </span>
+                    <span className="skill-tag">
+                      <MdOutlineDesignServices /> Wireframing
+                    </span>
+                    <span className="skill-tag">
+                      <FaDraftingCompass /> Prototyping
+                    </span>
                   </div>
                 </div>
               </div>
@@ -218,35 +264,46 @@ const AboutPage = () => {
               <div className="col-lg-6">
                 <div className="skill-category wow fadeInUp delay-0-2s">
                   <h4>
-                    <i className="ri-server-line"></i>
-                    DevOps & Infrastructure
+                    <i className="ri-database-2-line"></i>
+                    Databases
                   </h4>
                   <div className="skill-tags">
-                    <span className="skill-tag">Docker</span>
-                    <span className="skill-tag">Git</span>
-                    <span className="skill-tag">Linux</span>
-                    <span className="skill-tag">Vercel</span>
-                    <span className="skill-tag">CI/CD</span>
-                    <span className="skill-tag">Postman</span>
-                    <span className="skill-tag">AWS</span>
-                    <span className="skill-tag">Azure</span>
-                    <span className="skill-tag">Oracle Cloud</span>
+                    <span className="skill-tag">
+                      <SiMysql /> MySQL
+                    </span>
+                    <span className="skill-tag">
+                      <SiPostgresql /> PostgreSQL
+                    </span>
+                    <span className="skill-tag">
+                      <SiMongodb /> MongoDB
+                    </span>
+                    <span className="skill-tag">
+                      <SiFirebase /> Firebase
+                    </span>
                   </div>
                 </div>
 
                 <div className="skill-category wow fadeInUp delay-0-3s">
                   <h4>
-                    <i className="ri-lightbulb-flash-line"></i>
-                    Concepts & Methodologies
+                    <i className="ri-server-line"></i>
+                    DevOps & Tools
                   </h4>
                   <div className="skill-tags">
-                    <span className="skill-tag">OOP</span>
-                    <span className="skill-tag">REST</span>
-                    <span className="skill-tag">Microservices</span>
-                    <span className="skill-tag">Distributed Systems</span>
-                    <span className="skill-tag">Agile</span>
-                    <span className="skill-tag">SDLC</span>
-                    <span className="skill-tag">Design Thinking</span>
+                    <span className="skill-tag">
+                      <FaGitAlt /> Git
+                    </span>
+                    <span className="skill-tag">
+                      <FaDocker /> Docker
+                    </span>
+                    <span className="skill-tag">
+                      <FaLinux /> Linux
+                    </span>
+                    <span className="skill-tag">
+                      <FaAws /> AWS
+                    </span>
+                    <span className="skill-tag">
+                      <SiVercel /> Vercel
+                    </span>
                   </div>
                 </div>
               </div>
