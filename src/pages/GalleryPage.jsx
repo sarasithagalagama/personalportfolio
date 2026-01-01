@@ -188,7 +188,13 @@ const GalleryPage = () => {
         >
           {shuffledGallery.map((image) => (
             <SwiperSlide key={image.id} onClick={() => setSelectedImage(image)}>
-              <img src={image.src} alt={image.title} className="gallery-img" />
+              <img
+                src={image.src}
+                alt={image.title}
+                className="gallery-img"
+                loading="lazy"
+                decoding="async"
+              />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -288,7 +288,12 @@ const Home = () => {
                             height: "100%",
                           }}
                         >
-                          <img src={project.img} alt={project.title} />
+                          <img
+                            src={project.img}
+                            alt={project.title}
+                            loading="lazy"
+                            decoding="async"
+                          />
                         </Link>
                         <Link
                           to={`/single-project/${project.id}`}
