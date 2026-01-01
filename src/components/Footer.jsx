@@ -26,17 +26,32 @@ const Footer = () => {
           <div className="footer-right">
             <ul className="social-minimal">
               <li>
-                <a href="#" aria-label="LinkedIn">
+                <a
+                  href="https://www.linkedin.com/in/sarasitha-galagama"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                >
                   <i className="ri-linkedin-fill"></i>
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="GitHub">
+                <a
+                  href="https://github.com/sarasithagalagama"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                >
                   <i className="ri-github-line"></i>
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://www.instagram.com/sarasitha_galagama/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                >
                   <i className="ri-instagram-line"></i>
                 </a>
               </li>
