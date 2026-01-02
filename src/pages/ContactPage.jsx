@@ -61,8 +61,8 @@ const ContactPage = () => {
                     </div>
                     <h2>Email Me:</h2>
                     <p>
-                      <a href="mailto:contact@sarasitha.me">
-                        contact@sarasitha.me
+                      <a href="mailto:sarasithagalagama@gmail.com">
+                        sarasithagalagama@gmail.com
                       </a>
                     </p>
                   </div>
