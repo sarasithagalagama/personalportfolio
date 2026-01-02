@@ -364,7 +364,7 @@ const Home = () => {
                 <h2>Work with me on Fiverr</h2>
                 <p>
                   Prefer a structured freelance workflow? I’ve been designing
-                  for clients on Fiverr for 5+ years, delivering posters,
+                  for clients on Fiverr for 4+ years, delivering posters,
                   covers, thumbnails, and web visuals with clear communication
                   and on‑time delivery.
                 </p>
