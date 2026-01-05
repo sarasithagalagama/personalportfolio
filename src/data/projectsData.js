@@ -1,7 +1,7 @@
 ﻿export const projectsData = [
   {
     id: "githype-github-finder",
-    title: "GitHype | Modern GitHub Profile Finder",
+    title: "GitHype - Modern GitHub Profile Finder",
     category: "Full-Stack Web App",
     subTitle: "Discover Developers & Repos",
     filterCategory: ["full-stack", "ui-ux"],
@@ -297,7 +297,7 @@
   },
   {
     id: "potato-disease-analyzer",
-    title: "PotatoPulse | Advanced Agricultural Disease Detection",
+    title: "PotatoPulse - Potato Disease Detection",
     category: "AI & ML Projects",
     subTitle: "End-to-End Deep Learning Solution",
     filterCategory: "ai-ml",
