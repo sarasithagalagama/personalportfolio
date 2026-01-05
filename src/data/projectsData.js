@@ -320,7 +320,11 @@
         content: [
           {
             type: "paragraph",
-            text: "PotatoPulse is an end-to-end deep learning solution designed to automate the detection of pathological states in potato leaf imagery. Built to address crop yield loss caused by Late Blight and Early Blight, this system leverages a custom Deep Convolutional Neural Network (CNN) to achieve high-accuracy classification in real-time.",
+            text: "PotatoPulse is an end-to-end deep learning solution designed to automate the detection of pathological states in potato leaf imagery. Built to address crop yield loss caused by Phytophthora infestans (Late Blight) and Alternaria solani (Early Blight), this system leverages a custom Deep Convolutional Neural Network (CNN) to achieve high-accuracy classification in real-time.",
+          },
+          {
+            type: "paragraph",
+            text: "The project demonstrates a full machine learning lifecycle—from data pipeline construction and image preprocessing to model architecture design and deployment of a scalable inference engine.",
           },
         ],
       },
@@ -330,10 +334,10 @@
           {
             type: "list",
             items: [
-              " Advanced Custom CNN: 6-block architecture with ~97.7% training accuracy.",
-              " High Reliability: 94.5% accuracy on unseen test data with minimal generalization gap.",
-              " Robust Augmentation: RandomFlip and RandomRotation layers for orientation invariance.",
-              " Streamlit Deployment: Interactive, production-grade web interface for real-time analysis.",
+              "Advanced Custom CNN: 6-block architecture with ~97.7% training accuracy.",
+              "High Reliability: 94.5% accuracy on unseen test data with minimal generalization gap.",
+              "Robust Augmentation: RandomFlip and RandomRotation layers for orientation invariance.",
+              "Streamlit Deployment: Interactive, production-grade web interface for real-time analysis.",
             ],
           },
         ],
@@ -342,11 +346,49 @@
         title: "Technical Architecture",
         content: [
           {
+            type: "paragraph",
+            text: "The core classification engine is a sequential CNN trained on the PlantVillage dataset, engineered for robustness and generalization:",
+          },
+          {
             type: "list",
             items: [
-              "Data Pipeline: Automated partitioning, resizing (256x256), and normalization.",
-              "Model: Sequential CNN with 32-64 filter layers, MaxPooling, and Dropout.",
+              "Data Pipeline: Automated partitioning (Train/Val/Test), resizing, and normalization.",
+              "Augmentation: Integrated RandomFlip and RandomRotation layers to mitigate overfitting.",
+              "Model Structure: 6-block Convolutional Network using 32-64 filter feature extraction layers with ReLU activation.",
+              "Pooling: MaxPooling for spatial down-sampling and translational invariance.",
+              "Output: Flatten and Dense layers with Softmax activation for multi-class probability distribution.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Training Strategy",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Dataset: PlantVillage dataset loaded via image_dataset_from_directory().",
+              "Preprocessing: Resizing to 256x256 and Rescaling (1./255) for pixel normalization.",
               "Optimization: Adam optimizer with Sparse Categorical Crossentropy loss.",
+              "Epochs: Trained for 20 epochs to ensure convergence.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Performance & Robustness",
+        content: [
+          {
+            type: "paragraph",
+            text: "The model demonstrates excellent generalization with minimal overfitting:",
+          },
+          {
+            type: "list",
+            items: [
+              "Training Accuracy: ~97.77%",
+              "Validation Accuracy: ~97.40%",
+              "Test Accuracy: ~94.53% (on completely unseen data)",
+              "Generalization Gap: ~0.37% (indicating no memorization of training data)",
             ],
           },
         ],
@@ -358,22 +400,10 @@
             type: "list",
             items: [
               "Deep Learning: TensorFlow, Keras",
-              "Computer Vision: OpenCV, Pillow",
-              "Web Framework: Streamlit",
-              "Data Processing: NumPy, Pandas",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Model Performance",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Training Accuracy: ~97.77%",
-              "Validation Accuracy: ~97.40%",
-              "Test Accuracy: ~94.53%",
+              "Computer Vision: OpenCV, Pillow (PIL), NumPy",
+              "Data Processing: Pandas, Matplotlib",
+              "Deployment & UI: Streamlit",
+              "Version Control: Git",
             ],
           },
         ],
