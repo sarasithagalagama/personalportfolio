@@ -1,4 +1,4 @@
-export const projectsData = [
+﻿export const projectsData = [
   {
     id: "githype-github-finder",
     title: "GitHype | Modern GitHub Profile Finder",
@@ -297,28 +297,18 @@ export const projectsData = [
   },
   {
     id: "potato-disease-analyzer",
-    title: "Potato Disease Analyzer",
+    title: "PotatoPulse | Advanced Agricultural Disease Detection",
     category: "AI & ML Projects",
-    subTitle: "AI-powered disease detection system",
+    subTitle: "End-to-End Deep Learning Solution",
     filterCategory: "ai-ml",
-    img: "/assets/images/projects/potato-disease/main.png", // Placeholder, user needs to add image
+    img: "/assets/images/projects/potato-disease/stream-ui.png",
     client: "Personal Project",
-    date: "Dec 2025",
+    date: "Jan 2026",
     duration: "Completed",
-    github:
-      "https://github.com/sarasithagalagama/Potato-Disease-Classification", // Add if available
-    preview: "", // Add if available
-    technologies: [
-      "Python",
-      "TensorFlow",
-      "FastAPI",
-      "Google Gemini AI",
-      "HTML5/CSS3",
-    ],
-    images: [
-      "/assets/images/projects/potato-disease/main.png",
-      "/assets/images/projects/potato-disease/detection.png",
-    ],
+    github: "https://github.com/sarasithagalagama/PotatoPulse",
+    preview: "https://potatopulse.streamlit.app/",
+    technologies: ["Python", "TensorFlow", "Streamlit", "OpenCV"],
+    images: ["/assets/images/projects/potato-disease/stream-ui.png"],
     socialLinks: {
       facebook: "#",
       twitter: "#",
@@ -330,7 +320,7 @@ export const projectsData = [
         content: [
           {
             type: "paragraph",
-            text: "This application uses a Convolutional Neural Network (CNN) to detect three conditions in potato leaves: Early Blight (Fungal disease), Late Blight (Serious fungal disease), and Healthy conditions. It integrates Google Gemini AI to provide context-aware insights alongside the classification.",
+            text: "PotatoPulse is an end-to-end deep learning solution designed to automate the detection of pathological states in potato leaf imagery. Built to address crop yield loss caused by Late Blight and Early Blight, this system leverages a custom Deep Convolutional Neural Network (CNN) to achieve high-accuracy classification in real-time.",
           },
         ],
       },
@@ -340,26 +330,23 @@ export const projectsData = [
           {
             type: "list",
             items: [
-              "🔬 Disease Detection - 95%+ accuracy using TensorFlow CNN model",
-              "🤖 AI Explanations - Context-aware insights powered by Google Gemini",
-              "💬 Chat Assistant - Ask agricultural questions in real-time",
-              "📊 Visual Analytics - Confidence distribution charts",
-              "🎨 Modern UI - Glassmorphic design with dark/light themes", // Combined for brevity
+              " Advanced Custom CNN: 6-block architecture with ~97.7% training accuracy.",
+              " High Reliability: 94.5% accuracy on unseen test data with minimal generalization gap.",
+              " Robust Augmentation: RandomFlip and RandomRotation layers for orientation invariance.",
+              " Streamlit Deployment: Interactive, production-grade web interface for real-time analysis.",
             ],
           },
         ],
       },
       {
-        title: "UI/UX Highlights",
+        title: "Technical Architecture",
         content: [
           {
             type: "list",
             items: [
-              "Glassmorphic Design - Modern frosted glass aesthetic with backdrop blur",
-              "Smooth Animations - Cubic-bezier transitions and micro-interactions",
-              "Responsive Layout - Optimized for desktop, tablet, and mobile",
-              "Dark/Light Themes - Seamless theme switching with local storage",
-              "Interactive Elements - Hover effects, loading states, and visual feedback",
+              "Data Pipeline: Automated partitioning, resizing (256x256), and normalization.",
+              "Model: Sequential CNN with 32-64 filter layers, MaxPooling, and Dropout.",
+              "Optimization: Adam optimizer with Sparse Categorical Crossentropy loss.",
             ],
           },
         ],
@@ -370,23 +357,23 @@ export const projectsData = [
           {
             type: "list",
             items: [
-              "Backend: Python 3.8+, FastAPI, TensorFlow 2.x, Google Gemini AI (2.5-flash)",
-              "Frontend: HTML5, CSS3, JavaScript",
+              "Deep Learning: TensorFlow, Keras",
+              "Computer Vision: OpenCV, Pillow",
+              "Web Framework: Streamlit",
+              "Data Processing: NumPy, Pandas",
             ],
           },
         ],
       },
       {
-        title: "How It Works",
+        title: "Model Performance",
         content: [
           {
             type: "list",
             items: [
-              "1. Upload a potato leaf image (drag & drop or click)",
-              "2. Click 'Run Analysis Protocol'",
-              "3. View disease diagnosis with confidence scores",
-              "4. Read AI-generated explanation and expand treatment roadmap",
-              "5. Use chat assistant for additional questions",
+              "Training Accuracy: ~97.77%",
+              "Validation Accuracy: ~97.40%",
+              "Test Accuracy: ~94.53%",
             ],
           },
         ],
