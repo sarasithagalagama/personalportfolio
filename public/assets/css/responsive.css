@@ -1382,9 +1382,12 @@ Version      : 1.0
 /* Fix for zoomed project thumbnails on mobile */
 @media only screen and (max-width: 767px) {
   .project-item.style-two .project-image {
-    height: auto;
+    height: auto !important;
+  }
+  .project-item.style-two .project-image a {
+    height: auto !important;
   }
   .project-item.style-two .project-image img {
-    height: auto;
+    height: auto !important;
   }
 }
