@@ -1383,9 +1383,13 @@ Version      : 1.0
 @media only screen and (max-width: 767px) {
   .project-item.style-two {
     height: auto !important;
+    display: flex;
+    flex-direction: column;
+    overflow: visible !important;
   }
   .project-item.style-two .project-image {
     height: auto !important;
+    margin-bottom: 20px !important;
   }
   .project-item.style-two .project-image a {
     height: auto !important;
