@@ -51,22 +51,24 @@ const AboutPage = () => {
             {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-8">
               <div className="about-content-part wow fadeInUp delay-0-2s">
-                <h2>I’m Sarasitha Galagama</h2>
+                <h2>About Me</h2>
                 <p>
-                  A creative designer and full‑stack developer with a soft spot
-                  for clean interfaces, bold visuals, and well‑behaved code. As
-                  an Information Systems Engineering undergraduate at SLIIT and
-                  a freelance designer with 4+ years of Fiverr experience, I
-                  enjoy moving from UI layouts and prototypes to
-                  production‑ready web apps that solve real problems.
+                  I’m Sarasitha Galagama, an Information Systems Engineering
+                  (ISE) undergraduate at SLIIT, where I’m building a strong
+                  foundation in understanding, designing, and improving
+                  information systems — the technology that helps organisations
+                  work smarter. My studies blend technical knowledge with
+                  business-oriented thinking, giving me a balanced perspective
+                  on how technology solves real-world problems and supports
+                  decisions in modern workplaces.
                 </p>
                 <p>
-                  When I’m not experimenting with layouts in Figma, you’ll
-                  usually find me wiring up APIs, refining front‑end states, or
-                  building small AI and data‑driven tools. My journey from
-                  Ananda College, Colombo to university and freelance work has
-                  shaped me into someone who cares about both the user
-                  experience and the engineering behind it.
+                  Alongside my academic journey, I’m also a creative designer
+                  with 4+ years of experience on Fiverr, having completed 700+
+                  projects for clients around the world. I combine analytical
+                  thinking from my engineering focus with creative
+                  problem-solving, helping me approach challenges in both tech
+                  and design with innovation and clarity.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">

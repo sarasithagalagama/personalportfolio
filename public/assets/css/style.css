@@ -2481,8 +2481,8 @@ body.loaded {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     visibility: hidden;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
+    -webkit-transform: translateY(70px);
+    transform: translateY(70px);
     -webkit-transition: all 400ms linear;
     transition: all 400ms linear;
     mix-blend-mode: difference;
@@ -2823,7 +2823,8 @@ ul.blog_pagination li a:hover {
 }
 
 .single-side-bar ul li a:hover {
-    color: #fff opacity: 1;
+    color: #fff;
+    opacity: 1;
 }
 
 .single-blog-social-icon {
