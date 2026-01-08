@@ -1390,17 +1390,21 @@ Version      : 1.0
   .project-item.style-two .project-image {
     height: auto !important;
     margin-bottom: 0 !important;
+    border-radius: 14px 14px 0 0 !important;
   }
   .project-item.style-two .project-image a {
     height: auto !important;
   }
   .project-item.style-two .project-image img {
     height: auto !important;
+    border-radius: 14px 14px 0 0 !important;
   }
   .project-item.style-two .project-content {
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-top: 20px !important;
     padding-bottom: 20px !important;
+    background: #131313 !important;
+    border-radius: 0 0 14px 14px !important;
   }
 }

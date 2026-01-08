@@ -548,43 +548,55 @@
         box-sizing: border-box;
     }
 
-    /* Project Filters - Scrollbar Hide & Style */
+    /* Better Mobile Project Filter: Horizontal Scrollable Chips */
     .project-filter {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 5px; /* Reduced padding */
-        gap: 10px;
-        -webkit-overflow-scrolling: touch;
+        padding: 5px 20px 15px 20px; /* Padding for scroll spacing */
+        gap: 12px;
         justify-content: flex-start;
         margin-bottom: 25px;
+        margin-left: -20px;  /* Negative margin to span full width */
+        margin-right: -20px;
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* IE 10+ */
     }
     
+    /* Hide scrollbar for Chrome/Safari */
     .project-filter::-webkit-scrollbar { 
-        display: none; /* Chrome/Safari */
+        display: none; 
     }
     
     .project-filter li {
-        font-size: 13px;
-        padding: 8px 16px;
-        background: rgba(255,255,255,0.08); 
-        border: 1px solid rgba(255,255,255,0.15);
-        color: #ffffff !important;
-        border-radius: 50px;
+        font-size: 14px;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.05); 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7) !important;
+        border-radius: 30px;
         white-space: nowrap;
         font-weight: 500;
         flex-shrink: 0;
+        transition: all 0.3s ease;
     }
     
     .project-filter li.current {
         background: var(--primary-color);
         color: #fff !important;
         border-color: var(--primary-color);
+        box-shadow: 0 4px 15px rgba(235, 93, 58, 0.3);
+        transform: translateY(-1px);
     }
 
-    /* Project Cards Mobile - MATCHING SCREENSHOT EXACTLY */
+    /* Remove legacy pseudo-elements */
+    .project-filter li::after,
+    .project-filter li.current::after {
+        display: none !important;
+    }
+
+    /* Project Cards Mobile - Fixed Layout */
     .project-item {
         margin-bottom: 40px !important;
         padding: 0 !important;
@@ -595,21 +607,22 @@
     }
     
     .project-item .project-image {
-        border-radius: 24px !important; /* Higher border radius */
+        border-radius: 24px !important;
         overflow: hidden;
         margin-bottom: 20px;
         width: 100%;
-        /* Force a vertical/portrait aspect ratio like the screenshot */
-        aspect-ratio: 3/4 !important; 
         box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         position: relative;
+        /* Remove fixed aspect ratio to allow natural image sizing */
     }
     
     .project-item .project-image img {
         width: 100%;
-        height: 100%;
+        height: auto !important;
+        display: block;
         object-fit: cover !important;
-        object-position: top center; /* Focus on top logic */
+        object-position: top center;
+        border-radius: 24px !important;
     }
 
     /* Hide the overlay button to match the clean visual or make it minimal */
