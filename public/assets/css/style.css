@@ -1746,6 +1746,7 @@ ul.extra-skills li i {
     z-index: 1;
     -webkit-transition: .3s;
     transition: .3s;
+    pointer-events: none;
 }
 
 .project-item.style-two .project-image .details-btn {
