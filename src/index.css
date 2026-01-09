@@ -565,9 +565,7 @@
 }
 
 .main-header.fixed-header .header-upper {
-    background: rgba(18, 18, 20, 0.8) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important;
+    background: #121214 !important; /* Solid background */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: 10px 0 !important;
 }
@@ -584,19 +582,15 @@
         letter-spacing: -0.5px;
     }
 
-    /* Fixed header on mobile always has a bit of glass effect for depth */
+    /* Solid header on mobile */
     .header-upper {
-        background: rgba(0, 0, 0, 0.6) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: #000000 !important; 
         padding: 12px 0 !important;
     }
 
-    /* Modern Mobile Menu - Centered and Refined */
+    /* Modern Mobile Menu - Solid Refined look */
     .navbar-collapse {
-        background: rgba(20, 20, 22, 0.95) !important;
-        backdrop-filter: blur(25px) !important;
-        -webkit-backdrop-filter: blur(25px) !important;
+        background: #121214 !important; /* Solid background */
         padding: 30px 20px !important;
         margin-top: 10px !important;
         border-radius: 24px !important;
@@ -641,6 +635,12 @@
         text-align: center;
         border-radius: 12px;
         margin-bottom: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .main-menu .navigation > li > a:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--primary-color) !important;
     }
 
     .main-menu .navigation > li > a.active {
