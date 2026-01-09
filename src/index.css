@@ -9,40 +9,51 @@
 /* ============================================
    GLOBAL PAGE SPACING STANDARDS
    ============================================ */
-/* Standard padding for the first section of every page to account for fixed header */
-.about-area, 
-.innerpage-single-area {
-    padding-top: 150px !important; 
-    padding-bottom: 60px;
-}
-
 /* Reduced spacing for all other inner sections to avoid large gaps */
-.services-area, 
-.projects-area, 
-.fiverr-area, 
-.call-to-action-area, 
-.contact-area, 
-.gallery-area {
+section.services-area, 
+section.projects-area, 
+section.fiverr-area, 
+section.call-to-action-area, 
+section.contact-area, 
+section.gallery-area,
+section.resume-area,
+section.skills-area,
+section.testimonials-area {
     padding-top: 60px !important;
     padding-bottom: 60px !important;
 }
 
+/* Standard padding for the first section of every page to account for fixed header */
+/* Defined later to ensure it overrides general section padding and legacy styles */
+section.about-area, 
+section.about-single-area,
+section.innerpage-single-area,
+section.single-project-hero-area {
+    padding-top: 150px !important; 
+    padding-bottom: 60px;
+}
+
 /* Mobile Standardization (Tighter gaps) */
 @media (max-width: 991px) {
-    .about-area, 
-    .innerpage-single-area {
-        padding-top: 85px !important;
-        padding-bottom: 30px;
-    }
-
-    .services-area, 
-    .projects-area, 
-    .fiverr-area, 
-    .call-to-action-area, 
-    .contact-area, 
-    .gallery-area {
+    section.services-area, 
+    section.projects-area, 
+    section.fiverr-area, 
+    section.call-to-action-area, 
+    section.contact-area, 
+    section.gallery-area,
+    section.resume-area,
+    section.skills-area,
+    section.testimonials-area {
         padding-top: 30px !important;
         padding-bottom: 30px !important;
+    }
+
+    section.about-area, 
+    section.about-single-area,
+    section.innerpage-single-area,
+    section.single-project-hero-area {
+        padding-top: 85px !important;
+        padding-bottom: 30px;
     }
 }
 
