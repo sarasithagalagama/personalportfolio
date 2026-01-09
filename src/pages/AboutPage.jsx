@@ -421,32 +421,8 @@ const AboutPage = () => {
                               </span>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
                   </div>
                 </div>
-                {certItems.length > initialCertCount && (
-                  <div className="row">
-                    <div className="col-lg-12 text-center">
-                      <div className="hero-btns wow fadeInUp delay-0-2s">
-                        <button
-                          onClick={() => setShowAllCerts(!showAllCerts)}
-                          className="theme-btn"
-                        >
-                          {showAllCerts ? "Show Less" : "Load More"}{" "}
-                          <i
-                            className={
-                              showAllCerts
-                                ? "ri-arrow-up-line"
-                                : "ri-arrow-down-line"
-                            }
-                          ></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -462,6 +438,19 @@ const AboutPage = () => {
                   flexWrap: "wrap",
                 }}
               >
+                {certItems.length > initialCertCount && (
+                  <button
+                    onClick={() => setShowAllCerts(!showAllCerts)}
+                    className="theme-btn"
+                  >
+                    {showAllCerts ? "Show Less" : "Load More"}{" "}
+                    <i
+                      className={
+                        showAllCerts ? "ri-arrow-up-line" : "ri-arrow-down-line"
+                      }
+                    ></i>
+                  </button>
+                )}
                 <a
                   href="https://www.coursera.org/user/1c114cb914901ecbc751c46839b1b9ba"
                   target="_blank"
