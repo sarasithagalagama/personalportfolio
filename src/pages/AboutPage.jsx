@@ -117,112 +117,135 @@ const AboutPage = () => {
       {/* START RESUME EXPERIENCE DESIGN AREA */}
       <section id="resume" className="resume-area">
         <div className="container">
-          <div className="row">
-            <div className="col-xl-12 col-lg-12">
-              <div
-                className="section-title text-center wow fadeInUp delay-0-2s"
-                style={{ marginBottom: "50px" }}
-              >
-                <span className="subtitle">Resume</span>
-                <h2>Education & Experience</h2>
-              </div>
-            </div>
-          </div>
           <div className="resume-items">
             <div className="row">
-              {/* START EXPERIENCE RESUME DESIGN AREA */}
-              <div className="col-xl-6 col-md-6">
+              <div className="col-xl-12 col-md-12">
                 <div className="single-resume">
-                  <h2>Experience</h2>
-                  <div className="experience-list">
-                    {/* START SINGLE RESUME DESIGN AREA */}
-                    <div className="resume-item wow fadeInUp delay-0-3s">
-                      <div className="icon">
-                        <i className="ri-briefcase-line"></i>
-                      </div>
-                      <div className="content">
-                        <span className="years">2020 - Present</span>
-                        <h4>Freelance Creative Designer</h4>
-                        <span className="company">Fiverr & Upwork</span>
-                        <p
-                          style={{
-                            marginTop: "10px",
-                            color: "#b0b0b0",
-                            fontSize: "14px",
-                          }}
-                        >
-                          Designing movie posters, album covers, thumbnails, and
-                          social media creatives for clients worldwide.
-                        </p>
+                  <div
+                    className="section-title text-center wow fadeInUp delay-0-2s"
+                    style={{ marginBottom: "40px" }}
+                  >
+                    <span className="subtitle">Resume</span>
+                    <h2>Education & Experience</h2>
+                  </div>
+                  <div className="row">
+                    {/* START EXPERIENCE INNER CARD */}
+                    <div className="col-xl-6 col-md-12">
+                      <div className="resume-inner-card wow fadeInUp delay-0-2s">
+                        <h2 style={{ marginBottom: "20px" }}>
+                          <i
+                            className="ri-briefcase-line"
+                            style={{
+                              marginRight: "10px",
+                              color: "var(--primary-color)",
+                            }}
+                          ></i>
+                          Experience
+                        </h2>
+                        <div className="experience-list">
+                          {/* START SINGLE RESUME DESIGN AREA */}
+                          <div className="resume-item">
+                            <div className="icon">
+                              <i className="ri-briefcase-line"></i>
+                            </div>
+                            <div className="content">
+                              <span className="years">2020 - Present</span>
+                              <h4>Freelance Creative Designer</h4>
+                              <span className="company">Fiverr & Upwork</span>
+                              <p
+                                style={{
+                                  marginTop: "10px",
+                                  color: "#b0b0b0",
+                                  fontSize: "14px",
+                                }}
+                              >
+                                Designing movie posters, album covers,
+                                thumbnails, and social media creatives for
+                                clients worldwide.
+                              </p>
+                            </div>
+                          </div>
+                          {/* / END SINGLE RESUME DESIGN AREA */}
+                          {/* START SINGLE RESUME DESIGN AREA */}
+                          <div className="resume-item">
+                            <div className="icon">
+                              <i className="ri-code-s-slash-line"></i>
+                            </div>
+                            <div className="content">
+                              <span className="years">2023 - Present</span>
+                              <h4>Full‑Stack / UI Developer</h4>
+                              <span className="company">
+                                Personal & Academic Projects
+                              </span>
+                              <p
+                                style={{
+                                  marginTop: "10px",
+                                  color: "#b0b0b0",
+                                  fontSize: "14px",
+                                }}
+                              >
+                                Building web apps, dashboards, and tools using
+                                modern stacks while focusing on clean, usable
+                                interfaces.
+                              </p>
+                            </div>
+                          </div>
+                          {/* / END SINGLE RESUME DESIGN AREA */}
+                        </div>
                       </div>
                     </div>
-                    {/* / END SINGLE RESUME DESIGN AREA */}
-                    {/* START SINGLE RESUME DESIGN AREA */}
-                    <div className="resume-item wow fadeInUp delay-0-3s">
-                      <div className="icon">
-                        <i className="ri-code-s-slash-line"></i>
-                      </div>
-                      <div className="content">
-                        <span className="years">2023 - Present</span>
-                        <h4>Full‑Stack / UI Developer</h4>
-                        <span className="company">
-                          Personal & Academic Projects
-                        </span>
-                        <p
-                          style={{
-                            marginTop: "10px",
-                            color: "#b0b0b0",
-                            fontSize: "14px",
-                          }}
-                        >
-                          Building web apps, dashboards, and tools using modern
-                          stacks while focusing on clean, usable interfaces.
-                        </p>
+                    {/* // END EXPERIENCE INNER CARD */}
+
+                    {/* START EDUCATION INNER CARD */}
+                    <div className="col-xl-6 col-md-12">
+                      <div className="resume-inner-card wow fadeInUp delay-0-3s">
+                        <h2 style={{ marginBottom: "20px" }}>
+                          <i
+                            className="ri-graduation-cap-line"
+                            style={{
+                              marginRight: "10px",
+                              color: "var(--primary-color)",
+                            }}
+                          ></i>
+                          Education
+                        </h2>
+                        <div className="experience-list">
+                          {/* START SINGLE RESUME DESIGN AREA */}
+                          <div className="resume-item">
+                            <div className="icon">
+                              <i className="ri-graduation-cap-line"></i>
+                            </div>
+                            <div className="content">
+                              <span className="years">2024 - Present</span>
+                              <h4>
+                                BSc (Hons) in Information Technology
+                                Specializing in Information Systems Engineering
+                              </h4>
+                              <span className="company">SLIIT, Malabe</span>
+                            </div>
+                          </div>
+                          {/* / END SINGLE RESUME DESIGN AREA */}
+                          {/* START SINGLE RESUME DESIGN AREA */}
+                          <div className="resume-item">
+                            <div className="icon">
+                              <i className="ri-school-line"></i>
+                            </div>
+                            <div className="content">
+                              <span className="years">2009 - 2022</span>
+                              <h4>Ananda College, Colombo</h4>
+                              <span className="company">
+                                Physical Science – Maths stream
+                              </span>
+                            </div>
+                          </div>
+                          {/* / END SINGLE RESUME DESIGN AREA */}
+                        </div>
                       </div>
                     </div>
-                    {/* / END SINGLE RESUME DESIGN AREA */}
+                    {/* // END EDUCATION INNER CARD */}
                   </div>
                 </div>
               </div>
-              {/* // END EXPERIENCE RESUME DESIGN AREA */}
-              {/* START EDUCATION RESUME DESIGN AREA */}
-              <div className="col-xl-6 col-md-6">
-                <div className="experience-list">
-                  <div className="single-resume">
-                    <h2>Education</h2>
-                    {/* START SINGLE RESUME DESIGN AREA */}
-                    <div className="resume-item wow fadeInUp delay-0-3s">
-                      <div className="icon">
-                        <i className="ri-graduation-cap-line"></i>
-                      </div>
-                      <div className="content">
-                        <span className="years">2024 - Present</span>
-                        <h4>
-                          BSc (Hons) in Information Technology Specializing in
-                          Information Systems Engineering
-                        </h4>
-                        <span className="company">SLIIT, Malabe</span>
-                      </div>
-                    </div>
-                    {/* / END SINGLE RESUME DESIGN AREA */}
-                    {/* START SINGLE RESUME DESIGN AREA */}
-                    <div className="resume-item wow fadeInUp delay-0-3s">
-                      <div className="icon">
-                        <i className="ri-school-line"></i>
-                      </div>
-                      <div className="content">
-                        <span className="years">2009 - 2022</span>
-                        <h4>Ananda College, Colombo</h4>
-                        <span className="company">
-                          Physical Science – Maths stream
-                        </span>
-                      </div>
-                    </div>
-                    {/* / END SINGLE RESUME DESIGN AREA */}
-                  </div>
-                </div>
-              </div>
-              {/* // END EDUCATION RESUME DESIGN AREA */}
             </div>
           </div>
         </div>
@@ -360,19 +383,15 @@ const AboutPage = () => {
       {/* START CERTIFICATIONS DESIGN AREA */}
       <section className="certifications-area">
         <div className="container">
-          <div className="row">
-            <div className="col-xl-12 col-lg-12">
-              <div className="section-title text-center wow fadeInUp delay-0-2s">
-                <span className="subtitle">Credentials</span>
-                <h2>Professional Certifications</h2>
-              </div>
-            </div>
-          </div>
           <div className="resume-items">
             <div className="row">
               {/* CERTIFICATES COLUMN */}
               <div className="col-xl-12 col-md-12">
                 <div className="single-resume">
+                  <div className="section-title text-center wow fadeInUp delay-0-2s">
+                    <span className="subtitle">Credentials</span>
+                    <h2>Professional Certifications</h2>
+                  </div>
                   <div className="row">
                     {displayedCerts.map((cert) => {
                       return (
@@ -540,7 +559,13 @@ const AboutPage = () => {
                             <img
                               src={`/assets/images/testimonials/review${num}.png?v=2`}
                               alt={`Client Review ${num}`}
-                              style={{ width: "100%", borderRadius: "10px" }}
+                              style={{
+                                width: "100%",
+                                height: "auto",
+                                borderRadius: "10px",
+                                display: "block",
+                              }}
+                              loading="lazy"
                             />
                           </div>
                         </div>

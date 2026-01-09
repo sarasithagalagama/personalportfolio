@@ -215,7 +215,12 @@ const GalleryPage = () => {
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
                   <span className="subtitle">Gallery</span>
                   <h2>Creative Visuals</h2>
-                  <p>A collection of my graphic design and artistic works.</p>
+                  <p>
+                    A curated collection of my graphic design and artistic
+                    works—from bold posters and album covers to social media
+                    creatives and brand visuals, each piece crafted with
+                    attention to detail and creative storytelling.
+                  </p>
                 </div>
               </div>
             </div>

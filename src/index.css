@@ -19,8 +19,8 @@ section.gallery-area,
 section.resume-area,
 section.skills-area,
 section.testimonials-area {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
 }
 
 /* Standard padding for the first section of every page to account for fixed header */
@@ -29,8 +29,8 @@ section.about-area,
 section.about-single-area,
 section.innerpage-single-area,
 section.single-project-hero-area {
-    padding-top: 150px !important; 
-    padding-bottom: 60px;
+    padding-top: 120px !important; 
+    padding-bottom: 40px;
 }
 
 /* Mobile Standardization (Tighter gaps) */
@@ -44,8 +44,8 @@ section.single-project-hero-area {
     section.resume-area,
     section.skills-area,
     section.testimonials-area {
-        padding-top: 30px !important;
-        padding-bottom: 30px !important;
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
     }
 
     section.about-area, 
@@ -53,7 +53,7 @@ section.single-project-hero-area {
     section.innerpage-single-area,
     section.single-project-hero-area {
         padding-top: 85px !important;
-        padding-bottom: 30px;
+        padding-bottom: 25px;
     }
 }
 
@@ -937,12 +937,12 @@ section.single-project-hero-area {
 .single-contact .contact-icon {
     width: 60px;
     height: 60px;
-    background: rgba(235, 93, 58, 0.1);
-    border-radius: 12px;
+    background: #f5f5f5;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 24px;
     color: var(--primary-color);
     flex-shrink: 0;
     transition: all 0.4s ease;
@@ -954,7 +954,7 @@ section.single-project-hero-area {
 }
 
 .single-contact h2 {
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #888;
@@ -963,12 +963,14 @@ section.single-project-hero-area {
 }
 
 .single-contact p {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     margin: 0 !important;
     font-weight: 500;
     line-height: 1.4;
-    word-break: break-word; /* Prevents long emails from overflowing */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .single-contact p a {
@@ -1088,4 +1090,190 @@ section.single-project-hero-area {
     font-weight: 500;
 }
 
+/* Resume section responsive separator */
+@media (max-width: 767px) {
+    .resume-area .col-xl-6[style*="borderRight"] {
+        border-right: none !important;
+        padding-right: 15px !important;
+        margin-bottom: 40px;
+    }
+    
+    .resume-area .col-xl-6[style*="paddingLeft"] {
+        padding-left: 15px !important;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+        padding-top: 40px;
+    }
+}
 
+/* Resume inner cards styling */
+.resume-inner-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.resume-inner-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.resume-inner-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments for Resume section */
+@media (max-width: 1199px) {
+    .resume-inner-card {
+        padding: 25px;
+    }
+    
+    .resume-inner-card h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 991px) {
+    .resume-area .row > [class*="col-"] {
+        padding-bottom: 20px;
+    }
+    
+    .resume-inner-card {
+        margin-bottom: 0;
+        padding: 20px;
+    }
+    
+    .resume-inner-card h2 {
+        font-size: 20px;
+        margin-bottom: 20px !important;
+    }
+    
+    .resume-area .section-title {
+        margin-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .resume-area .row > [class*="col-"] {
+        padding-bottom: 15px;
+    }
+    
+    .resume-inner-card {
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    
+    .resume-inner-card h2 {
+        font-size: 18px;
+        margin-bottom: 20px !important;
+    }
+    
+    .resume-area .section-title h2 {
+        font-size: 24px;
+    }
+}
+
+/* Standardize resume content font sizes */
+.resume-area .resume-item .content .years {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.resume-area .resume-item .content h4 {
+    font-size: 18px;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.resume-area .resume-item .content .company {
+    font-size: 14px;
+    color: #888;
+}
+
+.resume-area .resume-item {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.resume-area .resume-item:first-child {
+    padding-top: 0;
+}
+
+.resume-area .resume-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
+/* Testimonial image stabilization */
+.testimonial-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.testimonial-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form validation styles */
+.error-message {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.success-message {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4caf50;
+    color: #4caf50;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.success-message i {
+    font-size: 20px;
+}
+
+.form-control.is-invalid {
+    border-color: #ff6b6b !important;
+}
+
+.form-control.is-invalid:focus {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1) !important;
+}
+
+.theme-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.theme-btn i.ri-loader-4-line {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
