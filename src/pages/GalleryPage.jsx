@@ -7,13 +7,6 @@ const GalleryPage = () => {
   const [shuffledGallery, setShuffledGallery] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     // Fisher-Yates Shuffle
@@ -30,10 +23,9 @@ const GalleryPage = () => {
   }, []);
 
   const initialCount = 8;
-  const displayedImages =
-    isMobile && !showAll
-      ? shuffledGallery.slice(0, initialCount)
-      : shuffledGallery;
+  const displayedImages = !showAll
+    ? shuffledGallery.slice(0, initialCount)
+    : shuffledGallery;
 
   const openLightbox = (image, index) => {
     setSelectedImage(image);
@@ -257,7 +249,7 @@ const GalleryPage = () => {
             ))}
           </div>
 
-          {isMobile && shuffledGallery.length > initialCount && (
+          {shuffledGallery.length > initialCount && (
             <div className="row">
               <div className="col-lg-12 text-center mt-20 mb-60">
                 <button
