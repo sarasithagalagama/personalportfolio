@@ -6,6 +6,14 @@ const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [shuffledGallery, setShuffledGallery] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     // Fisher-Yates Shuffle
@@ -21,6 +29,12 @@ const GalleryPage = () => {
     setShuffledGallery(shuffleArray(galleryData));
   }, []);
 
+  const initialCount = 8;
+  const displayedImages =
+    isMobile && !showAll
+      ? shuffledGallery.slice(0, initialCount)
+      : shuffledGallery;
+
   const openLightbox = (image, index) => {
     setSelectedImage(image);
     setActiveIndex(index);
@@ -31,9 +45,9 @@ const GalleryPage = () => {
   const navigateLightbox = (e, direction) => {
     e.stopPropagation();
     const newIndex =
-      (activeIndex + direction + shuffledGallery.length) %
-      shuffledGallery.length;
-    setSelectedImage(shuffledGallery[newIndex]);
+      (activeIndex + direction + displayedImages.length) %
+      displayedImages.length;
+    setSelectedImage(displayedImages[newIndex]);
     setActiveIndex(newIndex);
   };
 
@@ -44,7 +58,7 @@ const GalleryPage = () => {
           .gallery-masonry {
             column-count: 1;
             column-gap: 20px;
-            padding: 40px 0;
+            padding: 40px 0 20px;
           }
 
           @media (min-width: 576px) {
@@ -223,7 +237,7 @@ const GalleryPage = () => {
       <section className="gallery-section wow fadeInUp delay-0-3s">
         <div className="container">
           <div className="gallery-masonry">
-            {shuffledGallery.map((image, index) => (
+            {displayedImages.map((image, index) => (
               <div
                 key={image.id}
                 className="gallery-item"
@@ -242,6 +256,24 @@ const GalleryPage = () => {
               </div>
             ))}
           </div>
+
+          {isMobile && shuffledGallery.length > initialCount && (
+            <div className="row">
+              <div className="col-lg-12 text-center mt-20 mb-60">
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="theme-btn"
+                >
+                  {showAll ? "Show Less" : "Load More"}{" "}
+                  <i
+                    className={
+                      showAll ? "ri-arrow-up-line" : "ri-arrow-down-line"
+                    }
+                  ></i>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -288,7 +320,7 @@ const GalleryPage = () => {
                 fontSize: "14px",
               }}
             >
-              {activeIndex + 1} / {shuffledGallery.length} -{" "}
+              {activeIndex + 1} / {displayedImages.length} -{" "}
               {selectedImage.title}
             </div>
           </div>
