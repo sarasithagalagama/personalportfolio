@@ -6,11 +6,17 @@
   --primary-color: #eb5d3a;
 }
 
-.mobile-break {
-    display: none;
+/* ============================================
+   GLOBAL PAGE SPACING STANDARDS
+   ============================================ */
+/* Standard padding for the first section of every page to account for fixed header */
+.about-area, 
+.innerpage-single-area {
+    padding-top: 150px !important; 
+    padding-bottom: 60px;
 }
 
-/* Standard spacing for all sections */
+/* Reduced spacing for all other inner sections to avoid large gaps */
 .services-area, 
 .projects-area, 
 .fiverr-area, 
@@ -21,33 +27,22 @@
     padding-bottom: 60px !important;
 }
 
-/* Page Header Sections: Higher priority padding to clear fixed header */
-.about-area, 
-.about-single-area,
-.innerpage-single-area {
-    padding-top: 150px !important; 
-    padding-bottom: 60px;
-    overflow: visible !important;
-}
-
-/* Mobile Standardization */
+/* Mobile Standardization (Tighter gaps) */
 @media (max-width: 991px) {
+    .about-area, 
+    .innerpage-single-area {
+        padding-top: 85px !important;
+        padding-bottom: 30px;
+    }
+
     .services-area, 
     .projects-area, 
     .fiverr-area, 
     .call-to-action-area, 
     .contact-area, 
     .gallery-area {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-    }
-
-    .about-area, 
-    .about-single-area,
-    .innerpage-single-area {
-        padding-top: 100px !important; /* Slightly more space to be safe */
-        padding-bottom: 20px;
-        overflow: visible !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
     }
 }
 
@@ -555,126 +550,57 @@
    ============================================ */
 
 
-/* ============================================
-   MODERN MOBILE HEADER & NAVIGATION
-   ============================================ */
-
-.main-header {
-    transition: all 0.4s ease;
-    z-index: 1000;
-}
-
-.main-header.fixed-header .header-upper {
-    background: #121214 !important; /* Solid background */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px 0 !important;
-}
-
 @media (max-width: 991px) {
-    /* Prevent Logo and Menu from being too close to edges */
-    .header-inner {
-        padding: 5px 15px;
+    /* Header/Navigation Fixes */
+    .main-header {
+        padding: 15px 0;
     }
 
-    .logo h2, .mobile-logo h2 {
-        font-size: 22px !important;
-        font-weight: 700;
-        letter-spacing: -0.5px;
+    /* Logo - Restoring larger size but preventing huge overflows */
+    .logo h2,
+    .mobile-logo h2 {
+        font-size: 24px !important; /* Restored to a readable size */
+        margin: 0;
+        line-height: 1.2;
+        display: block; /* Allow standard block behavior */
+        white-space: normal; /* Allow wrapping if absolutely necessary */
+    }
+    
+    .logo a, .mobile-logo a {
+        display: block;
     }
 
-    /* Solid header on mobile */
-    .header-upper {
-        background: #000000 !important; 
-        padding: 12px 0 !important;
-    }
-
-    /* Modern Mobile Menu - Solid Refined look */
+    /* Mobile Menu Container */
     .navbar-collapse {
-        background: #121214 !important; /* Solid background */
-        padding: 30px 20px !important;
-        margin-top: 10px !important;
-        border-radius: 24px !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8) !important;
-        position: absolute !important;
-        width: 92% !important;
-        left: 4% !important;
-        top: 100% !important;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px) scale(0.95);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #1f1f1f;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        z-index: 1000;
     }
-
-    .navbar-collapse.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0) scale(1);
-    }
-
+    
     .main-menu .navigation > li {
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
         margin: 0;
-        padding: 0 !important;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.4s ease;
     }
-
-    .navbar-collapse.show .navigation > li {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .main-menu .navigation > li:last-child {
+        border-bottom: none;
     }
-
+    
     .main-menu .navigation > li > a {
-        padding: 18px 15px !important;
-        font-size: 18px !important;
-        color: #fff !important;
-        justify-content: center !important;
-        text-align: center;
-        border-radius: 12px;
-        margin-bottom: 5px;
-        transition: all 0.3s ease;
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+        color: #e0e0e0 !important;
     }
-
-    .main-menu .navigation > li > a:hover {
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--primary-color) !important;
-    }
-
-    .main-menu .navigation > li > a.active {
-        background: rgba(235, 93, 58, 0.15) !important;
-        color: var(--primary-color) !important;
-        font-weight: 600;
-    }
-
-    /* Modern Hamburger Toggle - Refined Transitions */
-    .navbar-toggle {
-        width: 40px !important;
-        height: 40px !important;
-        padding: 0 !important;
-        gap: 5px !important;
-    }
-
-    .navbar-toggle .icon-bar {
-        width: 22px !important;
-        height: 2px !important;
-        background: #fff !important;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    }
-
-    .navbar-toggle.active .icon-bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    .navbar-toggle.active .icon-bar:nth-child(2) {
-        transform: scaleX(0);
-        opacity: 0;
-    }
-    .navbar-toggle.active .icon-bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-}
 
     /* Hero & Profile Fixes */
     .about-image-part img {
@@ -693,10 +619,6 @@
         line-height: 1.2;
         margin-bottom: 15px;
         word-wrap: break-word;
-    }
-
-    .mobile-break {
-        display: block;
     }
     
     /* Social Icons - FORCE ONE ROW */
@@ -1030,13 +952,12 @@
 }
 
 .single-contact p {
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
     margin: 0 !important;
     font-weight: 500;
     line-height: 1.4;
-    word-break: break-all; /* Better for long emails */
-    overflow-wrap: anywhere;
+    word-break: break-word; /* Prevents long emails from overflowing */
 }
 
 .single-contact p a {
@@ -1080,7 +1001,7 @@
     }
     
     .single-contact p {
-        font-size: 13px; /* Reduced for better fit on small screens */
+        font-size: 14px; /* Reduced for better fit on small screens */
     }
 }
 
@@ -1135,60 +1056,25 @@
 }
 
 .contact-form-area .theme-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 30px;
+    font-size: 16px;
+    font-weight: 600;
     margin-top: 10px;
 }
 
 .section-title .subtitle {
     display: block;
-    font-size: 16px;
-    text-transform: none; /* remove all caps */
-    letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.65) !important;
-    margin-bottom: 10px !important;
-    font-weight: 500;
-}
-/* ============================================
-   MODERN TESTIMONIAL STYLES
-   ============================================ */
-.testimonials-area {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.testimonial-item {
-    background: #18191a;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 24px;
-    transition: all 0.4s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
 
-.testimonial-item:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.testimonial-image {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.testimonial-image img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-}
-
-@media (max-width: 768px) {
-    .testimonial-item {
-        padding: 10px;
-        border-radius: 16px;
-    }
-}

@@ -44,14 +44,11 @@ const WorksPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <span className="subtitle">Portfolio</span>
                   <h2>Works & Projects</h2>
                   <p>
-                    Explore my portfolio of branding, UI/UX, and development
-                    projects. Each one is a balance of aesthetic design and
-                    functional engineering, reflecting my commitment to
-                    delivering high-quality, user-centered solutions for clients
-                    worldwide.
+                    Check out some of my design projects, meticulously crafted
+                    with love and dedication, each one reflecting the passion
+                    and soul I poured into every detail.
                   </p>
                 </div>
               </div>

@@ -13,11 +13,6 @@ const ContactPage = () => {
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
                   <span className="subtitle">Contact</span>
                   <h2>Get in Touch with Me!</h2>
-                  <p>
-                    Have a project in mind or just want to say hello? Feel free
-                    to reach out. I'm always open to discussing new projects,
-                    creative ideas, or opportunities to be part of your vision.
-                  </p>
                 </div>
               </div>
             </div>

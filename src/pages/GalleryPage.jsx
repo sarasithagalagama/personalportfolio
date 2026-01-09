@@ -213,13 +213,8 @@ const GalleryPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <span className="subtitle">Gallery</span>
                   <h2>Creative Visuals</h2>
-                  <p>
-                    A curated collection of my creative visuals, graphic design
-                    projects, and artistic explorations. Each piece represents a
-                    blend of aesthetic precision and storytelling.
-                  </p>
+                  <p>A collection of my graphic design and artistic works.</p>
                 </div>
               </div>
             </div>

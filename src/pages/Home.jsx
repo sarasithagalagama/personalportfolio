@@ -171,7 +171,7 @@ const Home = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <span className="subtitle">Services</span>
+                  <p>Services</p>
                   <h2>Quality services for modern brands</h2>
                 </div>
               </div>

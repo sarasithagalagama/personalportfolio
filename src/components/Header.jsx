@@ -3,22 +3,23 @@ import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  /* Theme state removed */
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsFixed(window.scrollY >= 100);
+      if (window.scrollY >= 250) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when route changes
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
+  /* Theme toggle useEffect removed */
 
   return (
     <header className={`main-header ${isFixed ? "fixed-header" : ""}`}>
@@ -47,63 +48,40 @@ const Header = () => {
                   {/* Toggle Button */}
                   <button
                     type="button"
-                    className={`navbar-toggle ${isMenuOpen ? "active" : ""}`}
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="navbar-toggle"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse"
                   >
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                   </button>
                 </div>
-                <div className={`navbar-collapse ${isMenuOpen ? "show" : ""}`}>
-                  <ul className="navigation clearfix">
+                <div className="navbar-collapse collapse">
+                  <ul className="navigation onepage clearfix">
                     <li>
-                      <Link
-                        className={`nav-link-click ${
-                          location.pathname === "/" ? "active" : ""
-                        }`}
-                        to="/"
-                      >
+                      <Link className="nav-link-click" to="/">
                         Home
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        className={`nav-link-click ${
-                          location.pathname === "/about" ? "active" : ""
-                        }`}
-                        to="/about"
-                      >
+                      <Link className="nav-link-click" to="/about">
                         about
                       </Link>
                     </li>
+
                     <li>
-                      <Link
-                        className={`nav-link-click ${
-                          location.pathname === "/works" ? "active" : ""
-                        }`}
-                        to="/works"
-                      >
+                      <Link className="nav-link-click" to="/works">
                         works
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        className={`nav-link-click ${
-                          location.pathname === "/gallery" ? "active" : ""
-                        }`}
-                        to="/gallery"
-                      >
+                      <Link className="nav-link-click" to="/gallery">
                         Gallery
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        className={`nav-link-click ${
-                          location.pathname === "/contact" ? "active" : ""
-                        }`}
-                        to="/contact"
-                      >
+                      <Link className="nav-link-click" to="/contact">
                         Contact
                       </Link>
                     </li>

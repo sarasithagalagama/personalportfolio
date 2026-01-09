@@ -352,11 +352,8 @@ const AboutPage = () => {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title text-center wow fadeInUp delay-0-2s">
-                <span className="subtitle">Credentials</span>
-                <h2>
-                  Professional <br className="mobile-break" />
-                  Certifications
-                </h2>
+                <p>Credentials</p>
+                <h2>Professional Certifications</h2>
               </div>
             </div>
           </div>
@@ -447,7 +444,13 @@ const AboutPage = () => {
                   </div>
                   <div
                     className="hero-btns text-center wow fadeInUp delay-0-2s"
-                    style={{ marginTop: "20px" }}
+                    style={{
+                      marginTop: "20px",
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: "20px",
+                      flexWrap: "wrap",
+                    }}
                   >
                     {certItems.length > initialCertCount && (
                       <button
@@ -470,7 +473,8 @@ const AboutPage = () => {
                       rel="noopener noreferrer"
                       className="theme-btn"
                     >
-                      Coursera Profile <SiCoursera />
+                      Coursera Profile{" "}
+                      <SiCoursera style={{ marginLeft: "8px" }} />
                     </a>
                     <a
                       href="https://www.credly.com/users/sarasitha-galagama"
@@ -478,7 +482,11 @@ const AboutPage = () => {
                       rel="noopener noreferrer"
                       className="theme-btn"
                     >
-                      Credly Profile <i className="ri-award-line"></i>
+                      Credly Profile{" "}
+                      <i
+                        className="ri-award-line"
+                        style={{ marginLeft: "8px" }}
+                      ></i>
                     </a>
                   </div>
                 </div>
@@ -496,7 +504,7 @@ const AboutPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <span className="subtitle">Testimonials</span>
+                  <p>Testimonials</p>
                   <h2>What clients say!</h2>
                 </div>
               </div>
@@ -509,7 +517,7 @@ const AboutPage = () => {
                     spaceBetween={30}
                     slidesPerView={1}
                     autoplay={{
-                      delay: 4000,
+                      delay: 3000,
                       disableOnInteraction: false,
                     }}
                     className="testimonials-swiper"
@@ -521,7 +529,7 @@ const AboutPage = () => {
                             <img
                               src={`/assets/images/testimonials/review${num}.png?v=2`}
                               alt={`Client Review ${num}`}
-                              style={{ width: "100%", borderRadius: "15px" }}
+                              style={{ width: "100%", borderRadius: "10px" }}
                             />
                           </div>
                         </div>
