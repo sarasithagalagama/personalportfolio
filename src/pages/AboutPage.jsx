@@ -117,6 +117,17 @@ const AboutPage = () => {
       {/* START RESUME EXPERIENCE DESIGN AREA */}
       <section id="resume" className="resume-area">
         <div className="container">
+          <div className="row">
+            <div className="col-xl-12 col-lg-12">
+              <div
+                className="section-title text-center wow fadeInUp delay-0-2s"
+                style={{ marginBottom: "50px" }}
+              >
+                <span className="subtitle">Resume</span>
+                <h2>Education & Experience</h2>
+              </div>
+            </div>
+          </div>
           <div className="resume-items">
             <div className="row">
               {/* START EXPERIENCE RESUME DESIGN AREA */}
@@ -225,7 +236,7 @@ const AboutPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <p>Skills</p>
+                  <span className="subtitle">Skills</span>
                   <h2>Technical Proficiency</h2>
                 </div>
               </div>
@@ -352,7 +363,7 @@ const AboutPage = () => {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title text-center wow fadeInUp delay-0-2s">
-                <p>Credentials</p>
+                <span className="subtitle">Credentials</span>
                 <h2>Professional Certifications</h2>
               </div>
             </div>

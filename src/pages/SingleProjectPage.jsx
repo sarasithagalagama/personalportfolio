@@ -29,7 +29,7 @@ const SingleProjectPage = () => {
   return (
     <>
       {/* 1. SPLIT HERO SECTION */}
-      <section className="single-project-hero-area pt-150 pb-100">
+      <section className="single-project-hero-area innerpage-single-area pb-100">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">

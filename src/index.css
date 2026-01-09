@@ -1080,12 +1080,12 @@ section.single-project-hero-area {
 
 .section-title .subtitle {
     display: block;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-weight: 600;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    color: #9f9f9f;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 
