@@ -432,6 +432,79 @@
     box-shadow: 0 5px 15px rgba(235, 93, 58, 0.2);
 }
 
+
+/* ============================================
+   CERTIFICATIONS SECTION STYLES
+   ============================================ */
+.certifications-area {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.certification-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* fallback */
+    border-left: 4px solid transparent; /* Colored border will be applied inline */
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cert-icon {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.certification-item:hover .cert-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cert-content {
+    flex: 1;
+}
+
+.cert-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.cert-content .issuer {
+    display: block;
+    font-size: 13px;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+.cert-content .date {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+}
+
 /* ============================================
    MOBILE RESPONSIVENESS FIXES
    ============================================ */

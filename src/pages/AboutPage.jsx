@@ -11,7 +11,6 @@ import {
   FaGitAlt,
   FaDocker,
   FaLinux,
-  FaAws,
   FaDraftingCompass,
 } from "react-icons/fa";
 import {
@@ -30,8 +29,17 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { MdOutlineDesignServices } from "react-icons/md";
+import { FaMeta, FaGoogle, FaAws, FaHackerrank } from "react-icons/fa6";
+import { certificationsData } from "../data/certificationsData";
 
 const AboutPage = () => {
+  const iconMap = {
+    meta: FaMeta,
+    aws: FaAws,
+    google: FaGoogle,
+    hackerrank: FaHackerrank,
+  };
+
   return (
     <div>
       {/* START ABOUT DESIGN AREA */}
@@ -314,6 +322,78 @@ const AboutPage = () => {
         </div>
       </section>
       {/* / END SKILLS DESIGN AREA */}
+
+      {/* START CERTIFICATIONS DESIGN AREA */}
+      <section className="certifications-area">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12 col-lg-12">
+              <div className="section-title text-center wow fadeInUp delay-0-2s">
+                <p>Achievements</p>
+                <h2>Certifications & Badges</h2>
+              </div>
+            </div>
+          </div>
+          <div className="resume-items">
+            <div className="row">
+              {/* CERTIFICATIONS COLUMN */}
+              <div className="col-xl-6 col-md-6">
+                <div className="single-resume">
+                  <h2>Professional Certifications</h2>
+                  <div className="experience-list">
+                    {certificationsData
+                      .filter((item) => item.type === "certification")
+                      .map((cert) => {
+                        const Icon = iconMap[cert.icon];
+                        return (
+                          <div
+                            key={cert.id}
+                            className="resume-item wow fadeInUp delay-0-3s"
+                          >
+                            <div className="icon">{Icon ? <Icon /> : null}</div>
+                            <div className="content">
+                              <span className="years">{cert.date}</span>
+                              <h4>{cert.title}</h4>
+                              <span className="company">{cert.issuer}</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </div>
+              </div>
+
+              {/* BADGES COLUMN */}
+              <div className="col-xl-6 col-md-6">
+                <div className="single-resume">
+                  <h2>Skill Badges</h2>
+                  <div className="experience-list">
+                    {certificationsData
+                      .filter((item) => item.type === "badge")
+                      .map((cert) => {
+                        const Icon = iconMap[cert.icon];
+                        return (
+                          <div
+                            key={cert.id}
+                            className="resume-item wow fadeInUp delay-0-3s"
+                          >
+                            <div className="icon">{Icon ? <Icon /> : null}</div>
+                            <div className="content">
+                              <span className="years">{cert.date}</span>
+                              <h4>{cert.title}</h4>
+                              <span className="company">{cert.issuer}</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* / END CERTIFICATIONS DESIGN AREA */}
 
       {/* START TESTIMONIALS DESIGN AREA */}
       <section className="testimonials-area">
