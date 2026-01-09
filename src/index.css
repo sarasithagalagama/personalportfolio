@@ -11,17 +11,21 @@
    ============================================ */
 /* Ensure the first section of every page on mobile has enough space for the fixed header */
 @media (max-width: 991px) {
-    .about-area, 
-    .about-single-area,
-    .services-area, 
-    .projects-area, 
-.fiverr-area, 
-    .call-to-action-area, 
-    .contact-area, 
-    .gallery-area,
+    .about-area,
     .innerpage-single-area {
-        padding-top: 85px !important; 
-        padding-bottom: 40px;
+        padding-top: 85px !important;
+        padding-bottom: 30px;
+    }
+
+    /* Reduce spacing for all other sections to avoid large gaps */
+    .services-area,
+    .projects-area,
+    .fiverr-area,
+    .call-to-action-area,
+    .contact-area,
+    .gallery-area {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
     }
 }
 
