@@ -356,7 +356,22 @@ const AboutPage = () => {
                             key={cert.id}
                             className="resume-item wow fadeInUp delay-0-3s"
                           >
-                            <div className="icon">{Icon ? <Icon /> : null}</div>
+                            <div className="icon">
+                              {cert.image ? (
+                                <img
+                                  src={cert.image}
+                                  alt={cert.title}
+                                  style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "contain",
+                                    borderRadius: "5px",
+                                  }}
+                                />
+                              ) : Icon ? (
+                                <Icon />
+                              ) : null}
+                            </div>
                             <div className="content">
                               <span className="years">{cert.date}</span>
                               <h4>{cert.title}</h4>
@@ -369,32 +384,49 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* BADGES COLUMN */}
-              <div className="col-xl-6 col-md-6">
-                <div className="single-resume">
-                  <h2>Skill Badges</h2>
-                  <div className="experience-list">
-                    {certificationsData
-                      .filter((item) => item.type === "badge")
-                      .map((cert) => {
-                        const Icon = iconMap[cert.icon];
-                        return (
-                          <div
-                            key={cert.id}
-                            className="resume-item wow fadeInUp delay-0-3s"
-                          >
-                            <div className="icon">{Icon ? <Icon /> : null}</div>
-                            <div className="content">
-                              <span className="years">{cert.date}</span>
-                              <h4>{cert.title}</h4>
-                              <span className="company">{cert.issuer}</span>
+              {/* BADGES COLUMN (Hidden if empty) */}
+              {certificationsData.some((item) => item.type === "badge") && (
+                <div className="col-xl-6 col-md-6">
+                  <div className="single-resume">
+                    <h2>Skill Badges</h2>
+                    <div className="experience-list">
+                      {certificationsData
+                        .filter((item) => item.type === "badge")
+                        .map((cert) => {
+                          const Icon = iconMap[cert.icon];
+                          return (
+                            <div
+                              key={cert.id}
+                              className="resume-item wow fadeInUp delay-0-3s"
+                            >
+                              <div className="icon">
+                                {cert.image ? (
+                                  <img
+                                    src={cert.image}
+                                    alt={cert.title}
+                                    style={{
+                                      width: "100%",
+                                      height: "100%",
+                                      objectFit: "contain",
+                                      borderRadius: "5px",
+                                    }}
+                                  />
+                                ) : Icon ? (
+                                  <Icon />
+                                ) : null}
+                              </div>
+                              <div className="content">
+                                <span className="years">{cert.date}</span>
+                                <h4>{cert.title}</h4>
+                                <span className="company">{cert.issuer}</span>
+                              </div>
                             </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
