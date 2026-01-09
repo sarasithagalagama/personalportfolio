@@ -7,6 +7,38 @@
 }
 
 /* ============================================
+   GLOBAL PAGE SPACING STANDARDS
+   ============================================ */
+/* Standard padding for the first section of every page to account for fixed header */
+.about-area, 
+.about-single-area,
+.services-area, 
+.projects-area, 
+.fiverr-area, 
+.call-to-action-area, 
+.contact-area, 
+.gallery-area,
+.innerpage-single-area {
+    padding-top: 150px !important; /* Premium standard Desktop spacing */
+    padding-bottom: 80px;
+}
+
+@media (max-width: 991px) {
+    .about-area, 
+    .about-single-area,
+    .services-area, 
+    .projects-area, 
+    .fiverr-area, 
+    .call-to-action-area, 
+    .contact-area, 
+    .gallery-area,
+    .innerpage-single-area {
+        padding-top: 120px !important; /* Standardized Mobile spacing */
+        padding-bottom: 40px;
+    }
+}
+
+/* ============================================
    PREMIUM FOOTER STYLES (Restored)
    ============================================ */
 
@@ -738,11 +770,6 @@
         padding: 15px;
     }
     
-    /* Section Spacing - Increased padding-top to prevent header overlap */
-    .about-area, .services-area, .projects-area, .fiverr-area, .call-to-action-area, .contact-area {
-        padding-top: 100px;
-        padding-bottom: 40px;
-    }
 
 
     /* Footer Mobile */
