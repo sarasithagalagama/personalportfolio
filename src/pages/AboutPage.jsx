@@ -370,7 +370,7 @@ const AboutPage = () => {
                           className="col-xl-3 col-lg-4 col-md-6 mb-4"
                         >
                           <div
-                            onClick={() => setSelectedPdf(cert.link)}
+                            onClick={() => setSelectedPdf(cert.image)}
                             className="certificate-gallery-item wow fadeInUp delay-0-3s"
                             style={{ cursor: "pointer" }}
                           >
@@ -384,7 +384,7 @@ const AboutPage = () => {
                               }}
                             >
                               <img
-                                src={cert.link}
+                                src={cert.image}
                                 alt={cert.title}
                                 style={{
                                   width: "100%",
@@ -419,6 +419,23 @@ const AboutPage = () => {
                               >
                                 {cert.date}
                               </span>
+                              <a
+                                href={cert.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                style={{
+                                  color: "#b0b0b0",
+                                  fontSize: "12px",
+                                  marginLeft: "10px",
+                                  textDecoration: "underline",
+                                  display: "inline-flex",
+                                  alignItems: "center",
+                                  gap: "4px",
+                                }}
+                              >
+                                Verify <i className="ri-external-link-line"></i>
+                              </a>
                             </div>
                           </div>
                         </div>
