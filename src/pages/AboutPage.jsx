@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -34,6 +34,30 @@ import { certificationsData } from "../data/certificationsData";
 
 const AboutPage = () => {
   const [selectedPdf, setSelectedPdf] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(6); // Default to show enough
+
+  const certItems = certificationsData.filter(
+    (item) => item.type === "certification"
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(certItems.length);
+      }
+    };
+
+    handleResize(); // Check on mount
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [certItems.length]); // Dependency on certItems.length to re-evaluate if data changes
+
+  const handleLoadMore = () => {
+    setVisibleCount(certItems.length);
+  };
 
   const iconMap = {
     meta: FaMeta,
@@ -342,71 +366,80 @@ const AboutPage = () => {
               <div className="col-xl-12 col-md-12">
                 <div className="single-resume">
                   <div className="row">
-                    {certificationsData
-                      .filter((item) => item.type === "certification")
-                      .map((cert) => {
-                        return (
+                    {certItems.slice(0, visibleCount).map((cert) => {
+                      return (
+                        <div
+                          key={cert.id}
+                          className="col-xl-3 col-lg-4 col-md-6 mb-4"
+                        >
                           <div
-                            key={cert.id}
-                            className="col-xl-3 col-lg-4 col-md-6 mb-4"
+                            onClick={() => setSelectedPdf(cert.link)}
+                            className="certificate-gallery-item wow fadeInUp delay-0-3s"
+                            style={{ cursor: "pointer" }}
                           >
                             <div
-                              onClick={() => setSelectedPdf(cert.link)}
-                              className="certificate-gallery-item wow fadeInUp delay-0-3s"
-                              style={{ cursor: "pointer" }}
+                              className="image-box"
+                              style={{
+                                borderRadius: "10px",
+                                overflow: "hidden",
+                                border: "1px solid #333",
+                                marginBottom: "15px",
+                              }}
                             >
-                              <div
-                                className="image-box"
+                              <img
+                                src={cert.link}
+                                alt={cert.title}
                                 style={{
-                                  borderRadius: "10px",
-                                  overflow: "hidden",
-                                  border: "1px solid #333",
-                                  marginBottom: "15px",
+                                  width: "100%",
+                                  height: "auto",
+                                  display: "block",
+                                  transition: "transform 0.5s",
+                                }}
+                              />
+                            </div>
+                            <div className="content">
+                              <h4
+                                style={{
+                                  fontSize: "18px",
+                                  marginBottom: "5px",
                                 }}
                               >
-                                <img
-                                  src={cert.link}
-                                  alt={cert.title}
-                                  style={{
-                                    width: "100%",
-                                    height: "auto",
-                                    display: "block",
-                                    transition: "transform 0.5s",
-                                  }}
-                                />
-                              </div>
-                              <div className="content">
-                                <h4
-                                  style={{
-                                    fontSize: "18px",
-                                    marginBottom: "5px",
-                                  }}
-                                >
-                                  {cert.title}
-                                </h4>
-                                <span
-                                  className="issuer"
-                                  style={{
-                                    color: "#b0b0b0",
-                                    fontSize: "14px",
-                                    marginRight: "10px",
-                                  }}
-                                >
-                                  {cert.issuer}
-                                </span>
-                                <span
-                                  className="date"
-                                  style={{ color: "#eb5d3a", fontSize: "12px" }}
-                                >
-                                  {cert.date}
-                                </span>
-                              </div>
+                                {cert.title}
+                              </h4>
+                              <span
+                                className="issuer"
+                                style={{
+                                  color: "#b0b0b0",
+                                  fontSize: "14px",
+                                  marginRight: "10px",
+                                }}
+                              >
+                                {cert.issuer}
+                              </span>
+                              <span
+                                className="date"
+                                style={{ color: "#eb5d3a", fontSize: "12px" }}
+                              >
+                                {cert.date}
+                              </span>
                             </div>
                           </div>
-                        );
-                      })}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
+                {visibleCount < certItems.length && (
+                  <div className="row">
+                    <div className="col-lg-12 text-center">
+                      <div className="hero-btns wow fadeInUp delay-0-2s">
+                        <button onClick={handleLoadMore} className="theme-btn">
+                          Load More <i className="ri-refresh-line"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
