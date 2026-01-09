@@ -420,7 +420,6 @@ const AboutPage = () => {
                                 {cert.date}
                               </span>
                             </div>
-                            </div>
                           </div>
                         </div>
                       );
