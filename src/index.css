@@ -902,11 +902,6 @@
     transition: all 0.4s ease;
 }
 
-.single-contact:hover .contact-icon {
-    background: var(--primary-color);
-    color: #fff;
-    transform: scale(1.1);
-}
 
 .single-contact .contact-text {
     flex-grow: 1;
@@ -947,12 +942,13 @@
 
 .single-contact:hover .contact-icon {
     background: var(--primary-color);
-    color: #fff;
+    color: #fff !important;
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(235, 93, 58, 0.4);
 }
 
 .single-contact:hover .contact-icon i {
+    color: #fff !important;
     transform: rotate(10deg);
 }
 
