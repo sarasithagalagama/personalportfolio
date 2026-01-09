@@ -1155,5 +1155,111 @@
     margin-bottom: 10px !important;
     font-weight: 500;
 }
+/* ============================================
+   MODERN TESTIMONIAL STYLES
+   ============================================ */
+.testimonials-area {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 
+.testimonial-item {
+    background: #18191a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 24px;
+    transition: all 0.4s ease;
+    height: 100%;
+}
 
+.testimonial-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.quote-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.rating {
+    display: flex;
+    gap: 4px;
+    color: #ffb400; /* Star Gold */
+    font-size: 16px;
+}
+
+.testimonial-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 25px;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    background: rgba(235, 93, 58, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.client-details h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.client-details span {
+    font-size: 13px;
+    color: #888;
+}
+
+.testimonial-date span {
+    font-size: 12px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .testimonial-item {
+        padding: 30px;
+    }
+    
+    .testimonial-content p {
+        font-size: 16px;
+    }
+    
+    .testimonial-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

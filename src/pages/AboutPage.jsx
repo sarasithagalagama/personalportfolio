@@ -31,6 +31,7 @@ import {
 } from "react-icons/si";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaMeta, FaGoogle, FaAws, FaHackerrank } from "react-icons/fa6";
+import { testimonialsData } from "../data/testimonialsData";
 import { certificationsData } from "../data/certificationsData";
 
 const AboutPage = () => {
@@ -507,7 +508,7 @@ const AboutPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <p>Testimonials</p>
+                  <span className="subtitle">Testimonials</span>
                   <h2>What clients say!</h2>
                 </div>
               </div>
@@ -519,21 +520,46 @@ const AboutPage = () => {
                     modules={[Autoplay]}
                     spaceBetween={30}
                     slidesPerView={1}
+                    breakpoints={{
+                      1024: {
+                        slidesPerView: 2,
+                      },
+                    }}
                     autoplay={{
-                      delay: 3000,
+                      delay: 4000,
                       disableOnInteraction: false,
                     }}
                     className="testimonials-swiper"
                   >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                      <SwiperSlide key={num}>
+                    {testimonialsData.map((testimonial) => (
+                      <SwiperSlide key={testimonial.id}>
                         <div className="testimonial-item wow fadeInUp delay-0-3s">
-                          <div className="testimonial-image">
-                            <img
-                              src={`/assets/images/testimonials/review${num}.png?v=2`}
-                              alt={`Client Review ${num}`}
-                              style={{ width: "100%", borderRadius: "10px" }}
-                            />
+                          <div className="testimonial-header">
+                            <div className="quote-icon">
+                              <i className="ri-double-quotes-l"></i>
+                            </div>
+                            <div className="rating">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <i key={i} className="ri-star-fill"></i>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="testimonial-content">
+                            <p>{testimonial.text}</p>
+                          </div>
+                          <div className="testimonial-footer">
+                            <div className="client-info">
+                              <div className="client-avatar">
+                                <i className="ri-user-3-line"></i>
+                              </div>
+                              <div className="client-details">
+                                <h5>{testimonial.name}</h5>
+                                <span>{testimonial.location}</span>
+                              </div>
+                            </div>
+                            <div className="testimonial-date">
+                              <span>{testimonial.date}</span>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>

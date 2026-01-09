@@ -1,0 +1,47 @@
+export const testimonialsData = [
+  {
+    id: 1,
+    name: "diamondlmc",
+    location: "Belgium",
+    text: "Nice !! Quick work and very professionnal.",
+    rating: 5,
+    date: "6 days ago",
+    avatar: "/assets/images/testimonials/avatar1.png", // Fallback to a placeholder if not exists
+  },
+  {
+    id: 2,
+    name: "creative_pixel",
+    location: "United States",
+    text: "Sarasitha is an amazing designer. The attention to detail in the branding project was top-notch. Highly recommended!",
+    rating: 5,
+    date: "2 weeks ago",
+    avatar: "/assets/images/testimonials/avatar2.png",
+  },
+  {
+    id: 3,
+    name: "tech_solutions",
+    location: "United Kingdom",
+    text: "Very impressed with the UI/UX work. The landing page looks modern and converts really well. Great communication throughout.",
+    rating: 5,
+    date: "1 month ago",
+    avatar: "/assets/images/testimonials/avatar3.png",
+  },
+  {
+    id: 4,
+    name: "mark_m",
+    location: "Germany",
+    text: "Professional, fast, and high quality. Sarasitha understood our brand requirements perfectly and delivered ahead of schedule.",
+    rating: 5,
+    date: "2 months ago",
+    avatar: "/assets/images/testimonials/avatar4.png",
+  },
+  {
+    id: 5,
+    name: "sarah_j",
+    location: "Australia",
+    text: "The best experience I've had on Fiverr. The design was exactly what I was looking for, actually even better than expected!",
+    rating: 5,
+    date: "3 months ago",
+    avatar: "/assets/images/testimonials/avatar5.png",
+  },
+];
