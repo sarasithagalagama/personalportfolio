@@ -473,7 +473,7 @@ const AboutPage = () => {
       </section>
       {/*  // END CALL TO ACTION DESIGN AREA */}
 
-      {/* PDF MODAL */}
+      {/* CERTIFICATE MODAL */}
       {selectedPdf && (
         <div
           style={{
@@ -496,9 +496,11 @@ const AboutPage = () => {
               position: "relative",
               width: "90%",
               height: "90%",
-              backgroundColor: "#fff",
               borderRadius: "8px",
               overflow: "hidden",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -506,27 +508,40 @@ const AboutPage = () => {
               onClick={() => setSelectedPdf(null)}
               style={{
                 position: "absolute",
-                top: "10px",
-                right: "10px",
+                top: "20px",
+                right: "20px",
                 padding: "8px 12px",
                 background: "#eb5d3a",
                 color: "#fff",
                 border: "none",
                 borderRadius: "4px",
                 cursor: "pointer",
-                zIndex: 1,
+                zIndex: 10,
                 fontWeight: "bold",
               }}
             >
               Close
             </button>
-            <iframe
-              src={selectedPdf}
-              width="100%"
-              height="100%"
-              style={{ border: "none" }}
-              title="Certificate Viewer"
-            ></iframe>
+            {selectedPdf.toLowerCase().match(/\.(jpeg|jpg|gif|png)$/) ? (
+              <img
+                src={selectedPdf}
+                alt="Certificate"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  objectFit: "contain",
+                  borderRadius: "8px",
+                }}
+              />
+            ) : (
+              <iframe
+                src={selectedPdf}
+                width="100%"
+                height="100%"
+                style={{ border: "none", backgroundColor: "#fff" }}
+                title="Certificate Viewer"
+              ></iframe>
+            )}
           </div>
         </div>
       )}
