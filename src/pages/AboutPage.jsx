@@ -429,6 +429,23 @@ const AboutPage = () => {
               )}
             </div>
           </div>
+          <div className="row">
+            <div className="col-lg-12">
+              <div
+                className="hero-btns text-center wow fadeInUp delay-0-2s"
+                style={{ marginTop: "40px" }}
+              >
+                <a
+                  href="https://www.credly.com/users/sarasitha-galagama/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="theme-btn"
+                >
+                  View Credly Profile <i className="ri-external-link-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       {/* / END CERTIFICATIONS DESIGN AREA */}
