@@ -6,6 +6,10 @@
   --primary-color: #eb5d3a;
 }
 
+.mobile-break {
+    display: none;
+}
+
 /* ============================================
    GLOBAL PAGE SPACING STANDARDS
    ============================================ */
@@ -619,6 +623,10 @@
         line-height: 1.2;
         margin-bottom: 15px;
         word-wrap: break-word;
+    }
+
+    .mobile-break {
+        display: block;
     }
     
     /* Social Icons - FORCE ONE ROW */

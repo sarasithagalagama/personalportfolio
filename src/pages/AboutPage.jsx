@@ -353,7 +353,10 @@ const AboutPage = () => {
             <div className="col-xl-12 col-lg-12">
               <div className="section-title text-center wow fadeInUp delay-0-2s">
                 <p>Credentials</p>
-                <h2>Professional Certifications</h2>
+                <h2>
+                  Professional <br className="mobile-break" />
+                  Certifications
+                </h2>
               </div>
             </div>
           </div>
