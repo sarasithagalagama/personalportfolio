@@ -447,13 +447,7 @@ const AboutPage = () => {
                   </div>
                   <div
                     className="hero-btns text-center wow fadeInUp delay-0-2s"
-                    style={{
-                      marginTop: "20px",
-                      display: "flex",
-                      justifyContent: "center",
-                      gap: "20px",
-                      flexWrap: "wrap",
-                    }}
+                    style={{ marginTop: "20px" }}
                   >
                     {certItems.length > initialCertCount && (
                       <button
@@ -476,8 +470,7 @@ const AboutPage = () => {
                       rel="noopener noreferrer"
                       className="theme-btn"
                     >
-                      Coursera Profile{" "}
-                      <SiCoursera style={{ marginLeft: "8px" }} />
+                      Coursera Profile <SiCoursera />
                     </a>
                     <a
                       href="https://www.credly.com/users/sarasitha-galagama"
@@ -485,11 +478,7 @@ const AboutPage = () => {
                       rel="noopener noreferrer"
                       className="theme-btn"
                     >
-                      Credly Profile{" "}
-                      <i
-                        className="ri-award-line"
-                        style={{ marginLeft: "8px" }}
-                      ></i>
+                      Credly Profile <i className="ri-award-line"></i>
                     </a>
                   </div>
                 </div>
