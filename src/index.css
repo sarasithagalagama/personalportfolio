@@ -922,20 +922,38 @@
 }
 
 .single-contact p {
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     margin: 0 !important;
     font-weight: 500;
+    line-height: 1.4;
+    word-break: break-word; /* Prevents long emails from overflowing */
 }
 
 .single-contact p a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .single-contact p a:hover {
     color: var(--primary-color);
+}
+
+/* Enhanced Hover Effects */
+.single-contact .contact-icon i {
+    transition: all 0.4s ease;
+}
+
+.single-contact:hover .contact-icon {
+    background: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(235, 93, 58, 0.4);
+}
+
+.single-contact:hover .contact-icon i {
+    transform: rotate(10deg);
 }
 
 /* Mobile adjustments for contact cards */
@@ -948,11 +966,11 @@
     .single-contact .contact-icon {
         width: 50px;
         height: 50px;
-        font-size: 22px;
+        font-size: 20px;
     }
     
     .single-contact p {
-        font-size: 16px;
+        font-size: 14px; /* Reduced for better fit on small screens */
     }
 }
 
