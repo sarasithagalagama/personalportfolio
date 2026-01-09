@@ -431,49 +431,53 @@ const AboutPage = () => {
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <div
-                className="hero-btns text-center wow fadeInUp delay-0-2s"
-                style={{
-                  marginTop: "40px",
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "20px",
-                  flexWrap: "wrap",
-                }}
-              >
-                {certItems.length > initialCertCount && (
-                  <button
-                    onClick={() => setShowAllCerts(!showAllCerts)}
+              <div className="about-content-part wow fadeInUp delay-0-2s text-center">
+                <div
+                  className="hero-btns"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: "20px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {certItems.length > initialCertCount && (
+                    <button
+                      onClick={() => setShowAllCerts(!showAllCerts)}
+                      className="theme-btn"
+                    >
+                      {showAllCerts ? "Show Less" : "Load More"}{" "}
+                      <i
+                        className={
+                          showAllCerts
+                            ? "ri-arrow-up-line"
+                            : "ri-arrow-down-line"
+                        }
+                      ></i>
+                    </button>
+                  )}
+                  <a
+                    href="https://www.coursera.org/user/1c114cb914901ecbc751c46839b1b9ba"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="theme-btn"
                   >
-                    {showAllCerts ? "Show Less" : "Load More"}{" "}
+                    Coursera Profile{" "}
+                    <SiCoursera style={{ marginLeft: "8px" }} />
+                  </a>
+                  <a
+                    href="https://www.credly.com/users/sarasitha-galagama"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="theme-btn"
+                  >
+                    Credly Profile{" "}
                     <i
-                      className={
-                        showAllCerts ? "ri-arrow-up-line" : "ri-arrow-down-line"
-                      }
+                      className="ri-award-line"
+                      style={{ marginLeft: "8px" }}
                     ></i>
-                  </button>
-                )}
-                <a
-                  href="https://www.coursera.org/user/1c114cb914901ecbc751c46839b1b9ba"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="theme-btn"
-                >
-                  Coursera Profile <SiCoursera style={{ marginLeft: "8px" }} />
-                </a>
-                <a
-                  href="https://www.credly.com/users/sarasitha-galagama"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="theme-btn"
-                >
-                  Credly Profile{" "}
-                  <i
-                    className="ri-award-line"
-                    style={{ marginLeft: "8px" }}
-                  ></i>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
