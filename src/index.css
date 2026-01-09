@@ -1147,12 +1147,12 @@
 
 .section-title .subtitle {
     display: block;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.65);
-    margin-bottom: 10px;
-    font-weight: 600;
+    font-size: 16px;
+    text-transform: none; /* remove all caps */
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.65) !important;
+    margin-bottom: 10px !important;
+    font-weight: 500;
 }
 
 

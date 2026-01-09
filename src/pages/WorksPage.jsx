@@ -44,6 +44,7 @@ const WorksPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
+                  <span className="subtitle">Portfolio</span>
                   <h2>Works & Projects</h2>
                   <p>
                     Check out some of my design projects, meticulously crafted
