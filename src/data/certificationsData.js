@@ -10,16 +10,6 @@ export const certificationsData = [
     type: "certification",
   },
   {
-    id: 6,
-    title: "Machine Learning with Python",
-    issuer: "IBM",
-    date: "Issued Dec 2025",
-    link: "/assets/images/certificates/ibm-machine-learning.jpg",
-    icon: "ibm",
-    color: "#0530ad",
-    type: "certification",
-  },
-  {
     id: 2,
     title: "Meta Social Media Marketing Professional Certificate",
     issuer: "Meta",
@@ -27,6 +17,16 @@ export const certificationsData = [
     link: "/assets/images/certificates/meta-social-media-marketing.jpg",
     icon: "meta",
     color: "#0668E1",
+    type: "certification",
+  },
+  {
+    id: 6,
+    title: "Machine Learning with Python",
+    issuer: "IBM",
+    date: "Issued Dec 2025",
+    link: "/assets/images/certificates/ibm-machine-learning.jpg",
+    icon: "ibm",
+    color: "#0530ad",
     type: "certification",
   },
   {
