@@ -857,3 +857,175 @@
     color: #fff;
 }
 
+
+/* ============================================
+   MODERN CONTACT SECTION STYLES
+   ============================================ */
+.contact-content-part {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.single-contact {
+    background: #18191a;
+    border: 1px solid #333;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.single-contact:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    background: #1f2122;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.single-contact .contact-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(235, 93, 58, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.single-contact:hover .contact-icon {
+    background: var(--primary-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.single-contact .contact-text {
+    flex-grow: 1;
+}
+
+.single-contact h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin: 0 0 5px 0 !important;
+    font-weight: 600;
+}
+
+.single-contact p {
+    font-size: 18px;
+    color: #fff;
+    margin: 0 !important;
+    font-weight: 500;
+}
+
+.single-contact p a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.single-contact p a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile adjustments for contact cards */
+@media (max-width: 576px) {
+    .single-contact {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .single-contact .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+    
+    .single-contact p {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   MODERN CONTACT FORM STYLES
+   ============================================ */
+.contact-form-area {
+    background: #18191a !important;
+    border: 1px solid #333 !important;
+    padding: 40px !important;
+    border-radius: 16px !important;
+}
+
+.contact-form-area .form-group {
+    position: relative;
+    margin-bottom: 25px !important;
+}
+
+.contact-form-area .form-group label {
+    color: #888 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form-area .form-control {
+    background: #1f2122 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important;
+    transition: all 0.3s ease !important;
+    height: auto !important;
+}
+
+.contact-form-area .form-control:focus {
+    background: #1f2122 !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 4px rgba(235, 93, 58, 0.1) !important;
+    outline: none;
+}
+
+.contact-form-area .form-control::placeholder {
+    color: #444 !important;
+}
+
+.contact-form-area .form-group .for-icon {
+    display: none !important;
+}
+
+.contact-form-area .theme-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.section-title .subtitle {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+

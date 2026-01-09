@@ -11,7 +11,7 @@ const ContactPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <p>contact</p>
+                  <span className="subtitle">Contact</span>
                   <h2>Get in Touch with Me!</h2>
                 </div>
               </div>
@@ -27,8 +27,10 @@ const ContactPage = () => {
                     <div className="contact-icon">
                       <i className="ri-map-pin-line"></i>
                     </div>
-                    <h2>Location:</h2>
-                    <p>Kottawa, Sri Lanka</p>
+                    <div className="contact-text">
+                      <h2>Location:</h2>
+                      <p>Kottawa, Sri Lanka</p>
+                    </div>
                   </div>
                   {/* / END CONTACT SINGLEDESIGN AREA */}
                   {/* START CONTACT SINGLEDESIGN AREA */}
@@ -39,16 +41,18 @@ const ContactPage = () => {
                     <div className="contact-icon">
                       <i className="ri-phone-line"></i>
                     </div>
-                    <h2>Contact Number:</h2>
-                    <p>
-                      <a
-                        href="https://wa.me/94712175244"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        +94 71 217 5244
-                      </a>
-                    </p>
+                    <div className="contact-text">
+                      <h2>Contact Number:</h2>
+                      <p>
+                        <a
+                          href="https://wa.me/94712175244"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          +94 71 217 5244
+                        </a>
+                      </p>
+                    </div>
                   </div>
                   {/* / END CONTACT SINGLEDESIGN AREA */}
                   {/* START CONTACT SINGLEDESIGN AREA */}
@@ -59,12 +63,14 @@ const ContactPage = () => {
                     <div className="contact-icon">
                       <i className="ri-mail-line"></i>
                     </div>
-                    <h2>Email Me:</h2>
-                    <p>
-                      <a href="mailto:sarasithagalagama@gmail.com">
-                        sarasithagalagama@gmail.com
-                      </a>
-                    </p>
+                    <div className="contact-text">
+                      <h2>Email Me:</h2>
+                      <p>
+                        <a href="mailto:sarasithagalagama@gmail.com">
+                          sarasithagalagama@gmail.com
+                        </a>
+                      </p>
+                    </div>
                   </div>
                   {/* / END CONTACT SINGLEDESIGN AREA */}
                 </div>
@@ -88,13 +94,10 @@ const ContactPage = () => {
                             id="name"
                             name="name"
                             className="form-control"
-                            placeholder="Steve Milner"
+                            placeholder="Your Name"
                             required=""
                             data-error="Please enter your Name"
                           />
-                          <label htmlFor="name" className="for-icon">
-                            <i className="far fa-user"></i>
-                          </label>
                           <div className="help-block with-errors"></div>
                         </div>
                       </div>
@@ -106,13 +109,10 @@ const ContactPage = () => {
                             id="email"
                             name="email"
                             className="form-control"
-                            placeholder="hello@websitename.com"
+                            placeholder="Your Email"
                             required=""
                             data-error="Please enter your Email"
                           />
-                          <label htmlFor="email" className="for-icon">
-                            <i className="far fa-envelope"></i>
-                          </label>
                           <div className="help-block with-errors"></div>
                         </div>
                       </div>
@@ -124,7 +124,7 @@ const ContactPage = () => {
                             id="message"
                             className="form-control"
                             rows="4"
-                            placeholder="Write Your message"
+                            placeholder="How can I help you?"
                             required=""
                             data-error="Please Write your Message"
                           ></textarea>
@@ -134,9 +134,8 @@ const ContactPage = () => {
                       <div className="col-md-12">
                         <div className="form-group mb-0">
                           <button type="submit" className="theme-btn">
-                            Send Me Message <i className="ri-mail-line"></i>
+                            Send Message <i className="ri-mail-line"></i>
                           </button>
-                          <div id="msgSubmit" className="hidden"></div>
                         </div>
                       </div>
                     </div>
