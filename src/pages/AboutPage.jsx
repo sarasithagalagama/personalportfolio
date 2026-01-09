@@ -346,7 +346,10 @@ const AboutPage = () => {
                       .filter((item) => item.type === "certification")
                       .map((cert) => {
                         return (
-                          <div key={cert.id} className="col-xl-6 col-md-6 mb-4">
+                          <div
+                            key={cert.id}
+                            className="col-xl-3 col-lg-4 col-md-6 mb-4"
+                          >
                             <div
                               onClick={() => setSelectedPdf(cert.link)}
                               className="certificate-gallery-item wow fadeInUp delay-0-3s"
