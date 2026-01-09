@@ -331,8 +331,8 @@ const AboutPage = () => {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title text-center wow fadeInUp delay-0-2s">
-                <p>Achievements</p>
-                <h2>Certifications & Badges</h2>
+                <p>Credentials</p>
+                <h2>Professional Certifications</h2>
               </div>
             </div>
           </div>
@@ -341,7 +341,6 @@ const AboutPage = () => {
               {/* CERTIFICATES COLUMN */}
               <div className="col-xl-12 col-md-12">
                 <div className="single-resume">
-                  <h2>Professional Certificates</h2>
                   <div className="row">
                     {certificationsData
                       .filter((item) => item.type === "certification")
@@ -351,13 +350,7 @@ const AboutPage = () => {
                           <div key={cert.id} className="col-xl-6 col-md-6">
                             <div
                               onClick={() => setSelectedPdf(cert.link)}
-                              className="resume-item wow fadeInUp delay-0-3s"
-                              style={{
-                                textDecoration: "none",
-                                display: "flex",
-                                cursor: "pointer",
-                                marginBottom: "30px",
-                              }}
+                              className="certification-card wow fadeInUp delay-0-3s"
                             >
                               <div className="icon">
                                 {Icon ? <Icon /> : null}
@@ -366,6 +359,9 @@ const AboutPage = () => {
                                 <span className="years">{cert.date}</span>
                                 <h4>{cert.title}</h4>
                                 <span className="company">{cert.issuer}</span>
+                              </div>
+                              <div className="arrow-icon">
+                                <i className="ri-arrow-right-line"></i>
                               </div>
                             </div>
                           </div>

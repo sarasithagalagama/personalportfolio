@@ -769,3 +769,91 @@
         font-size: 22px; /* Slightly smaller headers on mobile */
     }
 }
+
+.certification-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background: var(--background-color-2, #18191a);
+  border: 1px solid var(--border-color, #333);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  margin-bottom: 30px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  background: var(--background-color-1, #1f2122);
+}
+
+.certification-card .icon {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary-color);
+  font-size: 26px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.certification-card:hover .icon {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.certification-card .content {
+    flex-grow: 1;
+}
+
+.certification-card .content .years {
+  font-size: 13px;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.certification-card .content h4 {
+  font-size: 18px;
+  color: var(--heading-color);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.certification-card .content .company {
+  display: block;
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+.certification-card .arrow-icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-left: auto;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.certification-card:hover .arrow-icon {
+    opacity: 1;
+    transform: translateX(0);
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+}
+
