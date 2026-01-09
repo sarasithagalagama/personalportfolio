@@ -207,7 +207,10 @@ const GalleryPage = () => {
       </style>
 
       {/* START GALLERY HEADER AREA */}
-      <section className="projects-area innerpage-single-area">
+      <section
+        className="projects-area innerpage-single-area"
+        style={{ paddingTop: "150px" }}
+      >
         <div className="container">
           <div className="container-inner">
             <div className="row">
