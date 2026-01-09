@@ -1030,12 +1030,13 @@
 }
 
 .single-contact p {
-    font-size: 16px;
+    font-size: 15px;
     color: #fff;
     margin: 0 !important;
     font-weight: 500;
     line-height: 1.4;
-    word-break: break-word; /* Prevents long emails from overflowing */
+    word-break: break-all; /* Better for long emails */
+    overflow-wrap: anywhere;
 }
 
 .single-contact p a {
@@ -1079,7 +1080,7 @@
     }
     
     .single-contact p {
-        font-size: 14px; /* Reduced for better fit on small screens */
+        font-size: 13px; /* Reduced for better fit on small screens */
     }
 }
 

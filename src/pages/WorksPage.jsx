@@ -47,9 +47,11 @@ const WorksPage = () => {
                   <span className="subtitle">Portfolio</span>
                   <h2>Works & Projects</h2>
                   <p>
-                    Check out some of my design projects, meticulously crafted
-                    with love and dedication, each one reflecting the passion
-                    and soul I poured into every detail.
+                    Explore my portfolio of branding, UI/UX, and development
+                    projects. Each one is a balance of aesthetic design and
+                    functional engineering, reflecting my commitment to
+                    delivering high-quality, user-centered solutions for clients
+                    worldwide.
                   </p>
                 </div>
               </div>
