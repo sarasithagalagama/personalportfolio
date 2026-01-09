@@ -345,23 +345,58 @@ const AboutPage = () => {
                     {certificationsData
                       .filter((item) => item.type === "certification")
                       .map((cert) => {
-                        const Icon = iconMap[cert.icon];
                         return (
-                          <div key={cert.id} className="col-xl-6 col-md-6">
+                          <div key={cert.id} className="col-xl-6 col-md-6 mb-4">
                             <div
                               onClick={() => setSelectedPdf(cert.link)}
-                              className="certification-card wow fadeInUp delay-0-3s"
+                              className="certificate-gallery-item wow fadeInUp delay-0-3s"
+                              style={{ cursor: "pointer" }}
                             >
-                              <div className="icon">
-                                {Icon ? <Icon /> : null}
+                              <div
+                                className="image-box"
+                                style={{
+                                  borderRadius: "10px",
+                                  overflow: "hidden",
+                                  border: "1px solid #333",
+                                  marginBottom: "15px",
+                                }}
+                              >
+                                <img
+                                  src={cert.link}
+                                  alt={cert.title}
+                                  style={{
+                                    width: "100%",
+                                    height: "auto",
+                                    display: "block",
+                                    transition: "transform 0.5s",
+                                  }}
+                                />
                               </div>
                               <div className="content">
-                                <span className="years">{cert.date}</span>
-                                <h4>{cert.title}</h4>
-                                <span className="company">{cert.issuer}</span>
-                              </div>
-                              <div className="arrow-icon">
-                                <i className="ri-arrow-right-line"></i>
+                                <h4
+                                  style={{
+                                    fontSize: "18px",
+                                    marginBottom: "5px",
+                                  }}
+                                >
+                                  {cert.title}
+                                </h4>
+                                <span
+                                  className="issuer"
+                                  style={{
+                                    color: "#b0b0b0",
+                                    fontSize: "14px",
+                                    marginRight: "10px",
+                                  }}
+                                >
+                                  {cert.issuer}
+                                </span>
+                                <span
+                                  className="date"
+                                  style={{ color: "#eb5d3a", fontSize: "12px" }}
+                                >
+                                  {cert.date}
+                                </span>
                               </div>
                             </div>
                           </div>
