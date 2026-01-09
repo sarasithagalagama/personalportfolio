@@ -35,7 +35,8 @@ import { certificationsData } from "../data/certificationsData";
 
 const AboutPage = () => {
   const [selectedPdf, setSelectedPdf] = useState(null);
-  const [visibleCount, setVisibleCount] = useState(6); // Default to show enough
+  const [showAllCerts, setShowAllCerts] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const certItems = certificationsData.filter(
     (item) => item.type === "certification"
@@ -43,22 +44,17 @@ const AboutPage = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setVisibleCount(2);
-      } else {
-        setVisibleCount(certItems.length);
-      }
+      setIsMobile(window.innerWidth < 768);
     };
-
-    handleResize(); // Check on mount
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [certItems.length]); // Dependency on certItems.length to re-evaluate if data changes
+  }, []);
 
-  const handleLoadMore = () => {
-    setVisibleCount(certItems.length);
-  };
+  const initialCertCount = isMobile ? 2 : certItems.length;
+  const displayedCerts = showAllCerts
+    ? certItems
+    : certItems.slice(0, initialCertCount);
 
   const iconMap = {
     meta: FaMeta,
@@ -367,7 +363,7 @@ const AboutPage = () => {
               <div className="col-xl-12 col-md-12">
                 <div className="single-resume">
                   <div className="row">
-                    {certItems.slice(0, visibleCount).map((cert) => {
+                    {displayedCerts.map((cert) => {
                       return (
                         <div
                           key={cert.id}
@@ -430,12 +426,22 @@ const AboutPage = () => {
                     })}
                   </div>
                 </div>
-                {visibleCount < certItems.length && (
+                {certItems.length > initialCertCount && (
                   <div className="row">
                     <div className="col-lg-12 text-center">
                       <div className="hero-btns wow fadeInUp delay-0-2s">
-                        <button onClick={handleLoadMore} className="theme-btn">
-                          Load More <i className="ri-refresh-line"></i>
+                        <button
+                          onClick={() => setShowAllCerts(!showAllCerts)}
+                          className="theme-btn"
+                        >
+                          {showAllCerts ? "Show Less" : "Load More"}{" "}
+                          <i
+                            className={
+                              showAllCerts
+                                ? "ri-arrow-up-line"
+                                : "ri-arrow-down-line"
+                            }
+                          ></i>
                         </button>
                       </div>
                     </div>
