@@ -342,27 +342,31 @@ const AboutPage = () => {
               <div className="col-xl-12 col-md-12">
                 <div className="single-resume">
                   <h2>Professional Certificates</h2>
-                  <div className="experience-list">
+                  <div className="row">
                     {certificationsData
                       .filter((item) => item.type === "certification")
                       .map((cert) => {
                         const Icon = iconMap[cert.icon];
                         return (
-                          <div
-                            onClick={() => setSelectedPdf(cert.link)}
-                            key={cert.id}
-                            className="resume-item wow fadeInUp delay-0-3s"
-                            style={{
-                              textDecoration: "none",
-                              display: "flex",
-                              cursor: "pointer",
-                            }}
-                          >
-                            <div className="icon">{Icon ? <Icon /> : null}</div>
-                            <div className="content">
-                              <span className="years">{cert.date}</span>
-                              <h4>{cert.title}</h4>
-                              <span className="company">{cert.issuer}</span>
+                          <div key={cert.id} className="col-xl-6 col-md-6">
+                            <div
+                              onClick={() => setSelectedPdf(cert.link)}
+                              className="resume-item wow fadeInUp delay-0-3s"
+                              style={{
+                                textDecoration: "none",
+                                display: "flex",
+                                cursor: "pointer",
+                                marginBottom: "30px",
+                              }}
+                            >
+                              <div className="icon">
+                                {Icon ? <Icon /> : null}
+                              </div>
+                              <div className="content">
+                                <span className="years">{cert.date}</span>
+                                <h4>{cert.title}</h4>
+                                <span className="company">{cert.issuer}</span>
+                              </div>
                             </div>
                           </div>
                         );
