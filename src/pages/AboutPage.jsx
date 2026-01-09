@@ -27,6 +27,7 @@ import {
   SiMongodb,
   SiFirebase,
   SiVercel,
+  SiCoursera,
 } from "react-icons/si";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaMeta, FaGoogle, FaAws, FaHackerrank } from "react-icons/fa6";
@@ -447,15 +448,33 @@ const AboutPage = () => {
             <div className="col-lg-12">
               <div
                 className="hero-btns text-center wow fadeInUp delay-0-2s"
-                style={{ marginTop: "40px" }}
+                style={{
+                  marginTop: "40px",
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "20px",
+                  flexWrap: "wrap",
+                }}
               >
                 <a
-                  href="https://www.credly.com/users/sarasitha-galagama/"
+                  href="https://www.coursera.org/user/1c114cb914901ecbc751c46839b1b9ba"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="theme-btn"
                 >
-                  View Credly Profile <i className="ri-external-link-line"></i>
+                  Coursera Profile <SiCoursera style={{ marginLeft: "8px" }} />
+                </a>
+                <a
+                  href="https://www.credly.com/users/sarasitha-galagama"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="theme-btn"
+                >
+                  Credly Profile{" "}
+                  <i
+                    className="ri-award-line"
+                    style={{ marginLeft: "8px" }}
+                  ></i>
                 </a>
               </div>
             </div>
