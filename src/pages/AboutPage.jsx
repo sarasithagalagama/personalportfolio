@@ -27,6 +27,9 @@ import {
   SiMongodb,
   SiFirebase,
   SiVercel,
+  SiIbm,
+  SiCisco,
+  SiOracle,
 } from "react-icons/si";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaMeta, FaGoogle, FaAws, FaHackerrank } from "react-icons/fa6";
@@ -38,6 +41,9 @@ const AboutPage = () => {
     aws: FaAws,
     google: FaGoogle,
     hackerrank: FaHackerrank,
+    ibm: SiIbm,
+    cisco: SiCisco,
+    oracle: SiOracle,
   };
 
   return (
