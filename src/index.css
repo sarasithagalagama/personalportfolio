@@ -7,22 +7,39 @@
 }
 
 /* ============================================
-   GLOBAL MOBILE PAGE SPACING STANDARDS
+   GLOBAL PAGE SPACING STANDARDS
    ============================================ */
-/* Ensure the first section of every page on mobile has enough space for the fixed header */
+/* Standard padding for the first section of every page to account for fixed header */
+.about-area, 
+.innerpage-single-area {
+    padding-top: 150px !important; 
+    padding-bottom: 60px;
+}
+
+/* Reduced spacing for all other inner sections to avoid large gaps */
+.services-area, 
+.projects-area, 
+.fiverr-area, 
+.call-to-action-area, 
+.contact-area, 
+.gallery-area {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Mobile Standardization (Tighter gaps) */
 @media (max-width: 991px) {
-    .about-area,
+    .about-area, 
     .innerpage-single-area {
         padding-top: 85px !important;
         padding-bottom: 30px;
     }
 
-    /* Reduce spacing for all other sections to avoid large gaps */
-    .services-area,
-    .projects-area,
-    .fiverr-area,
-    .call-to-action-area,
-    .contact-area,
+    .services-area, 
+    .projects-area, 
+    .fiverr-area, 
+    .call-to-action-area, 
+    .contact-area, 
     .gallery-area {
         padding-top: 30px !important;
         padding-bottom: 30px !important;
