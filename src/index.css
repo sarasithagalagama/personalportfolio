@@ -27,6 +27,7 @@
 .innerpage-single-area {
     padding-top: 150px !important; 
     padding-bottom: 60px;
+    overflow: visible !important;
 }
 
 /* Mobile Standardization */
@@ -37,15 +38,16 @@
     .call-to-action-area, 
     .contact-area, 
     .gallery-area {
-        padding-top: 30px !important;
-        padding-bottom: 30px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
     }
 
     .about-area, 
     .about-single-area,
     .innerpage-single-area {
-        padding-top: 85px !important;
-        padding-bottom: 30px;
+        padding-top: 100px !important; /* Slightly more space to be safe */
+        padding-bottom: 20px;
+        overflow: visible !important;
     }
 }
 
