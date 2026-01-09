@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Mousewheel, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
 import { galleryData } from "../data/galleryData";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [shuffledGallery, setShuffledGallery] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     // Fisher-Yates Shuffle
@@ -24,121 +21,182 @@ const GalleryPage = () => {
     setShuffledGallery(shuffleArray(galleryData));
   }, []);
 
-  // Close lightbox
+  const openLightbox = (image, index) => {
+    setSelectedImage(image);
+    setActiveIndex(index);
+  };
+
   const closeLightbox = () => setSelectedImage(null);
+
+  const navigateLightbox = (e, direction) => {
+    e.stopPropagation();
+    const newIndex =
+      (activeIndex + direction + shuffledGallery.length) %
+      shuffledGallery.length;
+    setSelectedImage(shuffledGallery[newIndex]);
+    setActiveIndex(newIndex);
+  };
 
   return (
     <>
       <style>
         {`
-          .gallery-container {
-            padding: 40px 0 80px;
-            overflow: hidden;
-            position: relative;
-          }
-
-          .swiper-gallery {
-            width: 100%;
+          .gallery-masonry {
+            column-count: 1;
+            column-gap: 20px;
             padding: 40px 0;
           }
 
-          /* Smooth continuous linear motion */
-          .swiper-wrapper {
-            transition-timing-function: linear !important;
+          @media (min-width: 576px) {
+            .gallery-masonry { column-count: 2; }
+          }
+          @media (min-width: 992px) {
+            .gallery-masonry { column-count: 3; }
+          }
+          @media (min-width: 1200px) {
+            .gallery-masonry { column-count: 4; }
           }
 
-          .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 280px; /* Mobile width */
-            height: 400px;
-            border-radius: 20px;
-            /* Glassmorphism backing */
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+          .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 15px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            background: #1a1a1a;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
           }
 
-          .gallery-img {
+          .gallery-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+          }
+
+          .gallery-item img {
+            width: 100%;
+            height: auto;
             display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            pointer-events: none; /* Let the slide click handle it */
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          /* Active slide styling enhancement */
-          .swiper-slide-active {
-            border: 1px solid var(--primary-color);
-            box-shadow: 0 0 30px rgba(235, 93, 58, 0.4);
+          .gallery-item:hover img {
+            transform: scale(1.08);
           }
 
-          /* Desktop Override */
-          @media (min-width: 768px) {
-            .swiper-slide {
-              width: 500px;
-              height: 600px;
-            }
+          .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: all 0.4s ease;
           }
 
-          /* Lightbox */
-          .lightbox-overlay {
+          .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+          }
+
+          .gallery-overlay h4 {
+            color: #fff;
+            margin: 0;
+            font-size: 18px;
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
+          }
+
+          .gallery-overlay span {
+            color: var(--primary-color);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+          }
+
+          .gallery-item:hover .gallery-overlay h4 {
+            transform: translateY(0);
+          }
+
+          /* Enhanced Lightbox */
+          .lb-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0,0,0,0.95);
             z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: fadeIn 0.3s ease;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            padding: 20px;
           }
-          .lightbox-content {
-            max-width: 90%;
-            max-height: 90vh;
+
+          .lb-container {
             position: relative;
-            animation: zoomIn 0.3s ease;
-          }
-          .lightbox-img {
             max-width: 100%;
-            max-height: 90vh;
-            border-radius: 8px;
+            max-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .lb-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 10px;
             box-shadow: 0 0 50px rgba(0,0,0,0.5);
           }
-          .lightbox-close {
+
+          .lb-nav {
             position: absolute;
-            top: -50px;
-            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             color: white;
-            font-size: 30px;
-            cursor: pointer;
-            background: rgba(255,255,255,0.1);
-            border: none;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 24px;
           }
-          .lightbox-close:hover {
+
+          .lb-nav:hover {
             background: var(--primary-color);
-            transform: rotate(90deg);
+            border-color: var(--primary-color);
           }
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+          .lb-prev { left: -70px; }
+          .lb-next { right: -70px; }
+
+          @media (max-width: 1100px) {
+            .lb-prev { left: 10px; }
+            .lb-next { right: 10px; }
+            .lb-nav { background: rgba(0,0,0,0.5); }
           }
-          @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+
+          .lb-close {
+            position: absolute;
+            top: -60px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
           }
+
+          .lb-close:hover { color: var(--primary-color); }
         `}
       </style>
 
@@ -152,8 +210,8 @@ const GalleryPage = () => {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="section-title text-center wow fadeInUp delay-0-2s">
-                  <h2>Visual Gallery</h2>
-                  <p>Swipe through to explore the collection.</p>
+                  <h2>Creative Visuals</h2>
+                  <p>A collection of my graphic design and artistic works.</p>
                 </div>
               </div>
             </div>
@@ -161,43 +219,30 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      {/* COVERFLOW GALLERY */}
-      <section className="gallery-container wow fadeInUp delay-0-3s">
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          loop={true}
-          mousewheel={true}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          speed={3000}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          modules={[EffectCoverflow, Mousewheel, Autoplay]}
-          className="swiper-gallery"
-        >
-          {shuffledGallery.map((image) => (
-            <SwiperSlide key={image.id} onClick={() => setSelectedImage(image)}>
-              <img
-                src={image.src}
-                alt={image.title}
-                className="gallery-img"
-                loading="lazy"
-                decoding="async"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      {/* MASONRY GALLERY */}
+      <section className="gallery-section wow fadeInUp delay-0-3s">
+        <div className="container">
+          <div className="gallery-masonry">
+            {shuffledGallery.map((image, index) => (
+              <div
+                key={image.id}
+                className="gallery-item"
+                onClick={() => openLightbox(image, index)}
+              >
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="gallery-overlay">
+                  <span>{image.category || "Design"}</span>
+                  <h4>{image.title}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {shuffledGallery.length === 0 && (
@@ -208,19 +253,44 @@ const GalleryPage = () => {
 
       {/* Lightbox Modal */}
       {selectedImage && (
-        <div className="lightbox-overlay" onClick={closeLightbox}>
-          <div
-            className="lightbox-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="lightbox-close" onClick={closeLightbox}>
+        <div className="lb-overlay" onClick={closeLightbox}>
+          <div className="lb-container" onClick={(e) => e.stopPropagation()}>
+            <button className="lb-close" onClick={closeLightbox}>
               <i className="ri-close-line"></i>
             </button>
+
+            <button
+              className="lb-nav lb-prev"
+              onClick={(e) => navigateLightbox(e, -1)}
+            >
+              <i className="ri-arrow-left-s-line"></i>
+            </button>
+
             <img
               src={selectedImage.src}
               alt={selectedImage.title}
-              className="lightbox-img"
+              className="lb-img"
             />
+
+            <button
+              className="lb-nav lb-next"
+              onClick={(e) => navigateLightbox(e, 1)}
+            >
+              <i className="ri-arrow-right-s-line"></i>
+            </button>
+
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-40px",
+                left: "0",
+                color: "white",
+                fontSize: "14px",
+              }}
+            >
+              {activeIndex + 1} / {shuffledGallery.length} -{" "}
+              {selectedImage.title}
+            </div>
           </div>
         </div>
       )}
@@ -229,17 +299,13 @@ const GalleryPage = () => {
       <section className="call-to-action-area">
         <div className="container">
           <div className="row">
-            {/* START ABOUT TEXT DESIGN AREA */}
             <div className="col-lg-12">
               <div className="call-to-action-part wow fadeInUp delay-0-2s text-center">
                 <h2>Ready to kickstart something awesome?</h2>
                 <p>
                   Let’s turn your ideas into clean visuals and working
                   products—from brand graphics to thoughtful UI/UX and full web
-                  experiences. I’m open to freelance, part‑time, and full‑time
-                  roles where I can blend creative design, UI/UX, and full‑stack
-                  development to build things that actually work for users and
-                  businesses.
+                  experiences.
                 </p>
                 <div className="hero-btns">
                   <Link to="/contact" className="theme-btn">
@@ -248,7 +314,6 @@ const GalleryPage = () => {
                 </div>
               </div>
             </div>
-            {/* / END ABOUT TEXT DESIGN AREA */}
           </div>
         </div>
       </section>
