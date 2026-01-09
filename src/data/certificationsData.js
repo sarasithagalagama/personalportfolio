@@ -8,7 +8,7 @@ export const certificationsData = [
     icon: "google",
     image: "/assets/images/badges/google-pm.png",
     color: "#4285F4",
-    type: "certification",
+    type: "badge",
   },
   {
     id: 3,
@@ -19,7 +19,7 @@ export const certificationsData = [
     icon: "meta",
     image: "/assets/images/badges/meta-social.png",
     color: "#0668E1",
-    type: "certification",
+    type: "badge",
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const certificationsData = [
     icon: "meta",
     image: "/assets/images/badges/meta-digital.png",
     color: "#0668E1",
-    type: "certification",
+    type: "badge",
   },
   {
     id: 4,

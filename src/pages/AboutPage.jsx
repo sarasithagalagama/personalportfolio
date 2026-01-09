@@ -336,54 +336,80 @@ const AboutPage = () => {
           </div>
           <div className="resume-items">
             <div className="row">
-              {/* CERTIFICATIONS COLUMN */}
-              <div className="col-xl-12 col-md-12">
+              {/* BADGES COLUMN */}
+              <div className="col-xl-6 col-md-6">
                 <div className="single-resume">
-                  <h2>Professional Certifications</h2>
+                  <h2>Verified Badges</h2>
                   <div className="experience-list">
                     {certificationsData
-                      .filter((item) => item.type === "certification")
+                      .filter((item) => item.type === "badge")
                       .map((cert) => {
-                        const Icon = iconMap[cert.icon];
                         return (
-                          <div
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             key={cert.id}
                             className="resume-item wow fadeInUp delay-0-3s"
+                            style={{ textDecoration: "none", display: "flex" }}
                           >
                             <div
                               className="icon"
-                              style={
-                                cert.image
-                                  ? {
-                                      background: "transparent",
-                                      width: "70px",
-                                      height: "70px",
-                                      borderRadius: "0",
-                                      marginRight: "25px",
-                                    }
-                                  : {}
-                              }
+                              style={{
+                                background: "transparent",
+                                width: "70px",
+                                height: "70px",
+                                borderRadius: "0",
+                                marginRight: "25px",
+                              }}
                             >
-                              {cert.image ? (
-                                <img
-                                  src={cert.image}
-                                  alt={cert.title}
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "contain",
-                                  }}
-                                />
-                              ) : Icon ? (
-                                <Icon />
-                              ) : null}
+                              <img
+                                src={cert.image}
+                                alt={cert.title}
+                                style={{
+                                  width: "100%",
+                                  height: "100%",
+                                  objectFit: "contain",
+                                }}
+                              />
                             </div>
                             <div className="content">
                               <span className="years">{cert.date}</span>
                               <h4>{cert.title}</h4>
                               <span className="company">{cert.issuer}</span>
                             </div>
-                          </div>
+                          </a>
+                        );
+                      })}
+                  </div>
+                </div>
+              </div>
+
+              {/* CERTIFICATES COLUMN */}
+              <div className="col-xl-6 col-md-6">
+                <div className="single-resume">
+                  <h2>Professional Certificates</h2>
+                  <div className="experience-list">
+                    {certificationsData
+                      .filter((item) => item.type === "certification")
+                      .map((cert) => {
+                        const Icon = iconMap[cert.icon];
+                        return (
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={cert.id}
+                            className="resume-item wow fadeInUp delay-0-3s"
+                            style={{ textDecoration: "none", display: "flex" }}
+                          >
+                            <div className="icon">{Icon ? <Icon /> : null}</div>
+                            <div className="content">
+                              <span className="years">{cert.date}</span>
+                              <h4>{cert.title}</h4>
+                              <span className="company">{cert.issuer}</span>
+                            </div>
+                          </a>
                         );
                       })}
                   </div>
