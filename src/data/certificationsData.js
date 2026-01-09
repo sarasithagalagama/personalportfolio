@@ -10,6 +10,16 @@ export const certificationsData = [
     type: "certification",
   },
   {
+    id: 6,
+    title: "Machine Learning with Python",
+    issuer: "IBM",
+    date: "Issued Dec 2025",
+    link: "/assets/certificates/ibm-machine-learning.jpg",
+    icon: "ibm",
+    color: "#0530ad",
+    type: "certification",
+  },
+  {
     id: 2,
     title: "Meta Social Media Marketing Professional Certificate",
     issuer: "Meta",
@@ -17,6 +27,16 @@ export const certificationsData = [
     link: "/assets/certificates/meta-social-media-marketing.jpg",
     icon: "meta",
     color: "#0668E1",
+    type: "certification",
+  },
+  {
+    id: 7,
+    title: "Data Security",
+    issuer: "Cisco",
+    date: "Issued Jan 2025",
+    link: "/assets/certificates/cisco-data-security.jpg",
+    icon: "cisco",
+    color: "#049fd9",
     type: "certification",
   },
   {
