@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -33,6 +33,8 @@ import { FaMeta, FaGoogle, FaAws, FaHackerrank } from "react-icons/fa6";
 import { certificationsData } from "../data/certificationsData";
 
 const AboutPage = () => {
+  const [selectedPdf, setSelectedPdf] = useState(null);
+
   const iconMap = {
     meta: FaMeta,
     aws: FaAws,
@@ -395,13 +397,15 @@ const AboutPage = () => {
                       .map((cert) => {
                         const Icon = iconMap[cert.icon];
                         return (
-                          <a
-                            href={cert.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <div
+                            onClick={() => setSelectedPdf(cert.link)}
                             key={cert.id}
                             className="resume-item wow fadeInUp delay-0-3s"
-                            style={{ textDecoration: "none", display: "flex" }}
+                            style={{
+                              textDecoration: "none",
+                              display: "flex",
+                              cursor: "pointer",
+                            }}
                           >
                             <div className="icon">{Icon ? <Icon /> : null}</div>
                             <div className="content">
@@ -409,7 +413,7 @@ const AboutPage = () => {
                               <h4>{cert.title}</h4>
                               <span className="company">{cert.issuer}</span>
                             </div>
-                          </a>
+                          </div>
                         );
                       })}
                   </div>
@@ -513,6 +517,64 @@ const AboutPage = () => {
         </div>
       </section>
       {/*  // END CALL TO ACTION DESIGN AREA */}
+
+      {/* PDF MODAL */}
+      {selectedPdf && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "20px",
+          }}
+          onClick={() => setSelectedPdf(null)}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "90%",
+              height: "90%",
+              backgroundColor: "#fff",
+              borderRadius: "8px",
+              overflow: "hidden",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedPdf(null)}
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                padding: "8px 12px",
+                background: "#eb5d3a",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
+                zIndex: 1,
+                fontWeight: "bold",
+              }}
+            >
+              Close
+            </button>
+            <iframe
+              src={selectedPdf}
+              width="100%"
+              height="100%"
+              style={{ border: "none" }}
+              title="Certificate Viewer"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
