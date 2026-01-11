@@ -1,5 +1,56 @@
 ﻿export const projectsData = [
   {
+    id: "sales-analysis-dashboard",
+    title: "Sales Analysis & Performance Dashboard",
+    category: "Data Analytics & BI",
+    subTitle: "Retail Sales Insights & Visualization",
+    filterCategory: ["dashboards", "ui-ux"],
+    img: "/assets/images/projects/sales-analysis-dashboard/dashboard.jpg",
+    client: "Personal Project",
+    date: "Jan 2026",
+    duration: "Completed",
+    github: "", // Update if available
+    preview: "", // Update if available
+    technologies: [
+      "Microsoft Power BI",
+      "DAX",
+      "Data Modeling",
+      "Data Visualization",
+    ],
+    images: ["/assets/images/projects/sales-analysis-dashboard/dashboard.jpg"],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "Designed and developed an interactive dashboard to visualize sales performance for a retail dataset. The goal was to transform raw transaction data into actionable insights for business decision-making.",
+          },
+        ],
+      },
+      {
+        title: "Key Contributions",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Data Modeling: Built an optimized data model using star schema principles to ensure fast query performance across $61M+ in total sales data.",
+              "Advanced Calculations: Utilized DAX to create dynamic measures for Net Revenue, Sales per Customer ($1.23K avg), and year-over-year comparisons.",
+              "Strategic Insights: Visualized revenue distribution, identifying 'Accessories' and 'Tablets' as top-performing sub-categories while analyzing regional consistency (approx. 25% customer base split per region).",
+              "UX Design: Created a cohesive visual layout allowing users to drill down from high-level annual metrics to granular monthly trends.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
     id: "githype-github-finder",
     title: "GitHype - Modern GitHub Profile Finder",
     category: "Full-Stack Web App",
@@ -44,11 +95,11 @@
           {
             type: "list",
             items: [
-              "🔍 Smart Search: Instant user search with real-time suggestions and debounced input.",
-              "👤 Detailed Profiles (Bento Grid): Identity cards, stats overview, location, and latest repositories.",
-              "🎓 Community Classroom: Curated roadmaps for Web Dev, Interviews, and CS.",
-              "🎨 Neo-Glass Bento Design: Deep blue/slate background, glassmorphism, and vibrant gradients.",
-              "🛠️ Optimized Performance: Debounced API calls and responsive layout.",
+              "Smart Search: Instant user search with real-time suggestions and debounced input.",
+              "Detailed Profiles (Bento Grid): Identity cards, stats overview, location, and latest repositories.",
+              "Community Classroom: Curated roadmaps for Web Dev, Interviews, and CS.",
+              "Neo-Glass Bento Design: Deep blue/slate background, glassmorphism, and vibrant gradients.",
+              "Optimized Performance: Debounced API calls and responsive layout.",
             ],
           },
         ],
