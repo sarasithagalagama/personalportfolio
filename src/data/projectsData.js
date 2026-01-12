@@ -1,127 +1,5 @@
 ﻿export const projectsData = [
   {
-    id: "sales-analysis-dashboard",
-    title: "Sales Analysis & Performance Dashboard",
-    category: "Data Analytics & BI",
-    subTitle: "Retail Sales Insights & Visualization",
-    filterCategory: ["dashboards", "ui-ux"],
-    img: "/assets/images/projects/sales-analysis-dashboard/dashboard.jpg",
-    client: "Personal Project",
-    date: "Jan 2026",
-    duration: "Completed",
-    github: "", // Update if available
-    preview: "", // Update if available
-    technologies: [
-      "Microsoft Power BI",
-      "DAX",
-      "Data Modeling",
-      "Data Visualization",
-    ],
-    images: ["/assets/images/projects/sales-analysis-dashboard/dashboard.jpg"],
-    socialLinks: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-    projectSections: [
-      {
-        title: "Project Overview",
-        content: [
-          {
-            type: "paragraph",
-            text: "Designed and developed an interactive dashboard to visualize sales performance for a retail dataset. The goal was to transform raw transaction data into actionable insights for business decision-making.",
-          },
-        ],
-      },
-      {
-        title: "Key Contributions",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Data Modeling: Built an optimized data model using star schema principles to ensure fast query performance across $61M+ in total sales data.",
-              "Advanced Calculations: Utilized DAX to create dynamic measures for Net Revenue, Sales per Customer ($1.23K avg), and year-over-year comparisons.",
-              "Strategic Insights: Visualized revenue distribution, identifying 'Accessories' and 'Tablets' as top-performing sub-categories while analyzing regional consistency (approx. 25% customer base split per region).",
-              "UX Design: Created a cohesive visual layout allowing users to drill down from high-level annual metrics to granular monthly trends.",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "githype-github-finder",
-    title: "GitHype - Modern GitHub Profile Finder",
-    category: "Full-Stack Web App",
-    subTitle: "Discover Developers & Repos",
-    filterCategory: ["full-stack", "ui-ux"],
-    img: "/assets/images/projects/githype/cover.png",
-    client: "Personal Project",
-    date: "Jan 2026",
-    duration: "Completed",
-    github: "https://github.com/sarasithagalagama/github-user-finder",
-    preview: "https://githype.sarasitha.me/",
-    technologies: [
-      "React 18",
-      "Vite",
-      "Vanilla CSS",
-      "GitHub REST API",
-      "Glassmorphism",
-    ],
-    images: [
-      "/assets/images/projects/githype/cover.png",
-      "/assets/images/projects/githype/profile.png",
-      "/assets/images/projects/githype/classroom.png",
-    ],
-    socialLinks: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-    projectSections: [
-      {
-        title: "Project Overview",
-        content: [
-          {
-            type: "paragraph",
-            text: "GitHype is a modern, aesthetically pleasing GitHub user finder application built with React and Vite. It features a 'Neo-Glass Bento' design system, providing a premium and responsive user experience. It goes beyond simple search by offering a 'Community Classroom' to explore trending resources and learning paths.",
-          },
-        ],
-      },
-      {
-        title: "Key Features",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Smart Search: Instant user search with real-time suggestions and debounced input.",
-              "Detailed Profiles (Bento Grid): Identity cards, stats overview, location, and latest repositories.",
-              "Community Classroom: Curated roadmaps for Web Dev, Interviews, and CS.",
-              "Neo-Glass Bento Design: Deep blue/slate background, glassmorphism, and vibrant gradients.",
-              "Optimized Performance: Debounced API calls and responsive layout.",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Tech Stack",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Framework: React 18 & Vite",
-              "Styling: Vanilla CSS (CSS Variables, Flexbox, Grid)",
-              "API: GitHub REST API",
-              "Icons: Font Awesome 6",
-              "Fonts: Outfit (Headings) & Inter (Body)",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: "the-path-political-compass",
     title: "The P.A.T.H. - Political Alignment Testing Hub",
     category: "Full-Stack Web App",
@@ -246,6 +124,214 @@
             items: [
               "D.S. Senanayake, Dudley Senanayake, Sir John Kotelawala",
               "S.W.R.D. Bandaranaike, W. Dahanayake, Sirimavo Bandaranaike",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "methsara-bookstore",
+    title: "Methsara Publications - E-commerce Bookstore",
+    category: "Full-Stack Web App",
+    subTitle: "Online Book Shop & Admin Dashboard",
+    filterCategory: ["full-stack", "ui-ux"],
+    img: "/assets/images/projects/methsara-bookstore/Home thumb.png",
+    client: "Methsara Publications",
+    date: "Jan 2026",
+    duration: "Completed",
+    github:
+      "https://github.com/sarasithagalagama/methsara-publications-bookstore",
+    preview: "https://methsarabooks.com/",
+    technologies: [
+      "MERN Stack",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "Stripe",
+      "Vercel",
+    ],
+    images: [
+      "/assets/images/projects/methsara-bookstore/Home.png",
+      "/assets/images/projects/methsara-bookstore/shop page.png",
+      "/assets/images/projects/methsara-bookstore/About.png",
+      "/assets/images/projects/methsara-bookstore/contact.png",
+      "/assets/images/projects/methsara-bookstore/admin 1.png",
+      "/assets/images/projects/methsara-bookstore/admin2.png",
+      "/assets/images/projects/methsara-bookstore/customer dashboard.png",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "About the Project",
+        content: [
+          {
+            type: "paragraph",
+            text: "Methsara Publications Bookstore is a comprehensive e-commerce solution designed for the Sri Lankan educational market. The platform provides a seamless shopping experience for students, parents, and educators to browse and purchase educational materials.",
+          },
+          {
+            type: "paragraph",
+            text: "A modern, full-stack e-commerce platform for educational books, built with the MERN stack and deployed on Vercel.",
+          },
+        ],
+      },
+      {
+        title: "Key Features",
+        content: [
+          {
+            type: "list",
+            items: [
+              "User Authentication: Secure login with Google OAuth 2.0 and JWT-based session management",
+              "Product Catalog: Browse books by category, grade, and subject with advanced filtering",
+              "Shopping Cart: Add items to cart with real-time price calculations",
+              "Wishlist: Save favorite books for later",
+              "Secure Checkout: Complete purchase flow with order management",
+              "Admin Dashboard: Comprehensive admin panel for inventory and order management",
+              "Bulk Operations: Efficient mass updates for pricing and inventory",
+              "Contact Form: Integrated contact system with email notifications",
+              "Responsive Design: Mobile-first design optimized for all devices",
+              "Image Management: Cloud-based image storage with Vercel Blob",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Tech Stack",
+        content: [
+          {
+            type: "paragraph",
+            text: "The application is built using a robust modern tech stack:",
+          },
+          {
+            type: "list",
+            items: [
+              "Frontend: React 18.2, Vite 5.0, Tailwind CSS 3.4, React Router, Axios, React Hot Toast, Lucide React",
+              "Backend: Node.js, Express.js 4.18, MongoDB, Mongoose 8.0, JWT, Google Auth Library, Nodemailer, Vercel Blob",
+              "Deployment: Vercel (Serverless), MongoDB Atlas (Cloud Database)",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "githype-github-finder",
+    title: "GitHype - Modern GitHub Profile Finder",
+    category: "Full-Stack Web App",
+    subTitle: "Discover Developers & Repos",
+    filterCategory: ["full-stack", "ui-ux"],
+    img: "/assets/images/projects/githype/cover.png",
+    client: "Personal Project",
+    date: "Jan 2026",
+    duration: "Completed",
+    github: "https://github.com/sarasithagalagama/github-user-finder",
+    preview: "https://githype.sarasitha.me/",
+    technologies: [
+      "React 18",
+      "Vite",
+      "Vanilla CSS",
+      "GitHub REST API",
+      "Glassmorphism",
+    ],
+    images: [
+      "/assets/images/projects/githype/cover.png",
+      "/assets/images/projects/githype/profile.png",
+      "/assets/images/projects/githype/classroom.png",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "GitHype is a modern, aesthetically pleasing GitHub user finder application built with React and Vite. It features a 'Neo-Glass Bento' design system, providing a premium and responsive user experience. It goes beyond simple search by offering a 'Community Classroom' to explore trending resources and learning paths.",
+          },
+        ],
+      },
+      {
+        title: "Key Features",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Smart Search: Instant user search with real-time suggestions and debounced input.",
+              "Detailed Profiles (Bento Grid): Identity cards, stats overview, location, and latest repositories.",
+              "Community Classroom: Curated roadmaps for Web Dev, Interviews, and CS.",
+              "Neo-Glass Bento Design: Deep blue/slate background, glassmorphism, and vibrant gradients.",
+              "Optimized Performance: Debounced API calls and responsive layout.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Tech Stack",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Framework: React 18 & Vite",
+              "Styling: Vanilla CSS (CSS Variables, Flexbox, Grid)",
+              "API: GitHub REST API",
+              "Icons: Font Awesome 6",
+              "Fonts: Outfit (Headings) & Inter (Body)",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "sales-analysis-dashboard",
+    title: "Sales Analysis & Performance Dashboard",
+    category: "Data Analytics & BI",
+    subTitle: "Retail Sales Insights & Visualization",
+    filterCategory: ["dashboards", "ui-ux"],
+    img: "/assets/images/projects/sales-analysis-dashboard/dashboard.jpg",
+    client: "Personal Project",
+    date: "Jan 2026",
+    duration: "Completed",
+    github: "", // Update if available
+    preview: "", // Update if available
+    technologies: [
+      "Microsoft Power BI",
+      "DAX",
+      "Data Modeling",
+      "Data Visualization",
+    ],
+    images: ["/assets/images/projects/sales-analysis-dashboard/dashboard.jpg"],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "Designed and developed an interactive dashboard to visualize sales performance for a retail dataset. The goal was to transform raw transaction data into actionable insights for business decision-making.",
+          },
+        ],
+      },
+      {
+        title: "Key Contributions",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Data Modeling: Built an optimized data model using star schema principles to ensure fast query performance across $61M+ in total sales data.",
+              "Advanced Calculations: Utilized DAX to create dynamic measures for Net Revenue, Sales per Customer ($1.23K avg), and year-over-year comparisons.",
+              "Strategic Insights: Visualized revenue distribution, identifying 'Accessories' and 'Tablets' as top-performing sub-categories while analyzing regional consistency (approx. 25% customer base split per region).",
+              "UX Design: Created a cohesive visual layout allowing users to drill down from high-level annual metrics to granular monthly trends.",
             ],
           },
         ],

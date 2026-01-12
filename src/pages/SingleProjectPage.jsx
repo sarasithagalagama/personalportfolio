@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 
@@ -6,9 +6,20 @@ const SingleProjectPage = () => {
   const { id } = useParams();
   const project = projectsData.find((p) => p.id === id);
 
+  // Lightbox State
+  const [lightboxIndex, setLightboxIndex] = useState(-1); // -1 means closed
+  const [isFit, setIsFit] = useState(true);
+  const [zoomLevel, setZoomLevel] = useState(100);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  // Reset zoom when changing images
+  useEffect(() => {
+    setIsFit(true);
+    setZoomLevel(100);
+  }, [lightboxIndex]);
 
   if (!project) {
     return (
@@ -25,6 +36,54 @@ const SingleProjectPage = () => {
   const currentIndex = projectsData.findIndex((p) => p.id === id);
   const nextProjectIndex = (currentIndex + 1) % projectsData.length;
   const nextProject = projectsData[nextProjectIndex];
+
+  // --- Lightbox Handlers ---
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    document.body.style.overflow = "hidden"; // Prevent scrolling bg
+  };
+
+  const closeLightbox = () => {
+    setLightboxIndex(-1);
+    setIsFit(true);
+    document.body.style.overflow = "auto";
+  };
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    if (project.images && lightboxIndex < project.images.length - 1) {
+      setLightboxIndex(lightboxIndex + 1);
+    }
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    if (lightboxIndex > 0) {
+      setLightboxIndex(lightboxIndex - 1);
+    }
+  };
+
+  const toggleFit = (e) => {
+    e.stopPropagation();
+    setIsFit(!isFit);
+    setZoomLevel(100); // Reset to 100% width when toggling
+  };
+
+  const handleZoomIn = (e) => {
+    e.stopPropagation();
+    setIsFit(false);
+    setZoomLevel((prev) => Math.min(prev + 25, 300));
+  };
+
+  const handleZoomOut = (e) => {
+    e.stopPropagation();
+    setIsFit(false);
+    setZoomLevel((prev) => Math.max(prev - 25, 25));
+  };
+
+  const currentImageSrc =
+    lightboxIndex >= 0 && project.images ? project.images[lightboxIndex] : null;
 
   return (
     <>
@@ -343,14 +402,20 @@ const SingleProjectPage = () => {
                     <div className="row g-4">
                       {project.images.map((imgSrc, index) => (
                         <div key={index} className="col-md-6">
-                          <div className="gallery-item rounded-3 overflow-hidden border border-dark">
+                          <div
+                            className="gallery-item rounded-3 overflow-hidden border border-dark position-relative"
+                            onClick={() => openLightbox(index)}
+                            style={{ cursor: "pointer" }}
+                          >
                             <img
                               src={imgSrc}
                               alt={`Gallery ${index + 1}`}
-                              className="img-fluid d-block mx-auto"
+                              className="img-fluid d-block mx-auto w-100"
                               style={{
                                 transition: "transform 0.5s ease",
-                                cursor: "pointer",
+                                objectFit: "cover",
+                                objectPosition: "top", // Show content from top
+                                height: "300px", // Fixed height for consistency
                               }}
                               onMouseOver={(e) =>
                                 (e.currentTarget.style.transform =
@@ -360,6 +425,12 @@ const SingleProjectPage = () => {
                                 (e.currentTarget.style.transform = "scale(1)")
                               }
                             />
+                            <div className="position-absolute bottom-0 start-0 w-100 bg-black bg-opacity-50 text-center py-2 text-white">
+                              <small>
+                                <i className="ri-zoom-in-line me-1"></i> Click
+                                to Zoom
+                              </small>
+                            </div>
                           </div>
                         </div>
                       ))}
@@ -467,6 +538,178 @@ const SingleProjectPage = () => {
           </Link>
         </div>
       </section>
+
+      {/* Native Resolution Lightbox Modal */}
+      {currentImageSrc && (
+        <div
+          className="lightbox-overlay"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.95)",
+            zIndex: 9999,
+            display: !isFit ? "block" : "flex",
+            justifyContent: !isFit ? "flex-start" : "center",
+            alignItems: !isFit ? "flex-start" : "center",
+            overflow: !isFit ? "auto" : "hidden",
+          }}
+          onClick={closeLightbox}
+        >
+          {/* Controls */}
+          <div
+            className="lightbox-controls"
+            style={{
+              position: "fixed",
+              top: "20px",
+              right: "20px",
+              zIndex: 10002,
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Zoom Controls */}
+            {!isFit && (
+              <>
+                <button
+                  onClick={handleZoomOut}
+                  className="btn btn-sm btn-outline-light rounded-circle"
+                  style={{ width: "40px", height: "40px" }}
+                  title="Zoom Out"
+                >
+                  <i className="ri-subtract-line"></i>
+                </button>
+                <span
+                  className="text-white fw-bold"
+                  style={{ minWidth: "45px", textAlign: "center" }}
+                >
+                  {zoomLevel}%
+                </span>
+                <button
+                  onClick={handleZoomIn}
+                  className="btn btn-sm btn-outline-light rounded-circle"
+                  style={{ width: "40px", height: "40px" }}
+                  title="Zoom In"
+                >
+                  <i className="ri-add-line"></i>
+                </button>
+              </>
+            )}
+
+            <button
+              onClick={toggleFit}
+              className="btn btn-sm btn-outline-light rounded-circle"
+              style={{ width: "40px", height: "40px" }}
+              title={isFit ? "Zoom 100%" : "Fit to Screen"}
+            >
+              <i
+                className={
+                  !isFit ? "ri-fullscreen-exit-line" : "ri-zoom-in-line"
+                }
+              ></i>
+            </button>
+
+            <button
+              onClick={closeLightbox}
+              className="btn btn-sm btn-danger rounded-circle"
+              style={{ width: "40px", height: "40px" }}
+              title="Close"
+            >
+              <i className="ri-close-line"></i>
+            </button>
+          </div>
+
+          {/* Navigation (Only visible when Fit to avoid overlap/scrolling) */}
+          {isFit && project.images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                style={{
+                  position: "absolute",
+                  left: "20px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "transparent",
+                  border: "none",
+                  color: "white",
+                  fontSize: "40px",
+                  zIndex: 10001,
+                  opacity: lightboxIndex === 0 ? 0.3 : 1,
+                  cursor: lightboxIndex === 0 ? "default" : "pointer",
+                }}
+                disabled={lightboxIndex === 0}
+              >
+                <i className="ri-arrow-left-s-line"></i>
+              </button>
+              <button
+                onClick={nextImage}
+                style={{
+                  position: "absolute",
+                  right: "20px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "transparent",
+                  border: "none",
+                  color: "white",
+                  fontSize: "40px",
+                  zIndex: 10001,
+                  opacity:
+                    lightboxIndex === project.images.length - 1 ? 0.3 : 1,
+                  cursor:
+                    lightboxIndex === project.images.length - 1
+                      ? "default"
+                      : "pointer",
+                }}
+                disabled={lightboxIndex === project.images.length - 1}
+              >
+                <i className="ri-arrow-right-s-line"></i>
+              </button>
+            </>
+          )}
+
+          {/* Image */}
+          <img
+            src={currentImageSrc}
+            alt="Full view"
+            onClick={toggleFit}
+            draggable="false"
+            style={
+              !isFit
+                ? {
+                    // Zoomed (Adjustable) styles
+                    width: `${zoomLevel}%`,
+                    height: "auto",
+                    maxWidth: "none",
+                    maxHeight: "none",
+                    margin: "auto",
+                    display: "block",
+                    cursor: "zoom-out",
+                  }
+                : {
+                    // Fit styles
+                    maxWidth: "90%",
+                    maxHeight: "90%",
+                    objectFit: "contain",
+                    cursor: "zoom-in",
+                  }
+            }
+          />
+
+          {/* Instructions (Only when fit) */}
+          {isFit && (
+            <div
+              className="lightbox-instructions position-absolute bottom-0 w-100 text-center pb-3 text-white-50"
+              style={{ pointerEvents: "none" }}
+            >
+              <small>Click image to Zoom (100% Width)</small>
+            </div>
+          )}
+        </div>
+      )}
     </>
   );
 };
