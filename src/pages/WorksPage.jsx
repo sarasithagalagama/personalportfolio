@@ -24,7 +24,11 @@ const WorksPage = () => {
   const filteredProjects =
     activeFilter === "*"
       ? [...projectsData].sort((a, b) => {
-          // Check if projects have "full-stack" in their filterCategory
+          // Prioritize The P.A.T.H. project first
+          if (a.id === "the-path-political-compass") return -1;
+          if (b.id === "the-path-political-compass") return 1;
+
+          // Then prioritize other fullstack projects
           const aIsFullStack = Array.isArray(a.filterCategory)
             ? a.filterCategory.includes("full-stack")
             : a.filterCategory === "full-stack";
@@ -32,7 +36,6 @@ const WorksPage = () => {
             ? b.filterCategory.includes("full-stack")
             : b.filterCategory === "full-stack";
 
-          // Fullstack projects come first
           if (aIsFullStack && !bIsFullStack) return -1;
           if (!aIsFullStack && bIsFullStack) return 1;
           return 0; // Keep original order for same category
