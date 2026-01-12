@@ -144,11 +144,13 @@
       "https://github.com/sarasithagalagama/methsara-publications-bookstore",
     preview: "https://methsarabooks.com/",
     technologies: [
-      "MERN Stack",
-      "Tailwind CSS",
+      "React 18",
       "Redux Toolkit",
-      "Stripe",
-      "Vercel",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Vercel Blob",
     ],
     images: [
       "/assets/images/projects/methsara-bookstore/Home.png",
