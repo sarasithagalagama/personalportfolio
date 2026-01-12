@@ -13,13 +13,10 @@ import GalleryPage from "./pages/GalleryPage";
 
 import { Analytics } from "@vercel/analytics/react";
 
-import WhatsAppBtn from "./components/WhatsAppBtn";
-
 function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <WhatsAppBtn />
       <Header />
       <Routes>
         {/* Assuming Home and AboutPage routes were present before the snippet */}
