@@ -23,7 +23,20 @@ const WorksPage = () => {
 
   const filteredProjects =
     activeFilter === "*"
-      ? projectsData
+      ? [...projectsData].sort((a, b) => {
+          // Check if projects have "full-stack" in their filterCategory
+          const aIsFullStack = Array.isArray(a.filterCategory)
+            ? a.filterCategory.includes("full-stack")
+            : a.filterCategory === "full-stack";
+          const bIsFullStack = Array.isArray(b.filterCategory)
+            ? b.filterCategory.includes("full-stack")
+            : b.filterCategory === "full-stack";
+
+          // Fullstack projects come first
+          if (aIsFullStack && !bIsFullStack) return -1;
+          if (!aIsFullStack && bIsFullStack) return 1;
+          return 0; // Keep original order for same category
+        })
       : projectsData.filter((project) =>
           Array.isArray(project.filterCategory)
             ? project.filterCategory.includes(activeFilter)
