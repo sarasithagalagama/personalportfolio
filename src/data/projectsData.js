@@ -242,8 +242,8 @@
     ],
     images: [
       "/assets/images/projects/githype/home.png",
-      "/assets/images/projects/githype/search result.png",
-      "/assets/images/projects/githype/community classroom.png",
+      "/assets/images/projects/githype/search-result.png",
+      "/assets/images/projects/githype/community-classroom.png",
     ],
     socialLinks: {
       facebook: "#",
