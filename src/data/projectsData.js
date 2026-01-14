@@ -10,7 +10,7 @@
     date: "Dec 2025",
     duration: "Ongoing",
     github: "https://github.com/sarasithagalagama/The_P.A.T.H",
-    preview: "https://thepathsl.vercel.app/en", // Add live link here if available
+    preview: "https://thepathsl.sarasitha.me/en", // Add live link here if available
     technologies: [
       "Next.js 16",
       "Tailwind CSS v4",
@@ -20,11 +20,13 @@
       "Shadcn/UI",
     ],
     images: [
-      "/assets/images/projects/the-path/ui-1.png",
-      "/assets/images/projects/the-path/ui-2.png",
+      "/assets/images/projects/the-path/home.png",
       "/assets/images/projects/the-path/quiz.png",
       "/assets/images/projects/the-path/result.png",
       "/assets/images/projects/the-path/leaders.png",
+      "/assets/images/projects/the-path/issues.png",
+      "/assets/images/projects/the-path/learn.png",
+      "/assets/images/projects/the-path/glossary.png",
     ],
     socialLinks: {
       facebook: "#",
@@ -225,7 +227,7 @@
     category: "Full-Stack Web App",
     subTitle: "Discover Developers & Repos",
     filterCategory: ["full-stack", "ui-ux"],
-    img: "/assets/images/projects/githype/cover.png",
+    img: "/assets/images/projects/githype/home.png",
     client: "Personal Project",
     date: "Jan 2026",
     duration: "Completed",
@@ -239,9 +241,9 @@
       "Glassmorphism",
     ],
     images: [
-      "/assets/images/projects/githype/cover.png",
-      "/assets/images/projects/githype/profile.png",
-      "/assets/images/projects/githype/classroom.png",
+      "/assets/images/projects/githype/home.png",
+      "/assets/images/projects/githype/search result.png",
+      "/assets/images/projects/githype/community classroom.png",
     ],
     socialLinks: {
       facebook: "#",
