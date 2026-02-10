@@ -144,7 +144,7 @@ const SingleProjectPage = () => {
                             color: "gray",
                           }}
                         >
-                          Client
+                          {project.clientLabel || "Client"}
                         </span>
                         <span style={{ fontWeight: "600", color: "#fff" }}>
                           {project.client}

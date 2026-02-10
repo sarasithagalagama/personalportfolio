@@ -1,5 +1,83 @@
 ﻿export const projectsData = [
   {
+    id: "explore-sri-lanka",
+    title: "Explore Sri Lanka With Us",
+    category: "Full-Stack Web App",
+    subTitle: "Tourism & Travel Platform",
+    filterCategory: ["full-stack", "ui-ux"],
+    img: "/assets/images/projects/explore_srilanka_with_us/thumb.png",
+    clientLabel: "Employed By",
+    client: "Infernation",
+    date: "Feb 2026",
+    duration: "Ongoing",
+    github: "https://github.com/sarasithagalagama/explore_srilanka_with_us",
+    preview: "https://www.exploresrilankawithus.com/",
+    technologies: [
+      "React 18",
+      "Vite",
+      "React Router v6",
+      "Modern CSS3",
+      "React Helmet Async",
+      "React Icons",
+    ],
+    images: [
+      "/assets/images/projects/explore_srilanka_with_us/home.png",
+      "/assets/images/projects/explore_srilanka_with_us/destinations.png",
+      "/assets/images/projects/explore_srilanka_with_us/tour-itineraries.png",
+      "/assets/images/projects/explore_srilanka_with_us/about_us.png",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "A modern, high-performance React application designed to showcase Sri Lanka as a premier travel destination. Built with a focus on immersive user experience, SEO optimization, and performance. I developed this project for Infernation.",
+          },
+          {
+            type: "paragraph",
+            text: "The platform features immersive parallax hero sections, glassmorphism effects, and smooth scroll animations to create an engaging visual journey for potential travelers.",
+          },
+        ],
+      },
+      {
+        title: "Key Features",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Immersive Design: Full-screen parallax hero sections, glassmorphism effects, and smooth scroll animations.",
+              "Responsive Layouts: Fully optimized for Mobile, Tablet, and Desktop using CSS Grid and Flexbox.",
+              "Interactive Elements: Hover effects, animated step indicators, and dynamic content cards.",
+              "Performance Optimization: Component Lazy Loading (React.lazy & Suspense), Efficient Asset Loading (loading='lazy'), and optimized production builds with Vite.",
+              "SEO Friendly: Dynamic Metadata with react-helmet-async for unique title, description, and keywords per page.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Tech Stack",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Framework: React 18 & Vite",
+              "Routing: React Router v6",
+              "Styling: Modern CSS3 (Variables, clamp() typography, localized stylesheets)",
+              "SEO: React Helmet Async",
+              "Icons: React Icons",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "the-path-political-compass",
     title: "The P.A.T.H. - Political Alignment Testing Hub",
     category: "Full-Stack Web App",
