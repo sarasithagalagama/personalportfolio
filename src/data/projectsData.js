@@ -1,31 +1,19 @@
 ﻿export const projectsData = [
   {
-    id: "explore-sri-lanka",
-    title: "Explore Sri Lanka With Us",
-    category: "Full-Stack Web App",
-    subTitle: "Tourism & Travel Platform",
-    filterCategory: ["full-stack", "ui-ux"],
-    img: "/assets/images/projects/explore_srilanka_with_us/thumb.png",
-    clientLabel: "Employed By",
-    client: "Infernation",
+    id: "fake-news-detection",
+    title: "Fake News Detection Model – WELFake Dataset",
+    category: "AI & ML Projects",
+    subTitle: "Data Science Portfolio",
+    filterCategory: "ai-ml",
+    img: "/assets/images/projects/fake-news-detection/1770542025125.jpeg",
+    client: "Personal Project",
     date: "Feb 2026",
     duration: "Ongoing",
-    github: "https://github.com/sarasithagalagama/explore_srilanka_with_us",
-    preview: "https://www.exploresrilankawithus.com/",
-    technologies: [
-      "React 18",
-      "Vite",
-      "React Router v6",
-      "Modern CSS3",
-      "React Helmet Async",
-      "React Icons",
-    ],
-    images: [
-      "/assets/images/projects/explore_srilanka_with_us/home.png",
-      "/assets/images/projects/explore_srilanka_with_us/destinations.png",
-      "/assets/images/projects/explore_srilanka_with_us/tour-itineraries.png",
-      "/assets/images/projects/explore_srilanka_with_us/about_us.png",
-    ],
+    github: "https://github.com/sarasithagalagama/fake-news-classifier",
+    preview:
+      "https://fake-news-classifier-bbgtvph2fk8xs83grcsep7.streamlit.app/",
+    technologies: ["Python", "scikit-learn", "NLTK", "pandas", "Streamlit"],
+    images: ["/assets/images/projects/fake-news-detection/1770542025125.jpeg"],
     socialLinks: {
       facebook: "#",
       twitter: "#",
@@ -37,26 +25,40 @@
         content: [
           {
             type: "paragraph",
-            text: "A modern, high-performance React application designed to showcase Sri Lanka as a premier travel destination. Built with a focus on immersive user experience, SEO optimization, and performance. I developed this project for Infernation.",
-          },
-          {
-            type: "paragraph",
-            text: "The platform features immersive parallax hero sections, glassmorphism effects, and smooth scroll animations to create an engaging visual journey for potential travelers.",
+            text: "Built an end-to-end fake news classification system using Logistic Regression and TF-IDF to help combat misinformation — one of the most pressing challenges in today’s information landscape.",
           },
         ],
       },
       {
-        title: "Key Features",
+        title: "Key Highlights & Achievements",
         content: [
           {
             type: "list",
             items: [
-              "Immersive Design: Full-screen parallax hero sections, glassmorphism effects, and smooth scroll animations.",
-              "Responsive Layouts: Fully optimized for Mobile, Tablet, and Desktop using CSS Grid and Flexbox.",
-              "Interactive Elements: Hover effects, animated step indicators, and dynamic content cards.",
-              "Performance Optimization: Component Lazy Loading (React.lazy & Suspense), Efficient Asset Loading (loading='lazy'), and optimized production builds with Vite.",
-              "SEO Friendly: Dynamic Metadata with react-helmet-async for unique title, description, and keywords per page.",
+              "Achieved 96.39% test accuracy and 0.9932 ROC-AUC on the WELFake dataset (~72k news articles).",
+              "Strong balanced performance: 97.16% recall on fake news → excellent at catching misleading content.",
+              "5-fold cross-validation: 96.53% ± 0.20% — very stable generalization.",
+              "Performed full ML pipeline: data exploration, text preprocessing (lemmatization, stopword removal, URL/mention cleaning), feature engineering with bigrams, hyperparameter tuning via GridSearchCV, model evaluation, error analysis, and deployment preparation.",
             ],
+          },
+        ],
+      },
+      {
+        title: "What I Learned",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Real-world text classification challenges.",
+              "Importance of consistent preprocessing between training and inference.",
+              "Saving both model and vectorizer for production use.",
+              "Building user-friendly ML interfaces with Streamlit.",
+              "Balancing precision/recall in misinformation detection.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Most importantly — it reminded me how powerful even “classic” ML can be when done thoughtfully. I believe accessible, transparent tools like this can contribute to healthier online information ecosystems.",
           },
         ],
       },
@@ -66,11 +68,14 @@
           {
             type: "list",
             items: [
-              "Framework: React 18 & Vite",
-              "Routing: React Router v6",
-              "Styling: Modern CSS3 (Variables, clamp() typography, localized stylesheets)",
-              "SEO: React Helmet Async",
-              "Icons: React Icons",
+              "Python",
+              "scikit-learn",
+              "NLTK",
+              "pandas",
+              "matplotlib",
+              "seaborn",
+              "joblib",
+              "Streamlit",
             ],
           },
         ],
@@ -293,6 +298,84 @@
               "Frontend: React 18.2, Vite 5.0, Tailwind CSS 3.4, React Router, Axios, React Hot Toast, Lucide React",
               "Backend: Node.js, Express.js 4.18, MongoDB, Mongoose 8.0, JWT, Google Auth Library, Nodemailer, Vercel Blob",
               "Deployment: Vercel (Serverless), MongoDB Atlas (Cloud Database)",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "explore-sri-lanka",
+    title: "Explore Sri Lanka With Us",
+    category: "Full-Stack Web App",
+    subTitle: "Tourism & Travel Platform",
+    filterCategory: ["full-stack", "ui-ux"],
+    img: "/assets/images/projects/explore_srilanka_with_us/thumb.png",
+    clientLabel: "Employed By",
+    client: "Infernation",
+    date: "Feb 2026",
+    duration: "Ongoing",
+    github: "https://github.com/sarasithagalagama/explore_srilanka_with_us",
+    preview: "https://www.exploresrilankawithus.com/",
+    technologies: [
+      "React 18",
+      "Vite",
+      "React Router v6",
+      "Modern CSS3",
+      "React Helmet Async",
+      "React Icons",
+    ],
+    images: [
+      "/assets/images/projects/explore_srilanka_with_us/home.png",
+      "/assets/images/projects/explore_srilanka_with_us/destinations.png",
+      "/assets/images/projects/explore_srilanka_with_us/tour-itineraries.png",
+      "/assets/images/projects/explore_srilanka_with_us/about_us.png",
+    ],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "A modern, high-performance React application designed to showcase Sri Lanka as a premier travel destination. Built with a focus on immersive user experience, SEO optimization, and performance. I developed this project for Infernation.",
+          },
+          {
+            type: "paragraph",
+            text: "The platform features immersive parallax hero sections, glassmorphism effects, and smooth scroll animations to create an engaging visual journey for potential travelers.",
+          },
+        ],
+      },
+      {
+        title: "Key Features",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Immersive Design: Full-screen parallax hero sections, glassmorphism effects, and smooth scroll animations.",
+              "Responsive Layouts: Fully optimized for Mobile, Tablet, and Desktop using CSS Grid and Flexbox.",
+              "Interactive Elements: Hover effects, animated step indicators, and dynamic content cards.",
+              "Performance Optimization: Component Lazy Loading (React.lazy & Suspense), Efficient Asset Loading (loading='lazy'), and optimized production builds with Vite.",
+              "SEO Friendly: Dynamic Metadata with react-helmet-async for unique title, description, and keywords per page.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Tech Stack",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Framework: React 18 & Vite",
+              "Routing: React Router v6",
+              "Styling: Modern CSS3 (Variables, clamp() typography, localized stylesheets)",
+              "SEO: React Helmet Async",
+              "Icons: React Icons",
             ],
           },
         ],
