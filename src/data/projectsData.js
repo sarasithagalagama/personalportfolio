@@ -1,88 +1,5 @@
 ﻿export const projectsData = [
   {
-    id: "fake-news-detection",
-    title: "Fake News Detection Model – WELFake Dataset",
-    category: "AI & ML Projects",
-    subTitle: "Data Science Portfolio",
-    filterCategory: "ai-ml",
-    img: "/assets/images/projects/fake-news-detection/1770542025125.jpeg",
-    client: "Personal Project",
-    date: "Feb 2026",
-    duration: "Ongoing",
-    github: "https://github.com/sarasithagalagama/fake-news-classifier",
-    preview:
-      "https://fake-news-classifier-bbgtvph2fk8xs83grcsep7.streamlit.app/",
-    technologies: ["Python", "scikit-learn", "NLTK", "pandas", "Streamlit"],
-    images: ["/assets/images/projects/fake-news-detection/1770542025125.jpeg"],
-    socialLinks: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-    projectSections: [
-      {
-        title: "Project Overview",
-        content: [
-          {
-            type: "paragraph",
-            text: "Built an end-to-end fake news classification system using Logistic Regression and TF-IDF to help combat misinformation — one of the most pressing challenges in today’s information landscape.",
-          },
-        ],
-      },
-      {
-        title: "Key Highlights & Achievements",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Achieved 96.39% test accuracy and 0.9932 ROC-AUC on the WELFake dataset (~72k news articles).",
-              "Strong balanced performance: 97.16% recall on fake news → excellent at catching misleading content.",
-              "5-fold cross-validation: 96.53% ± 0.20% — very stable generalization.",
-              "Performed full ML pipeline: data exploration, text preprocessing (lemmatization, stopword removal, URL/mention cleaning), feature engineering with bigrams, hyperparameter tuning via GridSearchCV, model evaluation, error analysis, and deployment preparation.",
-            ],
-          },
-        ],
-      },
-      {
-        title: "What I Learned",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Real-world text classification challenges.",
-              "Importance of consistent preprocessing between training and inference.",
-              "Saving both model and vectorizer for production use.",
-              "Building user-friendly ML interfaces with Streamlit.",
-              "Balancing precision/recall in misinformation detection.",
-            ],
-          },
-          {
-            type: "paragraph",
-            text: "Most importantly — it reminded me how powerful even “classic” ML can be when done thoughtfully. I believe accessible, transparent tools like this can contribute to healthier online information ecosystems.",
-          },
-        ],
-      },
-      {
-        title: "Tech Stack",
-        content: [
-          {
-            type: "list",
-            items: [
-              "Python",
-              "scikit-learn",
-              "NLTK",
-              "pandas",
-              "matplotlib",
-              "seaborn",
-              "joblib",
-              "Streamlit",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: "the-path-political-compass",
     title: "The P.A.T.H. - Political Alignment Testing Hub",
     category: "Full-Stack Web App",
@@ -376,6 +293,89 @@
               "Styling: Modern CSS3 (Variables, clamp() typography, localized stylesheets)",
               "SEO: React Helmet Async",
               "Icons: React Icons",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "fake-news-detection",
+    title: "Fake News Detection Model – WELFake Dataset",
+    category: "AI & ML Projects",
+    subTitle: "Data Science Portfolio",
+    filterCategory: "ai-ml",
+    img: "/assets/images/projects/fake-news-detection/1770542025125.jpeg",
+    client: "Personal Project",
+    date: "Feb 2026",
+    duration: "Ongoing",
+    github: "https://github.com/sarasithagalagama/fake-news-classifier",
+    preview:
+      "https://fake-news-classifier-bbgtvph2fk8xs83grcsep7.streamlit.app/",
+    technologies: ["Python", "scikit-learn", "NLTK", "pandas", "Streamlit"],
+    images: ["/assets/images/projects/fake-news-detection/1770542025125.jpeg"],
+    socialLinks: {
+      facebook: "#",
+      twitter: "#",
+      linkedin: "#",
+    },
+    projectSections: [
+      {
+        title: "Project Overview",
+        content: [
+          {
+            type: "paragraph",
+            text: "Built an end-to-end fake news classification system using Logistic Regression and TF-IDF to help combat misinformation — one of the most pressing challenges in today’s information landscape.",
+          },
+        ],
+      },
+      {
+        title: "Key Highlights & Achievements",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Achieved 96.39% test accuracy and 0.9932 ROC-AUC on the WELFake dataset (~72k news articles).",
+              "Strong balanced performance: 97.16% recall on fake news → excellent at catching misleading content.",
+              "5-fold cross-validation: 96.53% ± 0.20% — very stable generalization.",
+              "Performed full ML pipeline: data exploration, text preprocessing (lemmatization, stopword removal, URL/mention cleaning), feature engineering with bigrams, hyperparameter tuning via GridSearchCV, model evaluation, error analysis, and deployment preparation.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "What I Learned",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Real-world text classification challenges.",
+              "Importance of consistent preprocessing between training and inference.",
+              "Saving both model and vectorizer for production use.",
+              "Building user-friendly ML interfaces with Streamlit.",
+              "Balancing precision/recall in misinformation detection.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Most importantly — it reminded me how powerful even “classic” ML can be when done thoughtfully. I believe accessible, transparent tools like this can contribute to healthier online information ecosystems.",
+          },
+        ],
+      },
+      {
+        title: "Tech Stack",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Python",
+              "scikit-learn",
+              "NLTK",
+              "pandas",
+              "matplotlib",
+              "seaborn",
+              "joblib",
+              "Streamlit",
             ],
           },
         ],
