@@ -43,7 +43,7 @@ const WorksPage = () => {
       : projectsData.filter((project) =>
           Array.isArray(project.filterCategory)
             ? project.filterCategory.includes(activeFilter)
-            : project.filterCategory === activeFilter
+            : project.filterCategory === activeFilter,
         );
 
   const initialCount = isMobile ? 2 : 6;

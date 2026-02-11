@@ -39,7 +39,7 @@ const AboutPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const certItems = certificationsData.filter(
-    (item) => item.type === "certification"
+    (item) => item.type === "certification",
   );
 
   useEffect(() => {
