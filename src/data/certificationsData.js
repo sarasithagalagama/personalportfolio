@@ -1,5 +1,16 @@
 export const certificationsData = [
   {
+    id: 8,
+    title: "Microsoft Power BI Data Analyst",
+    issuer: "Microsoft",
+    date: "Issued 2026",
+    image: "/assets/images/certificates/Microsoft Power BI Data Analyst.jpg",
+    link: "https://coursera.org/share/9b48c0069b4b0032b13fa7121b811ef7",
+    icon: "microsoft",
+    color: "#0078D4",
+    type: "certification",
+  },
+  {
     id: 1,
     title: "Google Project Management Professional Certificate",
     issuer: "Google",

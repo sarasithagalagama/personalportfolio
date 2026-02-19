@@ -1277,3 +1277,157 @@ section.single-project-hero-area {
         transform: rotate(360deg);
     }
 }
+
+
+/* ============================================
+   FLOATING CIRCLE ICON BUTTONS
+   (WhatsApp & Buy Me a Coffee)
+   ============================================ */
+
+.floating-btns-container {
+  position: fixed;
+  bottom: 30px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Wrapper: holds the circle + close badge */
+.floating-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  animation: fabSlideIn 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes fabSlideIn {
+  from { opacity: 0; transform: scale(0.5) translateY(20px); }
+  to   { opacity: 1; transform: scale(1)   translateY(0);    }
+}
+
+/* The clickable circle */
+.floating-icon-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.floating-icon-btn svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.floating-icon-btn:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* ── WhatsApp ── */
+.whatsapp-icon-btn {
+  background: #25d366;
+}
+
+.whatsapp-icon-btn:hover {
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.55);
+}
+
+/* Pulse ring on WhatsApp */
+.floating-icon-whatsapp .whatsapp-icon-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  animation: fabPulse 2.4s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes fabPulse {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  70%  { transform: scale(1.55); opacity: 0;   }
+  100% { transform: scale(1.55); opacity: 0;   }
+}
+
+/* ── Buy Me a Coffee ── */
+.bmc-icon-btn {
+  background: #ffdd00;
+}
+
+.bmc-icon-btn svg {
+  fill: #1a1a1a;
+  width: 30px;
+  height: 30px;
+}
+
+.bmc-icon-btn:hover {
+  box-shadow: 0 10px 32px rgba(255, 200, 0, 0.55);
+}
+
+/* ── Close (×) badge ── */
+.floating-icon-close {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #bbb;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 0;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.floating-icon-close:hover {
+  background: #eb5d3a;
+  color: #fff;
+  transform: scale(1.2);
+  border-color: transparent;
+}
+
+/* ── Mobile ── */
+@media (max-width: 576px) {
+  .floating-btns-container {
+    bottom: 20px;
+    right: 18px;
+    gap: 14px;
+  }
+
+  .floating-icon-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-icon-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bmc-icon-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+

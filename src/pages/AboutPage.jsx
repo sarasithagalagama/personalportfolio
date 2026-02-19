@@ -213,6 +213,20 @@ const AboutPage = () => {
                           {/* START SINGLE RESUME DESIGN AREA */}
                           <div className="resume-item">
                             <div className="icon">
+                              <i className="ri-school-line"></i>
+                            </div>
+                            <div className="content">
+                              <span className="years">2009 - 2022</span>
+                              <h4>Ananda College, Colombo</h4>
+                              <span className="company">
+                                Physical Science – Maths stream
+                              </span>
+                            </div>
+                          </div>
+                          {/* / END SINGLE RESUME DESIGN AREA */}
+                          {/* START SINGLE RESUME DESIGN AREA */}
+                          <div className="resume-item">
+                            <div className="icon">
                               <i className="ri-graduation-cap-line"></i>
                             </div>
                             <div className="content">
@@ -228,14 +242,36 @@ const AboutPage = () => {
                           {/* START SINGLE RESUME DESIGN AREA */}
                           <div className="resume-item">
                             <div className="icon">
-                              <i className="ri-school-line"></i>
+                              <i className="ri-medal-line"></i>
                             </div>
                             <div className="content">
-                              <span className="years">2009 - 2022</span>
-                              <h4>Ananda College, Colombo</h4>
+                              <span className="years">Jan 2026 – Jun 2027</span>
+                              <h4>
+                                CIMA – Management Accounting
+                                <br />
+                                <small
+                                  style={{
+                                    fontSize: "13px",
+                                    fontWeight: 400,
+                                    color: "#b0b0b0",
+                                  }}
+                                >
+                                  Chartered Institute of Management Accountants
+                                </small>
+                              </h4>
                               <span className="company">
-                                Physical Science – Maths stream
+                                Wisdom Business Academy
                               </span>
+                              <p
+                                style={{
+                                  marginTop: "8px",
+                                  color: "#b0b0b0",
+                                  fontSize: "14px",
+                                }}
+                              >
+                                Currently pursuing the CIMA Professional
+                                Qualification (FLP).
+                              </p>
                             </div>
                           </div>
                           {/* / END SINGLE RESUME DESIGN AREA */}
