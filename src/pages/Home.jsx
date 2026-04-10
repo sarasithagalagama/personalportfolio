@@ -49,7 +49,7 @@ const Home = () => {
             <div className="col-lg-4">
               <div className="about-image-part wow fadeInUp delay-0-3s">
                 <img
-                  src="/assets/images/about/profile-pic2.png"
+                  src="/assets/images/about/profile-pic.png"
                   alt="About Me"
                 />
                 <h2>Sarasitha Galagama</h2>
